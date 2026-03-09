@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Événements & Communauté | Abdel Aziz Mfossa</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Configuration Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-blue-200 flex flex-col">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold text-blue-700 tracking-tighter">
+                Abdel<span class="text-slate-800">Mfossa.</span>
+            </a>
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-blue-600 transition-colors">Accueil</a>
+                <a href="projects.html" class="hover:text-blue-600 transition-colors">Projets</a>
+                <a href="blog.html" class="hover:text-blue-600 transition-colors">Articles</a>
+                <a href="events.html" class="text-blue-600 transition-colors">Événements</a>
+                <a href="videos.html" class="hover:text-blue-600 transition-colors">Vidéos</a>
+            </nav>
+            <a href="#contact" class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm">
+                Me contacter
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- HEADER DE LA PAGE (Thème sombre pour l'impact) -->
+        <section class="pt-20 pb-16 bg-slate-900 text-white relative overflow-hidden">
+            <!-- Décoration de fond -->
+            <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-20">
+                <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-600 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-10 w-72 h-72 bg-purple-600 rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="max-w-6xl mx-auto px-4 text-center md:text-left relative z-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20 text-blue-300 rounded-full text-sm font-semibold tracking-wide mb-6">
+                    <i data-lucide="users" class="w-4 h-4"></i>
+                    Google Developer Groups Lead
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">Communauté & <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Interventions</span></h1>
+                <p class="text-lg text-slate-300 max-w-2xl">
+                    Mon engagement pour l'écosystème tech africain. Découvrez mes conférences, les événements que j'organise avec le GDG Yaoundé et mes actions de mentoring.
+                </p>
+            </div>
+        </section>
+
+        <!-- GRILLE DES ÉVÉNEMENTS -->
+        <section class="py-16">
+            <div class="max-w-6xl mx-auto px-4">
+                
+                <div class="space-y-12">
+                    
+                    <!-- EVENT 1 -->
+                    <article class="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row group">
+                        <!-- Image & Date -->
+                        <div class="w-full md:w-2/5 h-64 md:h-auto relative overflow-hidden bg-slate-100 flex-shrink-0">
+                            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="DevFest Conférence" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            
+                            <!-- Bloc Date flottant -->
+                            <div class="absolute top-4 left-4 bg-white/95 backdrop-blur text-center rounded-xl shadow-lg border border-slate-100 overflow-hidden">
+                                <div class="bg-red-500 text-white text-[10px] font-bold uppercase tracking-widest py-1 px-3">2025</div>
+                                <div class="px-4 py-2">
+                                    <div class="text-2xl font-black text-slate-900 leading-none">15</div>
+                                    <div class="text-xs font-bold text-slate-500 uppercase">Nov</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contenu -->
+                        <div class="p-6 md:p-8 flex flex-col flex-grow">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center gap-2 text-sm text-slate-500 font-medium">
+                                    <i data-lucide="map-pin" class="w-4 h-4 text-blue-600"></i> Yaoundé, Cameroun
+                                </div>
+                                <!-- Badge Rôle -->
+                                <span class="text-xs font-bold px-3 py-1 bg-purple-100 text-purple-700 rounded-full border border-purple-200 flex items-center gap-1">
+                                    <i data-lucide="mic" class="w-3 h-3"></i> Speaker & Lead Orga
+                                </span>
+                            </div>
+
+                            <h2 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
+                                DevFest Yaoundé 2025
+                            </h2>
+
+                            <p class="text-slate-600 mb-6 leading-relaxed flex-grow">
+                                En tant que Lead GDG, j'ai coordonné l'organisation globale du plus grand événement tech de la ville. J'ai également animé une keynote très suivie sur l'utilisation de <strong>NotebookLM</strong> et l'IA générative pour transformer l'analyse de documents.
+                            </p>
+
+                            <!-- Footer Card (Liens d'action) -->
+                            <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100">
+                                <a href="#" target="_blank" class="inline-flex items-center gap-2 text-sm bg-slate-900 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-600 transition-colors">
+                                    <i data-lucide="external-link" class="w-4 h-4"></i> Site officiel
+                                </a>
+                                <a href="#" target="_blank" class="inline-flex items-center gap-2 text-sm bg-blue-50 text-blue-700 px-4 py-2 rounded-lg font-medium hover:bg-blue-100 transition-colors">
+                                    <i data-lucide="linkedin" class="w-4 h-4"></i> Post LinkedIn
+                                </a>
+                                <a href="#" target="_blank" class="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900 font-medium ml-auto">
+                                    <i data-lucide="youtube" class="w-4 h-4"></i> Replay vidéo
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- EVENT 2 -->
+                    <article class="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row group">
+                        <div class="w-full md:w-2/5 h-64 md:h-auto relative overflow-hidden bg-slate-100 flex-shrink-0">
+                            <img src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Atelier IA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            
+                            <div class="absolute top-4 left-4 bg-white/95 backdrop-blur text-center rounded-xl shadow-lg border border-slate-100 overflow-hidden">
+                                <div class="bg-blue-600 text-white text-[10px] font-bold uppercase tracking-widest py-1 px-3">2024</div>
+                                <div class="px-4 py-2">
+                                    <div class="text-2xl font-black text-slate-900 leading-none">20</div>
+                                    <div class="text-xs font-bold text-slate-500 uppercase">Avr</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 md:p-8 flex flex-col flex-grow">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center gap-2 text-sm text-slate-500 font-medium">
+                                    <i data-lucide="map-pin" class="w-4 h-4 text-blue-600"></i> Yaoundé, Cameroun
+                                </div>
+                                <span class="text-xs font-bold px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full border border-emerald-200 flex items-center gap-1">
+                                    <i data-lucide="users" class="w-3 h-3"></i> Organisateur
+                                </span>
+                            </div>
+
+                            <h2 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
+                                Campagne "Build with AI"
+                            </h2>
+
+                            <p class="text-slate-600 mb-6 leading-relaxed flex-grow">
+                                Pilotage de l'initiative locale "Build with AI" propulsée par Google. Une journée entière dédiée à la formation des développeurs locaux sur les API Gemini, permettant la création de solutions basées sur l'intelligence artificielle.
+                            </p>
+
+                            <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100">
+                                <a href="#" target="_blank" class="inline-flex items-center gap-2 text-sm bg-slate-900 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-600 transition-colors">
+                                    <i data-lucide="image" class="w-4 h-4"></i> Voir les photos
+                                </a>
+                                <a href="#" target="_blank" class="inline-flex items-center gap-2 text-sm bg-blue-50 text-blue-700 px-4 py-2 rounded-lg font-medium hover:bg-blue-100 transition-colors">
+                                    <i data-lucide="twitter" class="w-4 h-4"></i> Thread X (Twitter)
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- EVENT 3 -->
+                    <article class="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row group">
+                        <div class="w-full md:w-2/5 h-64 md:h-auto relative overflow-hidden bg-slate-100 flex-shrink-0">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Étudiants développeurs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            
+                            <div class="absolute top-4 left-4 bg-white/95 backdrop-blur text-center rounded-xl shadow-lg border border-slate-100 overflow-hidden">
+                                <div class="bg-slate-800 text-white text-[10px] font-bold uppercase tracking-widest py-1 px-3">Saison</div>
+                                <div class="px-4 py-2">
+                                    <div class="text-lg font-black text-slate-900 leading-none mt-1">20-21</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 md:p-8 flex flex-col flex-grow">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center gap-2 text-sm text-slate-500 font-medium">
+                                    <i data-lucide="building" class="w-4 h-4 text-blue-600"></i> Université de Yaoundé I
+                                </div>
+                                <span class="text-xs font-bold px-3 py-1 bg-blue-100 text-blue-700 rounded-full border border-blue-200 flex items-center gap-1">
+                                    <i data-lucide="award" class="w-3 h-3"></i> Fondateur & Lead
+                                </span>
+                            </div>
+
+                            <h2 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
+                                Lancement du Google Developer Student Club (GDSC)
+                            </h2>
+
+                            <p class="text-slate-600 mb-6 leading-relaxed flex-grow">
+                                Création du tout premier club étudiant de l'Université de Yaoundé I. J'ai formé l'équipe Core (bureau), organisé des dizaines d'ateliers sur le dev Web/Mobile et aidé les étudiants à créer des solutions tech pour des ONG locales.
+                            </p>
+
+                            <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100">
+                                <a href="#" target="_blank" class="inline-flex items-center gap-2 text-sm bg-blue-50 text-blue-700 px-4 py-2 rounded-lg font-medium hover:bg-blue-100 transition-colors">
+                                    <i data-lucide="linkedin" class="w-4 h-4"></i> Rétrospective LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="bg-slate-900 text-white pt-20 pb-10">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Me contacter</h2>
+            <p class="text-slate-400 mb-10 max-w-lg mx-auto">
+                Que ce soit pour une migration complexe, de l'automatisation sur mesure ou une intervention en tant que speaker, discutons de votre projet.
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-6 mb-16">
+                <a href="mailto:abdelemfossa@gmail.com" class="flex items-center justify-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    abdelemfossa@gmail.com
+                </a>
+                <a href="tel:+237699016727" class="flex items-center justify-center gap-3 bg-slate-800 text-white px-8 py-4 rounded-xl font-bold hover:bg-slate-700 transition-colors border border-slate-700">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                    (+237) 699 016 727
+                </a>
+            </div>
+
+            <div class="border-t border-slate-800 pt-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+                <div>
+                    &copy; 2026 Abdel Aziz MFOSSA. Tous droits réservés.
+                </div>
+                <div class="flex gap-4">
+                    <a href="https://linkedin.com/in/AbdelMfossa" class="hover:text-blue-500"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    <a href="https://twitter.com/AbdelMfossa" class="hover:text-blue-400"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="http://medium.com/@abdelmfossa" class="hover:text-white"><i data-lucide="book-open" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialisation des icônes Lucide -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>

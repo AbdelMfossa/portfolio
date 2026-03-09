@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdel Aziz Mfossa | Portfolio</title>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Configuration Tailwind (Optionnel pour customiser) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Utilitaire pour cacher la barre de défilement tout en gardant le scroll actif */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-blue-200">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold text-blue-700 tracking-tighter">
+                Abdel<span class="text-slate-800">Mfossa.</span>
+            </a>
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
+                <a href="index.html" class="text-blue-600 transition-colors">Accueil</a>
+                <a href="projects.html" class="hover:text-blue-600 transition-colors">Projets</a>
+                <a href="blog.html" class="hover:text-blue-600 transition-colors">Articles</a>
+                <a href="events.html" class="hover:text-blue-600 transition-colors">Événements</a>
+                <a href="videos.html" class="hover:text-blue-600 transition-colors">Vidéos</a>
+            </nav>
+            <a href="#contact"
+                class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm">
+                Me contacter
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="pt-24 pb-20 px-4 overflow-hidden relative">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-5 gap-12 lg:gap-8 items-center">
+
+                    <!-- Colonne 1 : Texte -->
+                    <div class="lg:col-span-3 text-center lg:text-left order-2 lg:order-1 relative z-10">
+                        <div
+                            class="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 text-blue-700 border border-blue-100 rounded-full text-sm font-semibold tracking-wide shadow-sm mb-6">
+                            <span class="w-2 h-2 rounded-full bg-blue-600 inline-block animate-pulse"></span>
+                            Disponible pour de nouveaux défis
+                        </div>
+
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-2">
+                            Hello, je suis <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Abdel
+                                Aziz</span>
+                        </h1>
+
+                        <h2
+                            class="text-3xl md:text-4xl lg:text-4xl font-extrabold tracking-tight text-slate-800 mb-6 mt-4 leading-tight">
+                            Consultant <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500">Google
+                                Workspace</span> <br class="hidden lg:block" />& Transformateur Digital
+                        </h2>
+
+                        <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Je conçois des solutions sur mesure pour optimiser vos processus métiers tout en animant
+                            activement l'écosystème tech.
+                        </p>
+
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-4 mb-10">
+                            <a href="#contact"
+                                class="flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-xl font-medium hover:bg-slate-800 transition-all shadow-md hover:shadow-lg">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                                Démarrer un projet
+                            </a>
+                            <a href="cv.pdf" download
+                                class="flex items-center gap-2 bg-white border border-slate-200 text-slate-700 px-6 py-3 rounded-xl font-medium hover:bg-slate-50 transition-all shadow-sm">
+                                <i data-lucide="download" class="w-5 h-5 text-blue-600"></i>
+                                Télécharger mon CV
+                            </a>
+                        </div>
+
+                        <div class="flex justify-center lg:justify-start gap-6 text-slate-400">
+                            <a href="https://facebook.com/AbdelMfossa" target="_blank" rel="noreferrer"
+                                class="hover:text-blue-400 transition-colors"><i
+                                    data-lucide="facebook" class="w-6 h-6"></i></a>
+                            <a href="https://linkedin.com/in/AbdelMfossa" target="_blank"
+                                class="hover:text-blue-400 transition-colors"><i data-lucide="linkedin"
+                                    class="w-6 h-6"></i></a>
+                            <a href="https://twitter.com/AbdelMfossa" target="_blank"
+                                class="hover:text-blue-400 transition-colors"><i data-lucide="twitter"
+                                    class="w-6 h-6"></i></a>
+                            <a href="http://medium.com/@abdelmfossa" target="_blank"
+                                class="hover:text-slate-900 transition-colors"><i data-lucide="book-open"
+                                    class="w-6 h-6"></i></a>
+                            <a href="http:youtube.com/@AbdelMfossa" target="_blank"
+                                class="hover:text-red-500 transition-colors"><i data-lucide="youtube"
+                                    class="w-6 h-6"></i></a>
+                            <a href="https://github.com/AbdelMfossa" target="_blank"
+                                class="hover:text-white transition-colors"><i data-lucide="github"
+                                    class="w-6 h-6"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Colonne 2 : Photo -->
+                    <div
+                        class="lg:col-span-2 flex justify-center order-1 lg:order-2 mb-10 lg:mb-0 relative z-10 w-full">
+                        <div class="relative group">
+                            <!-- Background blobs animés pour le style -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-tr from-blue-300 to-cyan-200 rounded-[3rem] rotate-6 scale-105 group-hover:rotate-12 group-hover:scale-110 transition-transform duration-500 ease-out z-0 opacity-70 blur-md hidden md:block">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-bl from-indigo-200 to-blue-100 rounded-[3rem] -rotate-6 scale-105 group-hover:-rotate-12 transition-transform duration-500 ease-out z-0">
+                            </div>
+
+                            <!-- Container image -->
+                            <div
+                                class="relative z-10 w-64 h-64 md:w-80 md:h-80 mx-auto rounded-[2.5rem] overflow-hidden border-8 border-white shadow-2xl bg-slate-100">
+                                <img src="Profile Abdel.jpg" alt="Abdel Aziz Mfossa"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+                            </div>
+
+
+                            <!-- Carte "en ligne" repositionnée -->
+                            <div
+                                class="absolute -bottom-4 -left-4 md:-bottom-2 md:-left-6 z-20 flex items-center gap-3 bg-white px-4 py-3 rounded-2xl border border-slate-100 shadow-xl group-hover:-translate-y-2 group-hover:-translate-x-2 transition-transform duration-300">
+                                <span class="relative flex h-3.5 w-3.5 ml-1">
+                                    <span
+                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-full w-full bg-emerald-500"></span>
+                                </span>
+                                <span class="text-sm font-bold text-slate-800 tracking-wide pr-1">Online</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6 text-slate-900">Plus qu'un ingénieur, <br />un accélérateur
+                            de productivité.</h2>
+                        <p class="text-slate-600 mb-4 text-lg leading-relaxed">
+                            Ingénieur Google Workspace certifié et Software Developer (Google Apps Script,
+                            Python, Javascript), je transforme les défis techniques complexes en processus fluides.
+                        </p>
+                        <p class="text-slate-600 mb-6 text-lg leading-relaxed">
+                            Au-delà du code, je suis un leader communautaire engagé (Lead GDG Yaoundé), speaker et
+                            créateur de contenu. Ce double profil me permet de résoudre des problèmes techniques tout en
+                            inspirant et en formant les équipes.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 mt-8">
+                            <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                                <div class="text-3xl font-bold text-blue-600 mb-1">80k+</div>
+                                <div class="text-sm text-slate-500">Utilisateurs gérés</div>
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                                <div class="text-3xl font-bold text-blue-600 mb-1">70%</div>
+                                <div class="text-sm text-slate-500">Gain de temps via automatisation</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div
+                            class="aspect-square bg-gradient-to-tr from-blue-100 to-cyan-50 rounded-3xl p-8 flex flex-col justify-center relative overflow-hidden">
+                            <i data-lucide="cloud"
+                                class="absolute top-10 right-10 text-blue-200 w-32 h-32 opacity-50"></i>
+                            <i data-lucide="code"
+                                class="absolute bottom-10 left-10 text-cyan-200 w-24 h-24 opacity-50"></i>
+                            <div
+                                class="relative z-10 bg-white/60 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-xl">
+                                <i data-lucide="terminal" class="text-blue-600 mb-4 w-8 h-8"></i>
+                                <div class="font-mono text-sm text-slate-700 leading-loose">
+                                    <span class="text-pink-500">const</span> <span class="text-blue-500">abdel</span> =
+                                    { <br />
+                                    &nbsp;&nbsp;role: <span class="text-green-600">'GW Engineer | Software Developer'</span>,<br />
+                                    &nbsp;&nbsp;skills: [<span class="text-green-600">'Apps Script'</span>, <span
+                                        class="text-green-600">'Python'</span>, <span class="text-green-600">'Javascript'</span>],<br />
+                                    &nbsp;&nbsp;community: <span class="text-green-600">'GDG Lead'</span>,<br />
+                                    &nbsp;&nbsp;solveProblems: <span class="text-blue-500">true</span><br />
+                                    };
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section class="py-20 bg-slate-50 border-b border-slate-100">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-4">Mon Expertise</h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto">Un mix parfait entre administration système,
+                        développement et intelligence artificielle.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Carte 1 -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        <div
+                            class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="cloud" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Google Workspace</h3>
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-blue-600"></div> Déploiement & Migration
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-blue-600"></div> Administration & Sécurité
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-blue-600"></div> Intégration d'API
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Carte 2 -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        <div
+                            class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="terminal" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Automatisation</h3>
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-emerald-600"></div> Google Apps Script
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-emerald-600"></div> Python
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-emerald-600"></div> Gestion des identités
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Carte 3 -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        <div
+                            class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="cpu" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">IA & Innovation</h3>
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-purple-600"></div> Google Gemini & NotebookLM
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-purple-600"></div> Prompt Engineering
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-purple-600"></div> Veille technologique
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE / PROJECTS SECTION -->
+        <section id="experience" class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="flex justify-center gap-4 mb-12">
+                    <button id="tab-btn-exp"
+                        class="px-6 py-2 rounded-full font-medium transition-colors bg-slate-900 text-white">
+                        Expériences 
+                    </button>
+                    <button id="tab-btn-proj"
+                        class="px-6 py-2 rounded-full font-medium transition-colors bg-slate-100 text-slate-600 hover:bg-slate-200">
+                        Projets Clés
+                    </button>
+                </div>
+
+                <!-- Expériences Content -->
+                <div id="tab-content-exp" class="space-y-12 block">
+                    <div class="relative pl-8 md:pl-0">
+                        <div
+                            class="hidden md:block absolute left-[50%] top-0 bottom-0 w-px bg-slate-200 -translate-x-1/2">
+                        </div>
+
+                        <div class="md:flex justify-between items-center w-full mb-8">
+                            <div class="md:w-[45%] text-left md:text-right pr-8 mb-4 md:mb-0 relative">
+                                <div
+                                    class="md:hidden absolute -left-8 top-1 w-4 h-4 rounded-full bg-blue-600 border-4 border-white">
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900">Google Workspace Engineer</h3>
+                                <div class="text-blue-600 font-medium">Tech Equity Cloud</div>
+                                <div class="text-sm text-slate-500 mb-2">2022 - Présent • Londres (Remote)</div>
+                                <p class="text-slate-600 text-sm">
+                                    Mise en œuvre, déploiement et migration sans interruption de Microsoft Exchange vers
+                                    Google Workspace. Création de scripts sur mesure pour étendre les fonctionnalités
+                                    natives.
+                                </p>
+                            </div>
+                            <div
+                                class="hidden md:flex absolute left-[50%] -translate-x-1/2 w-10 h-10 rounded-full bg-blue-600 border-4 border-white items-center justify-center z-10">
+                                <i data-lucide="briefcase" class="text-white w-4 h-4"></i>
+                            </div>
+                            <div class="md:w-[45%] pl-8 md:pl-8 text-left text-sm text-slate-600 hidden md:block">
+                                <ul class="list-disc space-y-2 marker:text-blue-600">
+                                    <li>Preuves de concept (PoC) personnalisées.</li>
+                                    <li>Migration de centaines d'utilisateurs.</li>
+                                    <li>Support niveau 1 & 2 et formation client.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="md:flex justify-between items-center w-full">
+                            <div
+                                class="md:w-[45%] text-left pl-8 md:pl-0 md:pr-8 mb-4 md:mb-0 relative order-2 md:order-1 hidden md:block">
+                                <ul class="list-disc space-y-2 marker:text-slate-400 md:text-right" dir="rtl">
+                                    <li class="text-left" dir="ltr">Gestion de +80 000 comptes (étudiants/profs).</li>
+                                    <li class="text-left" dir="ltr">Baisse des tickets de support de 60%.</li>
+                                    <li class="text-left" dir="ltr">Scripts Python & Apps Script pour l'admin.</li>
+                                </ul>
+                            </div>
+                            <div
+                                class="hidden md:flex absolute left-[50%] -translate-x-1/2 w-10 h-10 rounded-full bg-slate-400 border-4 border-white items-center justify-center z-10">
+                                <i data-lucide="briefcase" class="text-white w-4 h-4"></i>
+                            </div>
+                            <div class="md:w-[45%] text-left md:pl-8 relative order-1 md:order-2">
+                                <div
+                                    class="md:hidden absolute -left-8 top-1 w-4 h-4 rounded-full bg-slate-400 border-4 border-white">
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900">Admin GW for Education</h3>
+                                <div class="text-blue-600 font-medium">Université de Yaoundé I</div>
+                                <div class="text-sm text-slate-500 mb-2">2020 - 2024 • Cameroun</div>
+                                <p class="text-slate-600 text-sm">
+                                    Administration complète de l'environnement, configuration des politiques de sécurité
+                                    strictes, automatisation des rapports et intégration avec les SI académiques.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projets Content -->
+                <div id="tab-content-proj" class="hidden">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div
+                            class="border border-slate-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-md transition-all">
+                            <div class="flex items-center justify-between mb-4">
+                                <i data-lucide="terminal" class="text-blue-600 w-7 h-7"></i>
+                                <span class="text-xs font-bold px-2 py-1 bg-blue-50 text-blue-700 rounded-md">Apps
+                                    Script / Python</span>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">Automatisation des Comptes</h3>
+                            <p class="text-slate-600 text-sm mb-4">
+                                Pipeline de scripts automatisant le cycle de vie complet des identités utilisateurs
+                                (création, gestion, archivage, suppression).
+                            </p>
+                            <div class="text-sm font-semibold text-emerald-600 flex items-center gap-1">
+                                Résultat : -70% de temps de gestion manuel.
+                            </div>
+                        </div>
+
+                        <div
+                            class="border border-slate-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-md transition-all">
+                            <div class="flex items-center justify-between mb-4">
+                                <i data-lucide="cloud" class="text-blue-600 w-7 h-7"></i>
+                                <span class="text-xs font-bold px-2 py-1 bg-blue-50 text-blue-700 rounded-md">API
+                                    Google</span>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">Sauvegarde Contacts Auto</h3>
+                            <p class="text-slate-600 text-sm mb-4">
+                                Outil scripté conçu pour la synchronisation et la sauvegarde automatique et sécurisée
+                                des contacts téléphoniques vers Google Contacts.
+                            </p>
+                            <div class="text-sm font-semibold text-emerald-600 flex items-center gap-1">
+                                Fiabilité des données garantie.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-8">
+                        <a href="projets.html"
+                            class="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors">
+                            Voir tous mes projets <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMMUNITY & LEADERSHIP -->
+        <section id="community" class="py-20 bg-slate-900 text-white">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6">Leadership & Communauté</h2>
+                        <p class="text-slate-300 mb-8 text-lg">
+                            Je crois fermement que le savoir grandit quand il est partagé. Je m'investis pour dynamiser
+                            l'écosystème technologique et accompagner la prochaine génération de développeurs.
+                        </p>
+
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div class="mt-1 bg-blue-600/20 p-2 rounded-lg h-fit">
+                                    <i data-lucide="users" class="text-blue-400 w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold">Lead GDG Yaoundé (2023 - Présent)</h4>
+                                    <p class="text-slate-400 text-sm mt-1">Organisation d'événements majeurs (DevFest),
+                                        pilotage de la campagne "Build with AI", mentoring et développement de
+                                        partenariats.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div class="mt-1 bg-purple-600/20 p-2 rounded-lg h-fit">
+                                    <i data-lucide="mic" class="text-purple-400 w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold">Speaker & Créateur de contenu</h4>
+                                    <p class="text-slate-400 text-sm mt-1">Keynote Speaker sur "NotebookLM" au DevFest
+                                        Yaoundé. Rédaction d'articles techniques sur Medium et création de tutoriels.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div class="mt-1 bg-emerald-600/20 p-2 rounded-lg h-fit">
+                                    <i data-lucide="award" class="text-emerald-400 w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold">Fondateur GDSC Univ. Yaoundé</h4>
+                                    <p class="text-slate-400 text-sm mt-1">Création du premier club étudiant, formation
+                                        de l'équipe Core et organisation de dizaines d'ateliers pratiques.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-10">
+                            <a href="evenements.html"
+                                class="inline-flex items-center gap-2 text-blue-400 font-semibold hover:text-blue-300 transition-colors">
+                                Découvrir mes interventions <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="relative hidden md:block">
+                        <div
+                            class="aspect-square bg-slate-800 rounded-full border border-slate-700 relative flex items-center justify-center p-8">
+                            <div
+                                class="absolute top-1/4 left-1/4 w-16 h-16 bg-blue-500 rounded-full animate-pulse mix-blend-screen blur-xl">
+                            </div>
+                            <div
+                                class="absolute bottom-1/3 right-1/4 w-24 h-24 bg-purple-500 rounded-full animate-pulse mix-blend-screen blur-xl delay-700">
+                            </div>
+                            <div
+                                class="absolute top-1/2 right-1/3 w-20 h-20 bg-cyan-500 rounded-full animate-pulse mix-blend-screen blur-xl delay-1000">
+                            </div>
+
+                            <div
+                                class="text-center z-10 bg-slate-900/80 backdrop-blur-md p-8 rounded-2xl border border-slate-700">
+                                <div
+                                    class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 mb-2">
+                                    Google
+                                </div>
+                                <div class="text-xl font-medium text-slate-300 uppercase tracking-widest mb-4">
+                                    Developer Groups
+                                </div>
+                                <div
+                                    class="inline-block px-4 py-1 border border-slate-600 rounded-full text-sm text-slate-400">
+                                    Yaoundé Chapter Lead
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS SECTION (CARROUSEL) -->
+        <section class="py-20 bg-slate-50 overflow-hidden">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                    <div>
+                        <h2 class="text-3xl font-bold text-slate-900 mb-4">Certifications</h2>
+                        <p class="text-slate-600">Validation de mes compétences par les leaders de l'industrie.</p>
+                    </div>
+
+                    <!-- Ligne décorative et Contrôles du Carrousel -->
+                    <div class="flex items-center flex-grow justify-end gap-4 ml-0 md:ml-8">
+                        <div class="hidden md:block flex-grow border-b border-dashed border-slate-300"></div>
+                        <div class="flex gap-2">
+                            <button id="btn-prev-cert"
+                                class="w-10 h-10 rounded-full border border-slate-300 flex items-center justify-center text-slate-600 hover:bg-white hover:text-blue-600 hover:border-blue-300 transition-colors shadow-sm">
+                                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                            </button>
+                            <button id="btn-next-cert"
+                                class="w-10 h-10 rounded-full border border-slate-300 flex items-center justify-center text-slate-600 hover:bg-white hover:text-blue-600 hover:border-blue-300 transition-colors shadow-sm">
+                                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conteneur du Carrousel -->
+                <div id="cert-carousel"
+                    class="flex gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-8 pt-2 -mx-4 px-4 scroll-smooth">
+
+                    <!-- Carte Certif 1 -->
+                    <div
+                        class="min-w-[320px] max-w-[320px] snap-start bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl hover:border-blue-300 transition-all flex flex-col group">
+                        <!-- Image & Icône -->
+                        <div class="h-40 bg-slate-100 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Google Workspace"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                            <div
+                                class="absolute -bottom-5 right-4 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-blue-600 border border-slate-100 z-10">
+                                <i data-lucide="cloud" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <!-- Contenu -->
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Google</span>
+                                <span class="text-xs text-slate-400 font-medium">Oct 2023</span>
+                            </div>
+                            <h3 class="font-bold text-slate-900 leading-tight mb-3 text-lg">Google Workspace Deployment
+                                Services</h3>
+                            <p class="text-sm text-slate-600 line-clamp-2 mb-4">
+                                Certification validant l'expertise dans la planification, la configuration et la
+                                migration de données vers l'écosystème cloud de Google.
+                            </p>
+                            <!-- Tags -->
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded-md font-medium">Déploiement</span>
+                                <span
+                                    class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded-md font-medium">Cloud</span>
+                            </div>
+                            <!-- Lien -->
+                            <div class="mt-auto pt-4 border-t border-slate-100">
+                                <a href="#" target="_blank"
+                                    class="inline-flex items-center gap-2 text-sm text-blue-600 font-bold hover:text-blue-800 transition-colors">
+                                    Vérifier le badge <i data-lucide="external-link" class="w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carte Certif 2 -->
+                    <div
+                        class="min-w-[320px] max-w-[320px] snap-start bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl hover:border-blue-300 transition-all flex flex-col group">
+                        <div class="h-40 bg-slate-100 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Security"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                            <div
+                                class="absolute -bottom-5 right-4 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-blue-600 border border-slate-100 z-10">
+                                <i data-lucide="shield-check" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Google</span>
+                                <span class="text-xs text-slate-400 font-medium">Juin 2022</span>
+                            </div>
+                            <h3 class="font-bold text-slate-900 leading-tight mb-3 text-lg">Google Workspace
+                                Administration</h3>
+                            <p class="text-sm text-slate-600 line-clamp-2 mb-4">
+                                Maîtrise de la console d'administration, gestion des utilisateurs, des accès et des
+                                politiques de sécurité strictes.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded-md font-medium">Sécurité</span>
+                                <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded-md font-medium">Admin
+                                    IAM</span>
+                            </div>
+                            <div class="mt-auto pt-4 border-t border-slate-100">
+                                <a href="#" target="_blank"
+                                    class="inline-flex items-center gap-2 text-sm text-blue-600 font-bold hover:text-blue-800 transition-colors">
+                                    Vérifier le badge <i data-lucide="external-link" class="w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carte Certif 3 -->
+                    <div
+                        class="min-w-[320px] max-w-[320px] snap-start bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl hover:border-emerald-300 transition-all flex flex-col group">
+                        <div class="h-40 bg-slate-100 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Python"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                            <div
+                                class="absolute -bottom-5 right-4 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-emerald-600 border border-slate-100 z-10">
+                                <i data-lucide="terminal" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Coursera /
+                                    Google</span>
+                                <span class="text-xs text-slate-400 font-medium">Août 2021</span>
+                            </div>
+                            <h3 class="font-bold text-slate-900 leading-tight mb-3 text-lg">IT Automation with Python
+                            </h3>
+                            <p class="text-sm text-slate-600 line-clamp-2 mb-4">
+                                Spécialisation sur l'automatisation des tâches d'administration système et la gestion de
+                                configuration via des scripts Python.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="text-xs bg-emerald-50 text-emerald-700 px-2 py-1 rounded-md font-medium">Python</span>
+                                <span
+                                    class="text-xs bg-emerald-50 text-emerald-700 px-2 py-1 rounded-md font-medium">Scripting</span>
+                            </div>
+                            <div class="mt-auto pt-4 border-t border-slate-100">
+                                <a href="#" target="_blank"
+                                    class="inline-flex items-center gap-2 text-sm text-emerald-600 font-bold hover:text-emerald-800 transition-colors">
+                                    Vérifier le certificat <i data-lucide="external-link" class="w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carte Certif 4 -->
+                    <div
+                        class="min-w-[320px] max-w-[320px] snap-start bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl hover:border-purple-300 transition-all flex flex-col group">
+                        <div class="h-40 bg-slate-100 relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Data Science"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                            <div
+                                class="absolute -bottom-5 right-4 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-purple-600 border border-slate-100 z-10">
+                                <i data-lucide="database" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Udacity</span>
+                                <span class="text-xs text-slate-400 font-medium">Dec 2020</span>
+                            </div>
+                            <h3 class="font-bold text-slate-900 leading-tight mb-3 text-lg">Programming for Data Science
+                            </h3>
+                            <p class="text-sm text-slate-600 line-clamp-2 mb-4">
+                                Formation fondamentale sur l'analyse de données, SQL, la manipulation de dataframes et
+                                l'utilisation de Git.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="text-xs bg-purple-50 text-purple-700 px-2 py-1 rounded-md font-medium">Data</span>
+                                <span
+                                    class="text-xs bg-purple-50 text-purple-700 px-2 py-1 rounded-md font-medium">SQL</span>
+                            </div>
+                            <div class="mt-auto pt-4 border-t border-slate-100">
+                                <a href="#" target="_blank"
+                                    class="inline-flex items-center gap-2 text-sm text-purple-600 font-bold hover:text-purple-800 transition-colors">
+                                    Vérifier le diplôme <i data-lucide="external-link" class="w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="bg-slate-900 text-white pt-20 pb-10 mt-10">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Prêt à optimiser vos processus ?</h2>
+            <p class="text-slate-400 mb-10 max-w-lg mx-auto">
+                Que ce soit pour une migration complexe, de l'automatisation sur mesure ou une intervention en tant que
+                speaker, discutons de votre projet.
+            </p>
+
+            <div class="flex flex-col md:flex-row justify-center gap-6 mb-16">
+                <a href="mailto:abdelemfossa@gmail.com"
+                    class="flex items-center justify-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    abdelemfossa@gmail.com
+                </a>
+                <a href="tel:+237699016727"
+                    class="flex items-center justify-center gap-3 bg-slate-800 text-white px-8 py-4 rounded-xl font-bold hover:bg-slate-700 transition-colors border border-slate-700">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                    (+237) 699 016 727
+                </a>
+            </div>
+
+            <div
+                class="border-t border-slate-800 pt-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+                <div>
+                    &copy; 2024 Abdel Aziz MFOSSA. Tous droits réservés.
+                </div>
+                <div class="flex gap-4">
+                    <a href="https://www.youtube.com/@abdelmfossa" class="hover:text-red-500"><i data-lucide="youtube"
+                            class="w-5 h-5"></i></a>
+                    <a href="https://facebook.com/abdelmfossa" class="hover:text-blue-500"><i data-lucide="facebook"
+                            class="w-5 h-5"></i></a>
+                    <a href="https://github.com/AbdelMfossa" class="hover:text-white"><i data-lucide="github"
+                            class="w-5 h-5"></i></a>
+                    <a href="https://linkedin.com/in/AbdelMfossa" class="hover:text-blue-500"><i data-lucide="linkedin"
+                            class="w-5 h-5"></i></a>
+                    <a href="https://twitter.com/AbdelMfossa" class="hover:text-blue-400"><i data-lucide="twitter"
+                            class="w-5 h-5"></i></a>
+                    <a href="http://medium.com/@abdelmfossa" class="hover:text-white"><i data-lucide="book-open"
+                            class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialisation des icônes Lucide et des onglets -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialiser les icônes
+            lucide.createIcons();
+
+            // Script pour les onglets Expériences / Projets
+            const btnExp = document.getElementById('tab-btn-exp');
+            const btnProj = document.getElementById('tab-btn-proj');
+            const contentExp = document.getElementById('tab-content-exp');
+            const contentProj = document.getElementById('tab-content-proj');
+
+            function switchTab(tabId) {
+                if (tabId === 'exp') {
+                    btnExp.className = "px-6 py-2 rounded-full font-medium transition-colors bg-slate-900 text-white";
+                    btnProj.className = "px-6 py-2 rounded-full font-medium transition-colors bg-slate-100 text-slate-600 hover:bg-slate-200";
+                    contentExp.classList.remove('hidden');
+                    contentProj.classList.add('hidden');
+                } else {
+                    btnProj.className = "px-6 py-2 rounded-full font-medium transition-colors bg-slate-900 text-white";
+                    btnExp.className = "px-6 py-2 rounded-full font-medium transition-colors bg-slate-100 text-slate-600 hover:bg-slate-200";
+                    contentProj.classList.remove('hidden');
+                    contentExp.classList.add('hidden');
+                }
+            }
+
+            // Attacher les événements proprement
+            if (btnExp) {
+                btnExp.addEventListener('click', () => switchTab('exp'));
+            }
+            if (btnProj) {
+                btnProj.addEventListener('click', () => switchTab('proj'));
+            }
+
+            // Script pour le carrousel de Certifications
+            const carousel = document.getElementById('cert-carousel');
+            const btnPrevCert = document.getElementById('btn-prev-cert');
+            const btnNextCert = document.getElementById('btn-next-cert');
+
+            if (carousel && btnPrevCert && btnNextCert) {
+                // Largeur de scroll = largeur d'une carte (320px) + le gap (24px) = 344px
+                const scrollAmount = 344;
+
+                btnPrevCert.addEventListener('click', () => {
+                    carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+
+                btnNextCert.addEventListener('click', () => {
+                    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
