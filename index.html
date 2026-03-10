@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdel Aziz Mfossa | Portfolio</title>
+    <meta name="description"
+        content="Portfolio de Abdel Aziz Mfossa, Ingénieur Google Workspace, passionné d'automatisation et Lead du GDG Yaoundé.">
+    <meta property="og:title" content="Abdel Aziz Mfossa | Portfolio">
+    <meta property="og:description" content="Ingénieur Google Workspace & Transformateur Digital.">
+    <meta property="og:type" content="website">
 
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,6 +20,7 @@
     <!-- Configuration Tailwind (Optionnel pour customiser) -->
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -26,6 +32,15 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+
+    <!-- Script pour éviter le clignotement lors du chargement initial en mode sombre -->
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="logo abdelmfossa.svg">
@@ -41,51 +56,123 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+
+        /* Animation personnalisée pour le loader */
+        @keyframes loader-scale {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+                filter: drop-shadow(0 0 10px rgba(37, 99, 235, 0.2));
+            }
+
+            50% {
+                transform: scale(1.15);
+                opacity: 0.9;
+                filter: drop-shadow(0 0 25px rgba(37, 99, 235, 0.5));
+            }
+        }
+
+        .animate-loader {
+            animation: loader-scale 2s ease-in-out infinite;
+        }
+
+        /* Animation de flottaison pour l'Hero Section */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
     </style>
 </head>
 
-<body class="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-blue-200">
+<body
+    class="min-h-screen bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-200 font-sans selection:bg-blue-200 overflow-hidden transition-colors duration-300"
+    id="body-content">
+
+    <!-- PAGE LOADER -->
+    <div id="page-loader"
+        class="fixed inset-0 z-[100] bg-slate-50 dark:bg-slate-900 flex flex-col items-center justify-center transition-all duration-700 ease-in-out">
+        <div class="relative flex flex-col items-center justify-center w-32 h-32">
+            <!-- Cercle d'animation (pulse background) -->
+            <div class="absolute inset-0 bg-blue-100/50 rounded-full animate-ping"></div>
+            <!-- Logo principal -->
+            <div class="relative z-10 animate-loader">
+                <img src="logo abdelmfossa.svg" alt="Chargement"
+                    class="w-16 h-auto dark:invert transition-all duration-300">
+            </div>
+        </div>
+        <div class="mt-4 text-blue-600 font-semibold tracking-[0.3em] text-xs uppercase animate-pulse">
+            Chargement
+        </div>
+    </div>
 
     <!-- HEADER / NAVIGATION -->
-    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+    <header
+        class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-2 group">
                 <img src="logo abdelmfossa.svg" alt="Logo Abdel Mfossa"
-                    class="h-10 w-auto group-hover:scale-105 transition-transform duration-300">
-                <span class="text-xl font-bold text-slate-900 tracking-tighter">
-                    Abdel<span class="text-blue-700">Mfossa.</span>
+                    class="h-10 w-auto group-hover:scale-105 transition-all duration-300 dark:invert">
+                <span class="text-xl font-bold text-slate-900 dark:text-white tracking-tighter transition-colors">
+                    Abdel<span class="text-blue-700 dark:text-blue-500">Mfossa.</span>
                 </span>
             </a>
             <!-- Menu Desktop -->
-            <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
-                <a href="index.html" class="text-blue-600 transition-colors">Accueil</a>
-                <a href="projects.html" class="hover:text-blue-600 transition-colors">Projets</a>
-                <a href="blog.html" class="hover:text-blue-600 transition-colors">Articles</a>
-                <a href="events.html" class="hover:text-blue-600 transition-colors">Événements</a>
-                <a href="videos.html" class="hover:text-blue-600 transition-colors">Vidéos</a>
+            <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+                <a href="index.html" class="text-blue-600 dark:text-blue-500 transition-colors">Accueil</a>
+                <a href="projects.html"
+                    class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projets</a>
+                <a href="blog.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Articles</a>
+                <a href="events.html"
+                    class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Événements</a>
+                <a href="videos.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Vidéos</a>
             </nav>
-            <a href="#contact"
-                class="hidden md:inline-flex bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm">
-                Me contacter
-            </a>
+            <div class="flex items-center gap-4">
+                <!-- Toggle Mode Sombre -->
+                <button id="theme-toggle" type="button"
+                    class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700 rounded-lg text-sm p-2 transition-colors">
+                    <i id="theme-toggle-dark-icon" data-lucide="moon" class="hidden w-5 h-5"></i>
+                    <i id="theme-toggle-light-icon" data-lucide="sun" class="hidden w-5 h-5"></i>
+                </button>
 
-            <!-- Bouton Burger Mobile -->
-            <button id="mobile-menu-btn"
-                class="md:hidden p-2 text-slate-600 hover:text-blue-600 transition-colors rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-100">
-                <i data-lucide="menu" id="icon-menu" class="w-6 h-6"></i>
-                <i data-lucide="x" id="icon-x" class="w-6 h-6 hidden"></i>
-            </button>
+                <a href="#contact"
+                    class="hidden md:inline-flex bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm">
+                    Me contacter
+                </a>
+
+                <!-- Bouton Burger Mobile -->
+                <button id="mobile-menu-btn"
+                    class="md:hidden p-2 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-slate-700">
+                    <i data-lucide="menu" id="icon-menu" class="w-6 h-6"></i>
+                    <i data-lucide="x" id="icon-x" class="w-6 h-6 hidden"></i>
+                </button>
+            </div>
         </div>
 
         <!-- Menu Mobile (Caché par défaut) -->
         <div id="mobile-menu"
-            class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xl z-40 transition-all">
-            <nav class="flex flex-col py-6 gap-6 text-sm font-medium text-slate-700 items-center">
-                <a href="index.html" class="text-blue-600 hover:text-blue-700 transition-colors">Accueil</a>
-                <a href="projects.html" class="hover:text-blue-600 transition-colors">Projets</a>
-                <a href="blog.html" class="hover:text-blue-600 transition-colors">Articles</a>
-                <a href="events.html" class="hover:text-blue-600 transition-colors">Événements</a>
-                <a href="videos.html" class="hover:text-blue-600 transition-colors">Vidéos</a>
+            class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-xl z-40 transition-all">
+            <nav class="flex flex-col py-6 gap-6 text-sm font-medium text-slate-700 dark:text-slate-200 items-center">
+                <a href="index.html"
+                    class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors">Accueil</a>
+                <a href="projects.html"
+                    class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projets</a>
+                <a href="blog.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Articles</a>
+                <a href="events.html"
+                    class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Événements</a>
+                <a href="videos.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Vidéos</a>
                 <a href="#contact"
                     class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors shadow-sm mt-2 text-base">
                     Me contacter
@@ -103,43 +190,47 @@
                     <!-- Colonne 1 : Texte -->
                     <div class="lg:col-span-3 text-center lg:text-left order-2 lg:order-1 relative z-10">
                         <div
-                            class="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 text-blue-700 border border-blue-100 rounded-full text-sm font-semibold tracking-wide shadow-sm mb-6">
-                            <span class="w-2 h-2 rounded-full bg-blue-600 inline-block animate-pulse"></span>
+                            class="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50 rounded-full text-sm font-semibold tracking-wide shadow-sm mb-6 transition-colors">
+                            <span
+                                class="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400 inline-block animate-pulse"></span>
                             Disponible pour de nouveaux défis
                         </div>
 
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-2">
+                        <h1
+                            class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-2 transition-colors">
                             Hello, je suis <span
                                 class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Abdel
                                 Aziz</span>
                         </h1>
 
                         <h2
-                            class="text-3xl md:text-4xl lg:text-4xl font-extrabold tracking-tight text-slate-800 mb-6 mt-4 leading-tight">
+                            class="text-3xl md:text-4xl lg:text-4xl font-extrabold tracking-tight text-slate-800 dark:text-slate-200 mb-6 mt-4 leading-tight transition-colors">
                             Consultant <span
                                 class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500">Google
                                 Workspace</span> <br class="hidden lg:block" />& Transformateur Digital
                         </h2>
 
-                        <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        <p
+                            class="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed transition-colors">
                             Je conçois des solutions sur mesure pour optimiser vos processus métiers tout en animant
                             activement l'écosystème tech.
                         </p>
 
                         <div class="flex flex-wrap justify-center lg:justify-start gap-4 mb-10">
                             <a href="#contact"
-                                class="flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-xl font-medium hover:bg-slate-800 transition-all shadow-md hover:shadow-lg">
-                                <i data-lucide="mail" class="w-5 h-5"></i>
+                                class="group flex items-center gap-2 bg-slate-900 dark:bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-slate-800 dark:hover:bg-blue-700 transition-all shadow-md hover:shadow-lg">
+                                <i data-lucide="mail" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
                                 Démarrer un projet
                             </a>
                             <a href="cv.pdf" download
-                                class="flex items-center gap-2 bg-white border border-slate-200 text-slate-700 px-6 py-3 rounded-xl font-medium hover:bg-slate-50 transition-all shadow-sm">
-                                <i data-lucide="download" class="w-5 h-5 text-blue-600"></i>
+                                class="group flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 px-6 py-3 rounded-xl font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-all shadow-sm hover:shadow-md">
+                                <i data-lucide="download"
+                                    class="w-5 h-5 text-blue-600 dark:text-blue-400 group-hover:-translate-y-1 transition-transform"></i>
                                 Télécharger mon CV
                             </a>
                         </div>
 
-                        <div class="flex justify-center lg:justify-start gap-6 text-slate-400">
+                        <div class="flex justify-center lg:justify-start gap-6 text-slate-400 dark:text-slate-500">
                             <a href="https://facebook.com/AbdelMfossa" target="_blank" rel="noreferrer"
                                 class="hover:text-blue-400 transition-colors"><i data-lucide="facebook"
                                     class="w-6 h-6"></i></a>
@@ -150,14 +241,14 @@
                                 class="hover:text-blue-400 transition-colors"><i data-lucide="twitter"
                                     class="w-6 h-6"></i></a>
                             <a href="http://medium.com/@abdelmfossa" target="_blank"
-                                class="hover:text-slate-900 transition-colors"><i data-lucide="book-open"
-                                    class="w-6 h-6"></i></a>
+                                class="hover:text-slate-900 dark:hover:text-white transition-colors"><i
+                                    data-lucide="book-open" class="w-6 h-6"></i></a>
                             <a href="http:youtube.com/@AbdelMfossa" target="_blank"
                                 class="hover:text-red-500 transition-colors"><i data-lucide="youtube"
                                     class="w-6 h-6"></i></a>
                             <a href="https://github.com/AbdelMfossa" target="_blank"
-                                class="hover:text-white transition-colors"><i data-lucide="github"
-                                    class="w-6 h-6"></i></a>
+                                class="hover:text-slate-900 dark:hover:text-white transition-colors"><i
+                                    data-lucide="github" class="w-6 h-6"></i></a>
                         </div>
                     </div>
 
@@ -175,7 +266,7 @@
 
                             <!-- Container image -->
                             <div
-                                class="relative z-10 w-64 h-64 md:w-80 md:h-80 mx-auto rounded-[2.5rem] overflow-hidden border-8 border-white shadow-2xl bg-slate-100">
+                                class="relative z-10 w-64 h-64 md:w-80 md:h-80 mx-auto rounded-[2.5rem] overflow-hidden border-8 border-white dark:border-slate-800 shadow-2xl bg-slate-100 dark:bg-slate-800 animate-float transition-colors duration-300">
                                 <img src="Profile Abdel.jpg" alt="Abdel Aziz Mfossa"
                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
                             </div>
@@ -183,13 +274,14 @@
 
                             <!-- Carte "en ligne" repositionnée -->
                             <div
-                                class="absolute -bottom-4 -left-4 md:-bottom-2 md:-left-6 z-20 flex items-center gap-3 bg-white px-4 py-3 rounded-2xl border border-slate-100 shadow-xl group-hover:-translate-y-2 group-hover:-translate-x-2 transition-transform duration-300">
+                                class="absolute -bottom-4 -left-4 md:-bottom-2 md:-left-6 z-20 flex items-center gap-3 bg-white dark:bg-slate-800 px-4 py-3 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-xl dark:shadow-slate-900/50 group-hover:-translate-y-2 group-hover:-translate-x-2 transition-all duration-300">
                                 <span class="relative flex h-3.5 w-3.5 ml-1">
                                     <span
                                         class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                                     <span class="relative inline-flex rounded-full h-full w-full bg-emerald-500"></span>
                                 </span>
-                                <span class="text-sm font-bold text-slate-800 tracking-wide pr-1">Online</span>
+                                <span
+                                    class="text-sm font-bold text-slate-800 dark:text-slate-200 tracking-wide pr-1 transition-colors">Online</span>
                             </div>
                         </div>
                     </div>
@@ -199,43 +291,49 @@
         </section>
 
         <!-- ABOUT SECTION -->
-        <section class="py-20 bg-white">
+        <section class="py-20 bg-white dark:bg-slate-800/50 transition-colors duration-300">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <h2 class="text-3xl font-bold mb-6 text-slate-900">Plus qu'un ingénieur, <br />un accélérateur
+                        <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white transition-colors">Plus qu'un
+                            ingénieur, <br />un accélérateur
                             de productivité.</h2>
-                        <p class="text-slate-600 mb-4 text-lg leading-relaxed">
+                        <p class="text-slate-600 dark:text-slate-300 mb-4 text-lg leading-relaxed transition-colors">
                             Ingénieur Google Workspace certifié et Software Developer (Google Apps Script,
                             Python, Javascript), je transforme les défis techniques complexes en processus fluides.
                         </p>
-                        <p class="text-slate-600 mb-6 text-lg leading-relaxed">
+                        <p class="text-slate-600 dark:text-slate-300 mb-6 text-lg leading-relaxed transition-colors">
                             Au-delà du code, je suis un leader communautaire engagé (Lead GDG Yaoundé), speaker et
                             créateur de contenu. Ce double profil me permet de résoudre des problèmes techniques tout en
                             inspirant et en formant les équipes.
                         </p>
                         <div class="grid grid-cols-2 gap-4 mt-8">
-                            <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                            <div
+                                class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 transition-colors">
                                 <div class="text-3xl font-bold text-blue-600 mb-1">80k+</div>
-                                <div class="text-sm text-slate-500">Utilisateurs gérés</div>
+                                <div class="text-sm text-slate-500 dark:text-slate-400">Utilisateurs gérés</div>
                             </div>
-                            <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                            <div
+                                class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 transition-colors">
                                 <div class="text-3xl font-bold text-blue-600 mb-1">70%</div>
-                                <div class="text-sm text-slate-500">Gain de temps via automatisation</div>
+                                <div class="text-sm text-slate-500 dark:text-slate-400">Gain de temps via automatisation
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="relative">
                         <div
-                            class="aspect-square bg-gradient-to-tr from-blue-100 to-cyan-50 rounded-3xl p-8 flex flex-col justify-center relative overflow-hidden">
+                            class="aspect-square bg-gradient-to-tr from-blue-100 to-cyan-50 dark:from-slate-800 dark:to-slate-700 rounded-3xl p-8 flex flex-col justify-center relative overflow-hidden transition-colors duration-300">
                             <i data-lucide="cloud"
-                                class="absolute top-10 right-10 text-blue-200 w-32 h-32 opacity-50"></i>
+                                class="absolute top-10 right-10 text-blue-200 dark:text-blue-900 w-32 h-32 opacity-50"></i>
                             <i data-lucide="code"
-                                class="absolute bottom-10 left-10 text-cyan-200 w-24 h-24 opacity-50"></i>
+                                class="absolute bottom-10 left-10 text-cyan-200 dark:text-cyan-900 w-24 h-24 opacity-50"></i>
                             <div
-                                class="relative z-10 bg-white/60 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-xl">
-                                <i data-lucide="terminal" class="text-blue-600 mb-4 w-8 h-8"></i>
-                                <div class="font-mono text-sm text-slate-700 leading-loose">
+                                class="relative z-10 bg-white/60 dark:bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl border border-white/50 dark:border-slate-700/50 shadow-xl">
+                                <i data-lucide="terminal"
+                                    class="text-blue-600 dark:text-blue-400 mb-4 w-8 h-8 transition-colors"></i>
+                                <div
+                                    class="font-mono text-sm text-slate-700 dark:text-slate-300 leading-loose transition-colors">
                                     <span class="text-pink-500">const</span> <span class="text-blue-500">abdel</span> =
                                     { <br />
                                     &nbsp;&nbsp;role: <span class="text-green-600">'GW Engineer | Software
@@ -255,74 +353,85 @@
         </section>
 
         <!-- SKILLS SECTION -->
-        <section class="py-20 bg-slate-50 border-b border-slate-100">
+        <section
+            class="py-20 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl font-bold text-slate-900 mb-4">Mon Expertise</h2>
-                    <p class="text-slate-600 max-w-2xl mx-auto">Un mix parfait entre administration système,
+                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white transition-colors mb-4">Mon Expertise
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto transition-colors">Un mix parfait
+                        entre administration système,
                         développement et intelligence artificielle.</p>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8">
                     <!-- Carte 1 -->
                     <div
-                        class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md dark:hover:shadow-slate-900/50 transition-all duration-300">
                         <div
-                            class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
+                            class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-xl flex items-center justify-center mb-6 transition-colors">
                             <i data-lucide="cloud" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4">Google Workspace</h3>
-                        <ul class="space-y-3 text-slate-600">
+                        <h3 class="text-xl font-bold mb-4 dark:text-white transition-colors">Google Workspace</h3>
+                        <ul class="space-y-3 text-slate-600 dark:text-slate-300 transition-colors">
                             <li class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-blue-600"></div> Déploiement & Migration
+                                <div class="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-blue-400"></div> Déploiement &
+                                Migration
                             </li>
                             <li class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-blue-600"></div> Administration & Sécurité
+                                <div class="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-blue-400"></div> Administration
+                                & Sécurité
                             </li>
                             <li class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-blue-600"></div> Intégration d'API
+                                <div class="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-blue-400"></div> Intégration
+                                d'API
                             </li>
                         </ul>
                     </div>
 
                     <!-- Carte 2 -->
                     <div
-                        class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md dark:hover:shadow-slate-900/50 transition-all duration-300">
                         <div
-                            class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-6">
+                            class="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-xl flex items-center justify-center mb-6 transition-colors">
                             <i data-lucide="terminal" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4">Automatisation</h3>
-                        <ul class="space-y-3 text-slate-600">
+                        <h3 class="text-xl font-bold mb-4 dark:text-white transition-colors">Automatisation</h3>
+                        <ul class="space-y-3 text-slate-600 dark:text-slate-300 transition-colors">
                             <li class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-emerald-600"></div> Google Apps Script
+                                <div class="w-1.5 h-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400"></div> Google
+                                Apps Script
                             </li>
                             <li class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-emerald-600"></div> Python
+                                <div class="w-1.5 h-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400"></div> Python
                             </li>
                             <li class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-emerald-600"></div> Gestion des identités
+                                <div class="w-1.5 h-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400"></div> Gestion
+                                des identités
                             </li>
                         </ul>
                     </div>
 
                     <!-- Carte 3 -->
                     <div
-                        class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md dark:hover:shadow-slate-900/50 transition-all duration-300">
                         <div
-                            class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-6">
+                            class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-xl flex items-center justify-center mb-6 transition-colors">
                             <i data-lucide="cpu" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4">IA & Innovation</h3>
-                        <ul class="space-y-3 text-slate-600">
+                        <h3 class="text-xl font-bold mb-4 dark:text-white transition-colors">IA & Innovation</h3>
+                        <ul class="space-y-3 text-slate-600 dark:text-slate-300 transition-colors">
                             <li class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-purple-600"></div> Google Gemini & NotebookLM
+                                <div class="w-1.5 h-1.5 rounded-full bg-purple-600 dark:bg-purple-400"></div> Google
+                                Gemini & NotebookLM
                             </li>
                             <li class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-purple-600"></div> Prompt Engineering
+                                <div class="w-1.5 h-1.5 rounded-full bg-purple-600 dark:bg-purple-400"></div> Prompt
+                                Engineering
                             </li>
                             <li class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-purple-600"></div> Veille technologique
+                                <div class="w-1.5 h-1.5 rounded-full bg-purple-600 dark:bg-purple-400"></div> Veille
+                                technologique
                             </li>
                         </ul>
                     </div>
@@ -331,15 +440,15 @@
         </section>
 
         <!-- EXPERIENCE / PROJECTS SECTION -->
-        <section id="experience" class="py-20 bg-white">
+        <section id="experience" class="py-20 bg-white dark:bg-slate-800/50 transition-colors duration-300">
             <div class="max-w-4xl mx-auto px-4">
                 <div class="flex justify-center gap-4 mb-12">
                     <button id="tab-btn-exp"
-                        class="px-6 py-2 rounded-full font-medium transition-colors bg-slate-900 text-white">
+                        class="px-6 py-2 rounded-full font-medium transition-colors bg-slate-900 text-white dark:bg-blue-600 dark:text-white">
                         Expériences
                     </button>
                     <button id="tab-btn-proj"
-                        class="px-6 py-2 rounded-full font-medium transition-colors bg-slate-100 text-slate-600 hover:bg-slate-200">
+                        class="px-6 py-2 rounded-full font-medium transition-colors bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700">
                         Projets Clés
                     </button>
                 </div>
@@ -348,30 +457,33 @@
                 <div id="tab-content-exp" class="space-y-12 block">
                     <div class="relative pl-8 md:pl-0">
                         <div
-                            class="hidden md:block absolute left-[50%] top-0 bottom-0 w-px bg-slate-200 -translate-x-1/2">
+                            class="hidden md:block absolute left-[50%] top-0 bottom-0 w-px bg-slate-200 dark:bg-slate-700 -translate-x-1/2">
                         </div>
 
                         <!-- Experience 1 (Tech Equity Cloud) -->
                         <div class="md:flex justify-between items-center w-full mb-8">
                             <div class="md:w-[45%] text-left md:text-right pr-8 mb-4 md:mb-0 relative">
                                 <div
-                                    class="md:hidden absolute -left-8 top-1 w-4 h-4 rounded-full bg-blue-600 border-4 border-white">
+                                    class="md:hidden absolute -left-8 top-1 w-4 h-4 rounded-full bg-blue-600 border-4 border-white dark:border-slate-900">
                                 </div>
-                                <h3 class="text-xl font-bold text-slate-900">Google Workspace Engineer</h3>
-                                <div class="text-blue-600 font-medium">Tech Equity Cloud</div>
-                                <div class="text-sm text-slate-500 mb-2">Mai 2022 - Présent • Grand Londres (Remote)
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Google Workspace Engineer
+                                </h3>
+                                <div class="text-blue-600 dark:text-blue-400 font-medium">Tech Equity Cloud</div>
+                                <div class="text-sm text-slate-500 dark:text-slate-400 mb-2">Mai 2022 - Présent • Grand
+                                    Londres (Remote)
                                 </div>
-                                <p class="text-slate-600 text-sm">
+                                <p class="text-slate-600 dark:text-slate-300 text-sm">
                                     Déploiement, configuration et mise en œuvre technique de projets Google Workspace.
                                     Accueil des besoins clients, réalisation de Proof of Concepts (PoC) et
                                     démonstrations des services adaptés.
                                 </p>
                             </div>
                             <div
-                                class="hidden md:flex absolute left-[50%] -translate-x-1/2 w-10 h-10 rounded-full bg-blue-600 border-4 border-white items-center justify-center z-10">
+                                class="hidden md:flex absolute left-[50%] -translate-x-1/2 w-10 h-10 rounded-full bg-blue-600 border-4 border-white dark:border-slate-900 items-center justify-center z-10 transition-colors">
                                 <i data-lucide="briefcase" class="text-white w-4 h-4"></i>
                             </div>
-                            <div class="md:w-[45%] pl-8 md:pl-8 text-left text-sm text-slate-600 hidden md:block">
+                            <div
+                                class="md:w-[45%] pl-8 md:pl-8 text-left text-sm text-slate-600 dark:text-slate-300 hidden md:block">
                                 <ul class="list-disc space-y-2 marker:text-blue-600">
                                     <li>Définition des services et présentations clients.</li>
                                     <li>Configuration technique et implémentation.</li>
@@ -384,7 +496,8 @@
                         <div class="md:flex justify-between items-center w-full mb-8">
                             <div
                                 class="md:w-[45%] text-left pl-8 md:pl-0 md:pr-8 mb-4 md:mb-0 relative order-2 md:order-1 hidden md:block">
-                                <ul class="list-disc space-y-2 marker:text-slate-400 md:text-right" dir="rtl">
+                                <ul class="list-disc space-y-2 marker:text-slate-400 dark:marker:text-slate-500 md:text-right text-slate-600 dark:text-slate-300"
+                                    dir="rtl">
                                     <li class="text-left" dir="ltr">Gestion de +85 000 étudiants et 1 500 profs
                                         (Classroom).</li>
                                     <li class="text-left" dir="ltr">Création d'outils sur mesure avec Apps Script.</li>
@@ -393,17 +506,19 @@
                                 </ul>
                             </div>
                             <div
-                                class="hidden md:flex absolute left-[50%] -translate-x-1/2 w-10 h-10 rounded-full bg-slate-400 border-4 border-white items-center justify-center z-10">
+                                class="hidden md:flex absolute left-[50%] -translate-x-1/2 w-10 h-10 rounded-full bg-slate-400 border-4 border-white dark:border-slate-900 items-center justify-center z-10 transition-colors">
                                 <i data-lucide="monitor" class="text-white w-4 h-4"></i>
                             </div>
                             <div class="md:w-[45%] text-left md:pl-8 relative order-1 md:order-2">
                                 <div
-                                    class="md:hidden absolute -left-8 top-1 w-4 h-4 rounded-full bg-slate-400 border-4 border-white">
+                                    class="md:hidden absolute -left-8 top-1 w-4 h-4 rounded-full bg-slate-400 border-4 border-white dark:border-slate-900">
                                 </div>
-                                <h3 class="text-xl font-bold text-slate-900">IT Manager & GW Support</h3>
-                                <div class="text-blue-600 font-medium">Université de Yaoundé I</div>
-                                <div class="text-sm text-slate-500 mb-2">Mars 2020 - Mars 2024 • Yaoundé, Cameroun</div>
-                                <p class="text-slate-600 text-sm">
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">IT Manager & GW Support
+                                </h3>
+                                <div class="text-blue-600 dark:text-blue-400 font-medium">Université de Yaoundé I</div>
+                                <div class="text-sm text-slate-500 dark:text-slate-400 mb-2">Mars 2020 - Mars 2024 •
+                                    Yaoundé, Cameroun</div>
+                                <p class="text-slate-600 dark:text-slate-300 text-sm">
                                     Gestion des systèmes d'informations, administration complète de Google Workspace
                                     (déploiement, onboarding/offboarding) et accompagnement à la transformation digitale
                                     de l'institution.
@@ -415,21 +530,24 @@
                         <div class="md:flex justify-between items-center w-full mb-8">
                             <div class="md:w-[45%] text-left md:text-right pr-8 mb-4 md:mb-0 relative">
                                 <div
-                                    class="md:hidden absolute -left-8 top-1 w-4 h-4 rounded-full bg-purple-500 border-4 border-white">
+                                    class="md:hidden absolute -left-8 top-1 w-4 h-4 rounded-full bg-purple-500 border-4 border-white dark:border-slate-900">
                                 </div>
-                                <h3 class="text-xl font-bold text-slate-900">Trainer: Web Dev & GW</h3>
-                                <div class="text-blue-600 font-medium">African Technologies Innovation</div>
-                                <div class="text-sm text-slate-500 mb-2">Fév. 2019 - Août 2020 • Yaoundé, Cameroun</div>
-                                <p class="text-slate-600 text-sm">
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Trainer: Web Dev & GW</h3>
+                                <div class="text-blue-600 dark:text-blue-400 font-medium">African Technologies
+                                    Innovation</div>
+                                <div class="text-sm text-slate-500 dark:text-slate-400 mb-2">Fév. 2019 - Août 2020 •
+                                    Yaoundé, Cameroun</div>
+                                <p class="text-slate-600 dark:text-slate-300 text-sm">
                                     Conception et animation de sessions de formation interactives. Évaluation des
                                     besoins, développement de supports pédagogiques et gestion de classe.
                                 </p>
                             </div>
                             <div
-                                class="hidden md:flex absolute left-[50%] -translate-x-1/2 w-10 h-10 rounded-full bg-purple-500 border-4 border-white items-center justify-center z-10">
+                                class="hidden md:flex absolute left-[50%] -translate-x-1/2 w-10 h-10 rounded-full bg-purple-500 border-4 border-white dark:border-slate-900 items-center justify-center z-10 transition-colors">
                                 <i data-lucide="graduation-cap" class="text-white w-4 h-4"></i>
                             </div>
-                            <div class="md:w-[45%] pl-8 md:pl-8 text-left text-sm text-slate-600 hidden md:block">
+                            <div
+                                class="md:w-[45%] pl-8 md:pl-8 text-left text-sm text-slate-600 dark:text-slate-300 hidden md:block">
                                 <ul class="list-disc space-y-2 marker:text-purple-500">
                                     <li>Développement Web (Front-end & Back-end).</li>
                                     <li>Formation Microsoft Office (Data & Automatisation).</li>
@@ -442,24 +560,27 @@
                         <div class="md:flex justify-between items-center w-full">
                             <div
                                 class="md:w-[45%] text-left pl-8 md:pl-0 md:pr-8 mb-4 md:mb-0 relative order-2 md:order-1 hidden md:block">
-                                <ul class="list-disc space-y-2 marker:text-red-400 md:text-right" dir="rtl">
+                                <ul class="list-disc space-y-2 marker:text-red-400 dark:marker:text-red-500 md:text-right text-slate-600 dark:text-slate-300"
+                                    dir="rtl">
                                     <li class="text-left" dir="ltr">Animation de plus de 1 000 membres actifs.</li>
                                     <li class="text-left" dir="ltr">Organisation de conférences et hackathons.</li>
                                     <li class="text-left" dir="ltr">Développement de partenariats stratégiques.</li>
                                 </ul>
                             </div>
                             <div
-                                class="hidden md:flex absolute left-[50%] -translate-x-1/2 w-10 h-10 rounded-full bg-red-400 border-4 border-white items-center justify-center z-10">
+                                class="hidden md:flex absolute left-[50%] -translate-x-1/2 w-10 h-10 rounded-full bg-red-400 border-4 border-white dark:border-slate-900 items-center justify-center z-10 transition-colors">
                                 <i data-lucide="users" class="text-white w-4 h-4"></i>
                             </div>
                             <div class="md:w-[45%] text-left md:pl-8 relative order-1 md:order-2">
                                 <div
-                                    class="md:hidden absolute -left-8 top-1 w-4 h-4 rounded-full bg-red-400 border-4 border-white">
+                                    class="md:hidden absolute -left-8 top-1 w-4 h-4 rounded-full bg-red-400 border-4 border-white dark:border-slate-900">
                                 </div>
-                                <h3 class="text-xl font-bold text-slate-900">GDG Manager & GDSC Lead</h3>
-                                <div class="text-blue-600 font-medium">Google Developers</div>
-                                <div class="text-sm text-slate-500 mb-2">Août 2020 - Présent • Yaoundé, Cameroun</div>
-                                <p class="text-slate-600 text-sm">
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">GDG Manager & GDSC Lead
+                                </h3>
+                                <div class="text-blue-600 dark:text-blue-400 font-medium">Google Developers</div>
+                                <div class="text-sm text-slate-500 dark:text-slate-400 mb-2">Août 2020 - Présent •
+                                    Yaoundé, Cameroun</div>
+                                <p class="text-slate-600 dark:text-slate-300 text-sm">
                                     Pilotage bénévole de la communauté tech locale. Organisation d'événements, mentorat
                                     professionnel, promotion de l'innovation et encouragement à la participation de
                                     projets open source.
@@ -476,17 +597,18 @@
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <!-- Projet 1 -->
                         <div
-                            class="border border-slate-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-md transition-all flex flex-col group bg-white">
+                            class="border border-slate-200 dark:border-slate-700 rounded-xl p-6 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md dark:hover:shadow-slate-900/50 transition-all flex flex-col group bg-white dark:bg-slate-800">
                             <div class="flex items-center justify-between mb-4">
                                 <i data-lucide="terminal"
                                     class="text-blue-600 w-7 h-7 group-hover:scale-110 transition-transform"></i>
-                                <span class="text-xs font-bold px-2 py-1 bg-blue-50 text-blue-700 rounded-md">Apps
+                                <span
+                                    class="text-xs font-bold px-2 py-1 bg-blue-50 dark:bg-slate-700/50 text-blue-700 dark:text-blue-400 rounded-md transition-colors">Apps
                                     Script / Python</span>
                             </div>
                             <h3
-                                class="text-lg font-bold mb-2 text-slate-900 group-hover:text-blue-600 transition-colors">
+                                class="text-lg font-bold mb-2 text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                                 Automatisation des Comptes</h3>
-                            <p class="text-slate-600 text-sm mb-4 flex-grow">
+                            <p class="text-slate-600 dark:text-slate-300 text-sm mb-4 flex-grow transition-colors">
                                 Pipeline de scripts automatisant le cycle de vie complet des identités utilisateurs
                                 (création, gestion, archivage, suppression) pour des dizaines de milliers
                                 d'utilisateurs.
@@ -497,13 +619,14 @@
                             </div>
 
                             <!-- Liens du projet -->
-                            <div class="flex gap-2 pt-4 border-t border-slate-100 mt-auto">
+                            <div
+                                class="flex gap-2 pt-4 border-t border-slate-100 dark:border-slate-700 mt-auto transition-colors">
                                 <a href="#"
-                                    class="flex-1 flex justify-center items-center gap-2 bg-slate-900 text-white py-2 rounded-lg text-xs font-medium hover:bg-slate-800 transition-colors">
+                                    class="flex-1 flex justify-center items-center gap-2 bg-slate-900 dark:bg-slate-700 text-white py-2 rounded-lg text-xs font-medium hover:bg-slate-800 dark:hover:bg-slate-600 transition-colors">
                                     <i data-lucide="github" class="w-3.5 h-3.5"></i> Code source
                                 </a>
                                 <a href="#"
-                                    class="flex-1 flex justify-center items-center gap-2 bg-blue-50 text-blue-700 py-2 rounded-lg text-xs font-medium hover:bg-blue-100 transition-colors">
+                                    class="flex-1 flex justify-center items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 py-2 rounded-lg text-xs font-medium hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors">
                                     <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Démo Live
                                 </a>
                             </div>
@@ -511,17 +634,18 @@
 
                         <!-- Projet 2 -->
                         <div
-                            class="border border-slate-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-md transition-all flex flex-col group bg-white">
+                            class="border border-slate-200 dark:border-slate-700 rounded-xl p-6 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md dark:hover:shadow-slate-900/50 transition-all flex flex-col group bg-white dark:bg-slate-800">
                             <div class="flex items-center justify-between mb-4">
                                 <i data-lucide="cloud"
                                     class="text-blue-600 w-7 h-7 group-hover:scale-110 transition-transform"></i>
-                                <span class="text-xs font-bold px-2 py-1 bg-blue-50 text-blue-700 rounded-md">API
+                                <span
+                                    class="text-xs font-bold px-2 py-1 bg-blue-50 dark:bg-slate-700/50 text-blue-700 dark:text-blue-400 rounded-md transition-colors">API
                                     Google</span>
                             </div>
                             <h3
-                                class="text-lg font-bold mb-2 text-slate-900 group-hover:text-blue-600 transition-colors">
+                                class="text-lg font-bold mb-2 text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                                 Sauvegarde Contacts Auto</h3>
-                            <p class="text-slate-600 text-sm mb-4 flex-grow">
+                            <p class="text-slate-600 dark:text-slate-300 text-sm mb-4 flex-grow transition-colors">
                                 Outil scripté conçu pour la synchronisation et la sauvegarde automatique et sécurisée
                                 des contacts téléphoniques vers Google Contacts de manière transparente.
                             </p>
@@ -530,13 +654,14 @@
                             </div>
 
                             <!-- Liens du projet -->
-                            <div class="flex gap-2 pt-4 border-t border-slate-100 mt-auto">
+                            <div
+                                class="flex gap-2 pt-4 border-t border-slate-100 dark:border-slate-700 mt-auto transition-colors">
                                 <a href="#"
-                                    class="flex-1 flex justify-center items-center gap-2 bg-slate-900 text-white py-2 rounded-lg text-xs font-medium hover:bg-slate-800 transition-colors">
+                                    class="flex-1 flex justify-center items-center gap-2 bg-slate-900 dark:bg-slate-700 text-white py-2 rounded-lg text-xs font-medium hover:bg-slate-800 dark:hover:bg-slate-600 transition-colors">
                                     <i data-lucide="github" class="w-3.5 h-3.5"></i> Code source
                                 </a>
                                 <a href="#"
-                                    class="flex-1 flex justify-center items-center gap-2 bg-blue-50 text-blue-700 py-2 rounded-lg text-xs font-medium hover:bg-blue-100 transition-colors">
+                                    class="flex-1 flex justify-center items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 py-2 rounded-lg text-xs font-medium hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors">
                                     <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Voir le script
                                 </a>
                             </div>
@@ -544,17 +669,19 @@
 
                         <!-- Projet 3 (Nouveau) -->
                         <div
-                            class="border border-slate-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-md transition-all flex flex-col group bg-white md:col-span-2 lg:col-span-1">
+                            class="border border-slate-200 dark:border-slate-700 rounded-xl p-6 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md dark:hover:shadow-slate-900/50 transition-all flex flex-col group bg-white dark:bg-slate-800 md:col-span-2 lg:col-span-1">
                             <div class="flex items-center justify-between mb-4">
                                 <i data-lucide="layout"
                                     class="text-blue-600 w-7 h-7 group-hover:scale-110 transition-transform"></i>
-                                <span class="text-xs font-bold px-2 py-1 bg-blue-50 text-blue-700 rounded-md">Django /
+                                <span
+                                    class="text-xs font-bold px-2 py-1 bg-blue-50 dark:bg-slate-700/50 text-blue-700 dark:text-blue-400 rounded-md transition-colors">Django
+                                    /
                                     JS</span>
                             </div>
                             <h3
-                                class="text-lg font-bold mb-2 text-slate-900 group-hover:text-blue-600 transition-colors">
+                                class="text-lg font-bold mb-2 text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                                 Plateforme de Pré-inscription</h3>
-                            <p class="text-slate-600 text-sm mb-4 flex-grow">
+                            <p class="text-slate-600 dark:text-slate-300 text-sm mb-4 flex-grow transition-colors">
                                 Développement complet d'un site web de gestion des pré-inscriptions universitaires.
                                 Fonctionnalités multilingues et gestion multi-bases de données.
                             </p>
@@ -563,13 +690,14 @@
                             </div>
 
                             <!-- Liens du projet -->
-                            <div class="flex gap-2 pt-4 border-t border-slate-100 mt-auto">
+                            <div
+                                class="flex gap-2 pt-4 border-t border-slate-100 dark:border-slate-700 mt-auto transition-colors">
                                 <a href="#"
-                                    class="flex-1 flex justify-center items-center gap-2 bg-slate-900 text-white py-2 rounded-lg text-xs font-medium hover:bg-slate-800 transition-colors">
+                                    class="flex-1 flex justify-center items-center gap-2 bg-slate-900 dark:bg-slate-700 text-white py-2 rounded-lg text-xs font-medium hover:bg-slate-800 dark:hover:bg-slate-600 transition-colors">
                                     <i data-lucide="github" class="w-3.5 h-3.5"></i> Code source
                                 </a>
                                 <a href="https://preinscriptions.uninet.cm" target="_blank" rel="noreferrer"
-                                    class="flex-1 flex justify-center items-center gap-2 bg-blue-50 text-blue-700 py-2 rounded-lg text-xs font-medium hover:bg-blue-100 transition-colors">
+                                    class="flex-1 flex justify-center items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 py-2 rounded-lg text-xs font-medium hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors">
                                     <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Visiter le site
                                 </a>
                             </div>
@@ -578,7 +706,7 @@
 
                     <div class="text-center mt-10">
                         <a href="projects.html"
-                            class="inline-flex items-center gap-2 bg-white border border-slate-200 text-slate-700 font-semibold px-6 py-3 rounded-full hover:border-blue-300 hover:text-blue-600 transition-all shadow-sm">
+                            class="inline-flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold px-6 py-3 rounded-full hover:border-blue-300 dark:hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-all shadow-sm">
                             Découvrir tous mes projets <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
                     </div>
@@ -670,24 +798,29 @@
         </section>
 
         <!-- CERTIFICATIONS SECTION (CARROUSEL) -->
-        <section class="py-20 bg-slate-50 overflow-hidden">
+        <section
+            class="py-20 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-800 overflow-hidden transition-colors duration-300">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
                     <div>
-                        <h2 class="text-3xl font-bold text-slate-900 mb-4">Certifications</h2>
-                        <p class="text-slate-600">Validation de mes compétences par les leaders de l'industrie.</p>
+                        <h2 class="text-3xl font-bold text-slate-900 dark:text-white transition-colors mb-4">
+                            Certifications</h2>
+                        <p class="text-slate-600 dark:text-slate-400 transition-colors">Validation de mes compétences
+                            par les leaders de l'industrie.</p>
                     </div>
 
                     <!-- Ligne décorative et Contrôles du Carrousel -->
                     <div class="flex items-center flex-grow justify-end gap-4 ml-0 md:ml-8">
-                        <div class="hidden md:block flex-grow border-b border-dashed border-slate-300"></div>
+                        <div
+                            class="hidden md:block flex-grow border-b border-dashed border-slate-300 dark:border-slate-700 transition-colors">
+                        </div>
                         <div class="flex gap-2">
-                            <button id="btn-prev-cert"
-                                class="w-10 h-10 rounded-full border border-slate-300 flex items-center justify-center text-slate-600 hover:bg-white hover:text-blue-600 hover:border-blue-300 transition-colors shadow-sm">
+                            <button id="btn-prev-cert" aria-label="Certification précédente"
+                                class="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-white dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-300 dark:hover:border-blue-500 transition-colors shadow-sm">
                                 <i data-lucide="chevron-left" class="w-5 h-5"></i>
                             </button>
-                            <button id="btn-next-cert"
-                                class="w-10 h-10 rounded-full border border-slate-300 flex items-center justify-center text-slate-600 hover:bg-white hover:text-blue-600 hover:border-blue-300 transition-colors shadow-sm">
+                            <button id="btn-next-cert" aria-label="Certification suivante"
+                                class="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-white dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-300 dark:hover:border-blue-500 transition-colors shadow-sm">
                                 <i data-lucide="chevron-right" class="w-5 h-5"></i>
                             </button>
                         </div>
@@ -700,7 +833,7 @@
 
                     <!-- Carte Certif 1 -->
                     <div
-                        class="min-w-[320px] max-w-[320px] snap-start bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl hover:border-blue-300 transition-all flex flex-col group">
+                        class="min-w-[320px] max-w-[320px] snap-start bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-xl hover:border-blue-300 dark:hover:border-blue-500 transition-all flex flex-col group">
                         <!-- Image & Icône -->
                         <div class="h-40 bg-slate-100 relative overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
@@ -711,30 +844,32 @@
                         <!-- Contenu -->
                         <div class="p-6 flex-grow flex flex-col relative">
                             <div
-                                class="absolute -top-6 right-6 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-blue-600 border border-slate-100 z-10">
+                                class="absolute -top-6 right-6 w-12 h-12 bg-white dark:bg-slate-900 rounded-full shadow-md flex items-center justify-center text-blue-600 dark:text-blue-400 border border-slate-100 dark:border-slate-700 z-10 transition-colors">
                                 <i data-lucide="cloud" class="w-6 h-6"></i>
                             </div>
                             <div class="flex justify-between items-start mb-2 pr-10">
                                 <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Google</span>
                                 <span class="text-xs text-slate-400 font-medium">Oct 2023</span>
                             </div>
-                            <h3 class="font-bold text-slate-900 leading-tight mb-3 text-lg">Google Workspace Deployment
+                            <h3
+                                class="font-bold text-slate-900 dark:text-white leading-tight mb-3 text-lg transition-colors">
+                                Google Workspace Deployment
                                 Services</h3>
-                            <p class="text-sm text-slate-600 line-clamp-2 mb-4">
+                            <p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-2 mb-4 transition-colors">
                                 Certification validant l'expertise dans la planification, la configuration et la
                                 migration de données vers l'écosystème cloud de Google.
                             </p>
                             <!-- Tags -->
                             <div class="flex flex-wrap gap-2 mb-6">
                                 <span
-                                    class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded-md font-medium">Déploiement</span>
+                                    class="text-xs bg-blue-50 dark:bg-slate-700/50 text-blue-700 dark:text-blue-400 px-2 py-1 rounded-md font-medium transition-colors">Déploiement</span>
                                 <span
-                                    class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded-md font-medium">Cloud</span>
+                                    class="text-xs bg-blue-50 dark:bg-slate-700/50 text-blue-700 dark:text-blue-400 px-2 py-1 rounded-md font-medium transition-colors">Cloud</span>
                             </div>
                             <!-- Lien -->
-                            <div class="mt-auto pt-4 border-t border-slate-100">
+                            <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700 transition-colors">
                                 <a href="#" target="_blank"
-                                    class="inline-flex items-center gap-2 text-sm text-blue-600 font-bold hover:text-blue-800 transition-colors">
+                                    class="inline-flex items-center gap-2 text-sm text-blue-600 dark:text-blue-400 font-bold hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
                                     Vérifier le badge <i data-lucide="external-link" class="w-4 h-4"></i>
                                 </a>
                             </div>
@@ -743,7 +878,7 @@
 
                     <!-- Carte Certif 2 -->
                     <div
-                        class="min-w-[320px] max-w-[320px] snap-start bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl hover:border-blue-300 transition-all flex flex-col group">
+                        class="min-w-[320px] max-w-[320px] snap-start bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-xl hover:border-blue-300 dark:hover:border-blue-500 transition-all flex flex-col group">
                         <div class="h-40 bg-slate-100 relative overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                                 alt="Security"
@@ -752,28 +887,31 @@
                         </div>
                         <div class="p-6 flex-grow flex flex-col relative">
                             <div
-                                class="absolute -top-6 right-6 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-blue-600 border border-slate-100 z-10">
+                                class="absolute -top-6 right-6 w-12 h-12 bg-white dark:bg-slate-900 rounded-full shadow-md flex items-center justify-center text-blue-600 dark:text-blue-400 border border-slate-100 dark:border-slate-700 z-10 transition-colors">
                                 <i data-lucide="shield-check" class="w-6 h-6"></i>
                             </div>
                             <div class="flex justify-between items-start mb-2 pr-10">
                                 <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Google</span>
                                 <span class="text-xs text-slate-400 font-medium">Juin 2022</span>
                             </div>
-                            <h3 class="font-bold text-slate-900 leading-tight mb-3 text-lg">Google Workspace
+                            <h3
+                                class="font-bold text-slate-900 dark:text-white leading-tight mb-3 text-lg transition-colors">
+                                Google Workspace
                                 Administration</h3>
-                            <p class="text-sm text-slate-600 line-clamp-2 mb-4">
+                            <p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-2 mb-4 transition-colors">
                                 Maîtrise de la console d'administration, gestion des utilisateurs, des accès et des
                                 politiques de sécurité strictes.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-6">
                                 <span
-                                    class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded-md font-medium">Sécurité</span>
-                                <span class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded-md font-medium">Admin
+                                    class="text-xs bg-blue-50 dark:bg-slate-700/50 text-blue-700 dark:text-blue-400 px-2 py-1 rounded-md font-medium transition-colors">Sécurité</span>
+                                <span
+                                    class="text-xs bg-blue-50 dark:bg-slate-700/50 text-blue-700 dark:text-blue-400 px-2 py-1 rounded-md font-medium transition-colors">Admin
                                     IAM</span>
                             </div>
-                            <div class="mt-auto pt-4 border-t border-slate-100">
+                            <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700 transition-colors">
                                 <a href="#" target="_blank"
-                                    class="inline-flex items-center gap-2 text-sm text-blue-600 font-bold hover:text-blue-800 transition-colors">
+                                    class="inline-flex items-center gap-2 text-sm text-blue-600 dark:text-blue-400 font-bold hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
                                     Vérifier le badge <i data-lucide="external-link" class="w-4 h-4"></i>
                                 </a>
                             </div>
@@ -799,9 +937,11 @@
                                     Google</span>
                                 <span class="text-xs text-slate-400 font-medium">Août 2021</span>
                             </div>
-                            <h3 class="font-bold text-slate-900 leading-tight mb-3 text-lg">IT Automation with Python
+                            <h3
+                                class="font-bold text-slate-900 dark:text-white leading-tight mb-3 text-lg transition-colors">
+                                IT Automation with Python
                             </h3>
-                            <p class="text-sm text-slate-600 line-clamp-2 mb-4">
+                            <p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-2 mb-4 transition-colors">
                                 Spécialisation sur l'automatisation des tâches d'administration système et la gestion de
                                 configuration via des scripts Python.
                             </p>
@@ -811,7 +951,7 @@
                                 <span
                                     class="text-xs bg-emerald-50 text-emerald-700 px-2 py-1 rounded-md font-medium">Scripting</span>
                             </div>
-                            <div class="mt-auto pt-4 border-t border-slate-100">
+                            <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700 transition-colors">
                                 <a href="#" target="_blank"
                                     class="inline-flex items-center gap-2 text-sm text-emerald-600 font-bold hover:text-emerald-800 transition-colors">
                                     Vérifier le certificat <i data-lucide="external-link" class="w-4 h-4"></i>
@@ -838,9 +978,11 @@
                                 <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Udacity</span>
                                 <span class="text-xs text-slate-400 font-medium">Dec 2020</span>
                             </div>
-                            <h3 class="font-bold text-slate-900 leading-tight mb-3 text-lg">Programming for Data Science
+                            <h3
+                                class="font-bold text-slate-900 dark:text-white leading-tight mb-3 text-lg transition-colors">
+                                Programming for Data Science
                             </h3>
-                            <p class="text-sm text-slate-600 line-clamp-2 mb-4">
+                            <p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-2 mb-4 transition-colors">
                                 Formation fondamentale sur l'analyse de données, SQL, la manipulation de dataframes et
                                 l'utilisation de Git.
                             </p>
@@ -850,7 +992,7 @@
                                 <span
                                     class="text-xs bg-purple-50 text-purple-700 px-2 py-1 rounded-md font-medium">SQL</span>
                             </div>
-                            <div class="mt-auto pt-4 border-t border-slate-100">
+                            <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700 transition-colors">
                                 <a href="#" target="_blank"
                                     class="inline-flex items-center gap-2 text-sm text-purple-600 font-bold hover:text-purple-800 transition-colors">
                                     Vérifier le diplôme <i data-lucide="external-link" class="w-4 h-4"></i>
@@ -911,6 +1053,12 @@
         </div>
     </footer>
 
+    <!-- Bouton Retour en haut -->
+    <button id="back-to-top" aria-label="Retour en haut"
+        class="fixed bottom-6 right-6 w-12 h-12 bg-blue-600 text-white rounded-full shadow-lg flex items-center justify-center opacity-0 translate-y-10 invisible transition-all duration-300 z-50 hover:bg-blue-700 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-400 group">
+        <i data-lucide="arrow-up" class="w-5 h-5 group-hover:-translate-y-1 transition-transform"></i>
+    </button>
+
     <!-- Initialisation des icônes Lucide et des onglets -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -925,13 +1073,13 @@
 
             function switchTab(tabId) {
                 if (tabId === 'exp') {
-                    btnExp.className = "px-6 py-2 rounded-full font-medium transition-colors bg-slate-900 text-white";
-                    btnProj.className = "px-6 py-2 rounded-full font-medium transition-colors bg-slate-100 text-slate-600 hover:bg-slate-200";
+                    btnExp.className = "px-6 py-2 rounded-full font-medium transition-colors bg-slate-900 text-white dark:bg-blue-600 dark:text-white";
+                    btnProj.className = "px-6 py-2 rounded-full font-medium transition-colors bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700";
                     contentExp.classList.remove('hidden');
                     contentProj.classList.add('hidden');
                 } else {
-                    btnProj.className = "px-6 py-2 rounded-full font-medium transition-colors bg-slate-900 text-white";
-                    btnExp.className = "px-6 py-2 rounded-full font-medium transition-colors bg-slate-100 text-slate-600 hover:bg-slate-200";
+                    btnProj.className = "px-6 py-2 rounded-full font-medium transition-colors bg-slate-900 text-white dark:bg-blue-600 dark:text-white";
+                    btnExp.className = "px-6 py-2 rounded-full font-medium transition-colors bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700";
                     contentProj.classList.remove('hidden');
                     contentExp.classList.add('hidden');
                 }
@@ -989,6 +1137,84 @@
 
                 emailSpan.textContent = secureEmail;
                 emailLink.href = 'mailto:' + secureEmail;
+            }
+
+            // Gestion Dark Mode
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+            const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+            if (themeToggleBtn && themeToggleDarkIcon && themeToggleLightIcon) {
+                // Change les icônes en fonction de l'état actuel
+                if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    themeToggleLightIcon.classList.remove('hidden');
+                } else {
+                    themeToggleDarkIcon.classList.remove('hidden');
+                }
+
+                // Bascule lors du clic
+                themeToggleBtn.addEventListener('click', function () {
+                    themeToggleDarkIcon.classList.toggle('hidden');
+                    themeToggleLightIcon.classList.toggle('hidden');
+
+                    if (localStorage.getItem('color-theme')) {
+                        if (localStorage.getItem('color-theme') === 'light') {
+                            document.documentElement.classList.add('dark');
+                            localStorage.setItem('color-theme', 'dark');
+                        } else {
+                            document.documentElement.classList.remove('dark');
+                            localStorage.setItem('color-theme', 'light');
+                        }
+                    } else {
+                        if (document.documentElement.classList.contains('dark')) {
+                            document.documentElement.classList.remove('dark');
+                            localStorage.setItem('color-theme', 'light');
+                        } else {
+                            document.documentElement.classList.add('dark');
+                            localStorage.setItem('color-theme', 'dark');
+                        }
+                    }
+                });
+            }
+
+            // Gestion du bouton Retour en Haut
+            const backToTopBtn = document.getElementById('back-to-top');
+            if (backToTopBtn) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 400) {
+                        backToTopBtn.classList.remove('opacity-0', 'translate-y-10', 'invisible');
+                        backToTopBtn.classList.add('opacity-100', 'translate-y-0', 'visible');
+                    } else {
+                        backToTopBtn.classList.add('opacity-0', 'translate-y-10', 'invisible');
+                        backToTopBtn.classList.remove('opacity-100', 'translate-y-0', 'visible');
+                    }
+                });
+
+                backToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+
+        // Disparition du Loader une fois la page chargée
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('page-loader');
+            const body = document.getElementById('body-content');
+
+            if (loader) {
+                // Optionnel : un délai minime pour l'effet visuel
+                setTimeout(() => {
+                    loader.classList.add('opacity-0', 'invisible');
+                    body.classList.remove('overflow-hidden'); // On réactive le scroll
+
+                    // On retire le loader du DOM après la transition
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 700); // 700ms doit correspondre au duration-700 de Tailwind
+                }, 500);
             }
         });
     </script>
