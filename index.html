@@ -65,9 +65,32 @@
                 <a href="videos.html" class="hover:text-blue-600 transition-colors">Vidéos</a>
             </nav>
             <a href="#contact"
-                class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm">
+                class="hidden md:inline-flex bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm">
                 Me contacter
             </a>
+
+            <!-- Bouton Burger Mobile -->
+            <button id="mobile-menu-btn"
+                class="md:hidden p-2 text-slate-600 hover:text-blue-600 transition-colors rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-100">
+                <i data-lucide="menu" id="icon-menu" class="w-6 h-6"></i>
+                <i data-lucide="x" id="icon-x" class="w-6 h-6 hidden"></i>
+            </button>
+        </div>
+
+        <!-- Menu Mobile (Caché par défaut) -->
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xl z-40 transition-all">
+            <nav class="flex flex-col py-6 gap-6 text-sm font-medium text-slate-700 items-center">
+                <a href="index.html" class="text-blue-600 hover:text-blue-700 transition-colors">Accueil</a>
+                <a href="projects.html" class="hover:text-blue-600 transition-colors">Projets</a>
+                <a href="blog.html" class="hover:text-blue-600 transition-colors">Articles</a>
+                <a href="events.html" class="hover:text-blue-600 transition-colors">Événements</a>
+                <a href="videos.html" class="hover:text-blue-600 transition-colors">Vidéos</a>
+                <a href="#contact"
+                    class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors shadow-sm mt-2 text-base">
+                    Me contacter
+                </a>
+            </nav>
         </div>
     </header>
 
@@ -684,14 +707,14 @@
                                 alt="Google Workspace"
                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                            <div
-                                class="absolute -bottom-5 right-4 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-blue-600 border border-slate-100 z-10">
-                                <i data-lucide="cloud" class="w-6 h-6"></i>
-                            </div>
                         </div>
                         <!-- Contenu -->
-                        <div class="p-6 flex-grow flex flex-col">
-                            <div class="flex justify-between items-start mb-2">
+                        <div class="p-6 flex-grow flex flex-col relative">
+                            <div
+                                class="absolute -top-6 right-6 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-blue-600 border border-slate-100 z-10">
+                                <i data-lucide="cloud" class="w-6 h-6"></i>
+                            </div>
+                            <div class="flex justify-between items-start mb-2 pr-10">
                                 <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Google</span>
                                 <span class="text-xs text-slate-400 font-medium">Oct 2023</span>
                             </div>
@@ -726,13 +749,13 @@
                                 alt="Security"
                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col relative">
                             <div
-                                class="absolute -bottom-5 right-4 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-blue-600 border border-slate-100 z-10">
+                                class="absolute -top-6 right-6 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-blue-600 border border-slate-100 z-10">
                                 <i data-lucide="shield-check" class="w-6 h-6"></i>
                             </div>
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <div class="flex justify-between items-start mb-2">
+                            <div class="flex justify-between items-start mb-2 pr-10">
                                 <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Google</span>
                                 <span class="text-xs text-slate-400 font-medium">Juin 2022</span>
                             </div>
@@ -765,13 +788,13 @@
                                 alt="Python"
                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col relative">
                             <div
-                                class="absolute -bottom-5 right-4 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-emerald-600 border border-slate-100 z-10">
+                                class="absolute -top-6 right-6 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-emerald-600 border border-slate-100 z-10">
                                 <i data-lucide="terminal" class="w-6 h-6"></i>
                             </div>
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <div class="flex justify-between items-start mb-2">
+                            <div class="flex justify-between items-start mb-2 pr-10">
                                 <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Coursera /
                                     Google</span>
                                 <span class="text-xs text-slate-400 font-medium">Août 2021</span>
@@ -805,13 +828,13 @@
                                 alt="Data Science"
                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col relative">
                             <div
-                                class="absolute -bottom-5 right-4 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-purple-600 border border-slate-100 z-10">
+                                class="absolute -top-6 right-6 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-purple-600 border border-slate-100 z-10">
                                 <i data-lucide="database" class="w-6 h-6"></i>
                             </div>
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <div class="flex justify-between items-start mb-2">
+                            <div class="flex justify-between items-start mb-2 pr-10">
                                 <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Udacity</span>
                                 <span class="text-xs text-slate-400 font-medium">Dec 2020</span>
                             </div>
@@ -852,10 +875,11 @@
             </p>
 
             <div class="flex flex-col md:flex-row justify-center gap-6 mb-16">
-                <a href="mailto:abdelemfossa@gmail.com"
+                <!-- Email obfusqué pour éviter le spam (généré par JS) -->
+                <a href="#" id="contact-email"
                     class="flex items-center justify-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20">
                     <i data-lucide="mail" class="w-5 h-5"></i>
-                    abdelemfossa@gmail.com
+                    <span id="contact-email-text">Email</span>
                 </a>
                 <a href="tel:+237699016727"
                     class="flex items-center justify-center gap-3 bg-slate-800 text-white px-8 py-4 rounded-xl font-bold hover:bg-slate-700 transition-colors border border-slate-700">
@@ -937,6 +961,34 @@
                 btnNextCert.addEventListener('click', () => {
                     carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
                 });
+            }
+
+            // Gestion du Menu Mobile
+            const btnMenuMobile = document.getElementById('mobile-menu-btn');
+            const menuMobile = document.getElementById('mobile-menu');
+            const iconMenu = document.getElementById('icon-menu');
+            const iconX = document.getElementById('icon-x');
+
+            if (btnMenuMobile && menuMobile) {
+                btnMenuMobile.addEventListener('click', () => {
+                    menuMobile.classList.toggle('hidden');
+                    iconMenu.classList.toggle('hidden');
+                    iconX.classList.toggle('hidden');
+                });
+            }
+
+            // Protection de l'email contre les robots (obfuscation)
+            const emailSpan = document.getElementById('contact-email-text');
+            const emailLink = document.getElementById('contact-email');
+
+            if (emailSpan && emailLink) {
+                // Reconstitution dynamique de l'email
+                const user = 'abdelemfossa';
+                const domain = 'gmail.com';
+                const secureEmail = user + '@' + domain;
+
+                emailSpan.textContent = secureEmail;
+                emailLink.href = 'mailto:' + secureEmail;
             }
         });
     </script>
