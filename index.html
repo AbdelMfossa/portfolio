@@ -26,6 +26,11 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="logo abdelmfossa.svg">
+    <link rel="alternate icon" type="image/png" href="logo abdelmfossa.png">
+
     <style>
         /* Utilitaire pour cacher la barre de défilement tout en gardant le scroll actif */
         .hide-scrollbar::-webkit-scrollbar {
@@ -44,8 +49,12 @@
     <!-- HEADER / NAVIGATION -->
     <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-bold text-blue-700 tracking-tighter">
-                Abdel<span class="text-slate-800">Mfossa.</span>
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="logo abdelmfossa.svg" alt="Logo Abdel Mfossa"
+                    class="h-10 w-auto group-hover:scale-105 transition-transform duration-300">
+                <span class="text-xl font-bold text-slate-900 tracking-tighter">
+                    Abdel<span class="text-blue-700">Mfossa.</span>
+                </span>
             </a>
             <!-- Menu Desktop -->
             <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
@@ -109,8 +118,8 @@
 
                         <div class="flex justify-center lg:justify-start gap-6 text-slate-400">
                             <a href="https://facebook.com/AbdelMfossa" target="_blank" rel="noreferrer"
-                                class="hover:text-blue-400 transition-colors"><i
-                                    data-lucide="facebook" class="w-6 h-6"></i></a>
+                                class="hover:text-blue-400 transition-colors"><i data-lucide="facebook"
+                                    class="w-6 h-6"></i></a>
                             <a href="https://linkedin.com/in/AbdelMfossa" target="_blank"
                                 class="hover:text-blue-400 transition-colors"><i data-lucide="linkedin"
                                     class="w-6 h-6"></i></a>
@@ -206,9 +215,11 @@
                                 <div class="font-mono text-sm text-slate-700 leading-loose">
                                     <span class="text-pink-500">const</span> <span class="text-blue-500">abdel</span> =
                                     { <br />
-                                    &nbsp;&nbsp;role: <span class="text-green-600">'GW Engineer | Software Developer'</span>,<br />
+                                    &nbsp;&nbsp;role: <span class="text-green-600">'GW Engineer | Software
+                                        Developer'</span>,<br />
                                     &nbsp;&nbsp;skills: [<span class="text-green-600">'Apps Script'</span>, <span
-                                        class="text-green-600">'Python'</span>, <span class="text-green-600">'Javascript'</span>],<br />
+                                        class="text-green-600">'Python'</span>, <span
+                                        class="text-green-600">'Javascript'</span>],<br />
                                     &nbsp;&nbsp;community: <span class="text-green-600">'GDG Lead'</span>,<br />
                                     &nbsp;&nbsp;solveProblems: <span class="text-blue-500">true</span><br />
                                     };
@@ -302,7 +313,7 @@
                 <div class="flex justify-center gap-4 mb-12">
                     <button id="tab-btn-exp"
                         class="px-6 py-2 rounded-full font-medium transition-colors bg-slate-900 text-white">
-                        Expériences 
+                        Expériences
                     </button>
                     <button id="tab-btn-proj"
                         class="px-6 py-2 rounded-full font-medium transition-colors bg-slate-100 text-slate-600 hover:bg-slate-200">
@@ -317,6 +328,7 @@
                             class="hidden md:block absolute left-[50%] top-0 bottom-0 w-px bg-slate-200 -translate-x-1/2">
                         </div>
 
+                        <!-- Experience 1 (Tech Equity Cloud) -->
                         <div class="md:flex justify-between items-center w-full mb-8">
                             <div class="md:w-[45%] text-left md:text-right pr-8 mb-4 md:mb-0 relative">
                                 <div
@@ -324,11 +336,12 @@
                                 </div>
                                 <h3 class="text-xl font-bold text-slate-900">Google Workspace Engineer</h3>
                                 <div class="text-blue-600 font-medium">Tech Equity Cloud</div>
-                                <div class="text-sm text-slate-500 mb-2">2022 - Présent • Londres (Remote)</div>
+                                <div class="text-sm text-slate-500 mb-2">Mai 2022 - Présent • Grand Londres (Remote)
+                                </div>
                                 <p class="text-slate-600 text-sm">
-                                    Mise en œuvre, déploiement et migration sans interruption de Microsoft Exchange vers
-                                    Google Workspace. Création de scripts sur mesure pour étendre les fonctionnalités
-                                    natives.
+                                    Déploiement, configuration et mise en œuvre technique de projets Google Workspace.
+                                    Accueil des besoins clients, réalisation de Proof of Concepts (PoC) et
+                                    démonstrations des services adaptés.
                                 </p>
                             </div>
                             <div
@@ -337,83 +350,213 @@
                             </div>
                             <div class="md:w-[45%] pl-8 md:pl-8 text-left text-sm text-slate-600 hidden md:block">
                                 <ul class="list-disc space-y-2 marker:text-blue-600">
-                                    <li>Preuves de concept (PoC) personnalisées.</li>
-                                    <li>Migration de centaines d'utilisateurs.</li>
-                                    <li>Support niveau 1 & 2 et formation client.</li>
+                                    <li>Définition des services et présentations clients.</li>
+                                    <li>Configuration technique et implémentation.</li>
+                                    <li>Formation client et Support Niveau 1 & 2.</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="md:flex justify-between items-center w-full">
+                        <!-- Experience 2 (University of Yaoundé I) -->
+                        <div class="md:flex justify-between items-center w-full mb-8">
                             <div
                                 class="md:w-[45%] text-left pl-8 md:pl-0 md:pr-8 mb-4 md:mb-0 relative order-2 md:order-1 hidden md:block">
                                 <ul class="list-disc space-y-2 marker:text-slate-400 md:text-right" dir="rtl">
-                                    <li class="text-left" dir="ltr">Gestion de +80 000 comptes (étudiants/profs).</li>
-                                    <li class="text-left" dir="ltr">Baisse des tickets de support de 60%.</li>
-                                    <li class="text-left" dir="ltr">Scripts Python & Apps Script pour l'admin.</li>
+                                    <li class="text-left" dir="ltr">Gestion de +85 000 étudiants et 1 500 profs
+                                        (Classroom).</li>
+                                    <li class="text-left" dir="ltr">Création d'outils sur mesure avec Apps Script.</li>
+                                    <li class="text-left" dir="ltr">Dév. d'un site de pré-inscription avec Django et JS.
+                                    </li>
                                 </ul>
                             </div>
                             <div
                                 class="hidden md:flex absolute left-[50%] -translate-x-1/2 w-10 h-10 rounded-full bg-slate-400 border-4 border-white items-center justify-center z-10">
-                                <i data-lucide="briefcase" class="text-white w-4 h-4"></i>
+                                <i data-lucide="monitor" class="text-white w-4 h-4"></i>
                             </div>
                             <div class="md:w-[45%] text-left md:pl-8 relative order-1 md:order-2">
                                 <div
                                     class="md:hidden absolute -left-8 top-1 w-4 h-4 rounded-full bg-slate-400 border-4 border-white">
                                 </div>
-                                <h3 class="text-xl font-bold text-slate-900">Admin GW for Education</h3>
+                                <h3 class="text-xl font-bold text-slate-900">IT Manager & GW Support</h3>
                                 <div class="text-blue-600 font-medium">Université de Yaoundé I</div>
-                                <div class="text-sm text-slate-500 mb-2">2020 - 2024 • Cameroun</div>
+                                <div class="text-sm text-slate-500 mb-2">Mars 2020 - Mars 2024 • Yaoundé, Cameroun</div>
                                 <p class="text-slate-600 text-sm">
-                                    Administration complète de l'environnement, configuration des politiques de sécurité
-                                    strictes, automatisation des rapports et intégration avec les SI académiques.
+                                    Gestion des systèmes d'informations, administration complète de Google Workspace
+                                    (déploiement, onboarding/offboarding) et accompagnement à la transformation digitale
+                                    de l'institution.
                                 </p>
                             </div>
                         </div>
+
+                        <!-- Experience 3 (Trainer ATI) -->
+                        <div class="md:flex justify-between items-center w-full mb-8">
+                            <div class="md:w-[45%] text-left md:text-right pr-8 mb-4 md:mb-0 relative">
+                                <div
+                                    class="md:hidden absolute -left-8 top-1 w-4 h-4 rounded-full bg-purple-500 border-4 border-white">
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900">Trainer: Web Dev & GW</h3>
+                                <div class="text-blue-600 font-medium">African Technologies Innovation</div>
+                                <div class="text-sm text-slate-500 mb-2">Fév. 2019 - Août 2020 • Yaoundé, Cameroun</div>
+                                <p class="text-slate-600 text-sm">
+                                    Conception et animation de sessions de formation interactives. Évaluation des
+                                    besoins, développement de supports pédagogiques et gestion de classe.
+                                </p>
+                            </div>
+                            <div
+                                class="hidden md:flex absolute left-[50%] -translate-x-1/2 w-10 h-10 rounded-full bg-purple-500 border-4 border-white items-center justify-center z-10">
+                                <i data-lucide="graduation-cap" class="text-white w-4 h-4"></i>
+                            </div>
+                            <div class="md:w-[45%] pl-8 md:pl-8 text-left text-sm text-slate-600 hidden md:block">
+                                <ul class="list-disc space-y-2 marker:text-purple-500">
+                                    <li>Développement Web (Front-end & Back-end).</li>
+                                    <li>Formation Microsoft Office (Data & Automatisation).</li>
+                                    <li>Formation approfondie sur Google Workspace.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Experience 4 (Community GDG/GDSC) -->
+                        <div class="md:flex justify-between items-center w-full">
+                            <div
+                                class="md:w-[45%] text-left pl-8 md:pl-0 md:pr-8 mb-4 md:mb-0 relative order-2 md:order-1 hidden md:block">
+                                <ul class="list-disc space-y-2 marker:text-red-400 md:text-right" dir="rtl">
+                                    <li class="text-left" dir="ltr">Animation de plus de 1 000 membres actifs.</li>
+                                    <li class="text-left" dir="ltr">Organisation de conférences et hackathons.</li>
+                                    <li class="text-left" dir="ltr">Développement de partenariats stratégiques.</li>
+                                </ul>
+                            </div>
+                            <div
+                                class="hidden md:flex absolute left-[50%] -translate-x-1/2 w-10 h-10 rounded-full bg-red-400 border-4 border-white items-center justify-center z-10">
+                                <i data-lucide="users" class="text-white w-4 h-4"></i>
+                            </div>
+                            <div class="md:w-[45%] text-left md:pl-8 relative order-1 md:order-2">
+                                <div
+                                    class="md:hidden absolute -left-8 top-1 w-4 h-4 rounded-full bg-red-400 border-4 border-white">
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900">GDG Manager & GDSC Lead</h3>
+                                <div class="text-blue-600 font-medium">Google Developers</div>
+                                <div class="text-sm text-slate-500 mb-2">Août 2020 - Présent • Yaoundé, Cameroun</div>
+                                <p class="text-slate-600 text-sm">
+                                    Pilotage bénévole de la communauté tech locale. Organisation d'événements, mentorat
+                                    professionnel, promotion de l'innovation et encouragement à la participation de
+                                    projets open source.
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
                 <!-- Projets Content -->
                 <div id="tab-content-proj" class="hidden">
-                    <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Modification en 3 colonnes pour les écrans larges -->
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Projet 1 -->
                         <div
-                            class="border border-slate-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-md transition-all">
+                            class="border border-slate-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-md transition-all flex flex-col group bg-white">
                             <div class="flex items-center justify-between mb-4">
-                                <i data-lucide="terminal" class="text-blue-600 w-7 h-7"></i>
+                                <i data-lucide="terminal"
+                                    class="text-blue-600 w-7 h-7 group-hover:scale-110 transition-transform"></i>
                                 <span class="text-xs font-bold px-2 py-1 bg-blue-50 text-blue-700 rounded-md">Apps
                                     Script / Python</span>
                             </div>
-                            <h3 class="text-lg font-bold mb-2">Automatisation des Comptes</h3>
-                            <p class="text-slate-600 text-sm mb-4">
+                            <h3
+                                class="text-lg font-bold mb-2 text-slate-900 group-hover:text-blue-600 transition-colors">
+                                Automatisation des Comptes</h3>
+                            <p class="text-slate-600 text-sm mb-4 flex-grow">
                                 Pipeline de scripts automatisant le cycle de vie complet des identités utilisateurs
-                                (création, gestion, archivage, suppression).
+                                (création, gestion, archivage, suppression) pour des dizaines de milliers
+                                d'utilisateurs.
                             </p>
-                            <div class="text-sm font-semibold text-emerald-600 flex items-center gap-1">
-                                Résultat : -70% de temps de gestion manuel.
+                            <div class="text-sm font-semibold text-emerald-600 flex items-center gap-1 mb-5">
+                                <i data-lucide="check-circle" class="w-4 h-4"></i> Résultat : -70% de temps de gestion
+                                manuel
+                            </div>
+
+                            <!-- Liens du projet -->
+                            <div class="flex gap-2 pt-4 border-t border-slate-100 mt-auto">
+                                <a href="#"
+                                    class="flex-1 flex justify-center items-center gap-2 bg-slate-900 text-white py-2 rounded-lg text-xs font-medium hover:bg-slate-800 transition-colors">
+                                    <i data-lucide="github" class="w-3.5 h-3.5"></i> Code source
+                                </a>
+                                <a href="#"
+                                    class="flex-1 flex justify-center items-center gap-2 bg-blue-50 text-blue-700 py-2 rounded-lg text-xs font-medium hover:bg-blue-100 transition-colors">
+                                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Démo Live
+                                </a>
                             </div>
                         </div>
 
+                        <!-- Projet 2 -->
                         <div
-                            class="border border-slate-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-md transition-all">
+                            class="border border-slate-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-md transition-all flex flex-col group bg-white">
                             <div class="flex items-center justify-between mb-4">
-                                <i data-lucide="cloud" class="text-blue-600 w-7 h-7"></i>
+                                <i data-lucide="cloud"
+                                    class="text-blue-600 w-7 h-7 group-hover:scale-110 transition-transform"></i>
                                 <span class="text-xs font-bold px-2 py-1 bg-blue-50 text-blue-700 rounded-md">API
                                     Google</span>
                             </div>
-                            <h3 class="text-lg font-bold mb-2">Sauvegarde Contacts Auto</h3>
-                            <p class="text-slate-600 text-sm mb-4">
+                            <h3
+                                class="text-lg font-bold mb-2 text-slate-900 group-hover:text-blue-600 transition-colors">
+                                Sauvegarde Contacts Auto</h3>
+                            <p class="text-slate-600 text-sm mb-4 flex-grow">
                                 Outil scripté conçu pour la synchronisation et la sauvegarde automatique et sécurisée
-                                des contacts téléphoniques vers Google Contacts.
+                                des contacts téléphoniques vers Google Contacts de manière transparente.
                             </p>
-                            <div class="text-sm font-semibold text-emerald-600 flex items-center gap-1">
-                                Fiabilité des données garantie.
+                            <div class="text-sm font-semibold text-emerald-600 flex items-center gap-1 mb-5">
+                                <i data-lucide="shield-check" class="w-4 h-4"></i> Fiabilité et sécurité des données
+                            </div>
+
+                            <!-- Liens du projet -->
+                            <div class="flex gap-2 pt-4 border-t border-slate-100 mt-auto">
+                                <a href="#"
+                                    class="flex-1 flex justify-center items-center gap-2 bg-slate-900 text-white py-2 rounded-lg text-xs font-medium hover:bg-slate-800 transition-colors">
+                                    <i data-lucide="github" class="w-3.5 h-3.5"></i> Code source
+                                </a>
+                                <a href="#"
+                                    class="flex-1 flex justify-center items-center gap-2 bg-blue-50 text-blue-700 py-2 rounded-lg text-xs font-medium hover:bg-blue-100 transition-colors">
+                                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Voir le script
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Projet 3 (Nouveau) -->
+                        <div
+                            class="border border-slate-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-md transition-all flex flex-col group bg-white md:col-span-2 lg:col-span-1">
+                            <div class="flex items-center justify-between mb-4">
+                                <i data-lucide="layout"
+                                    class="text-blue-600 w-7 h-7 group-hover:scale-110 transition-transform"></i>
+                                <span class="text-xs font-bold px-2 py-1 bg-blue-50 text-blue-700 rounded-md">Django /
+                                    JS</span>
+                            </div>
+                            <h3
+                                class="text-lg font-bold mb-2 text-slate-900 group-hover:text-blue-600 transition-colors">
+                                Plateforme de Pré-inscription</h3>
+                            <p class="text-slate-600 text-sm mb-4 flex-grow">
+                                Développement complet d'un site web de gestion des pré-inscriptions universitaires.
+                                Fonctionnalités multilingues et gestion multi-bases de données.
+                            </p>
+                            <div class="text-sm font-semibold text-emerald-600 flex items-center gap-1 mb-5">
+                                <i data-lucide="monitor-check" class="w-4 h-4"></i> Adopté par des milliers d'étudiants
+                            </div>
+
+                            <!-- Liens du projet -->
+                            <div class="flex gap-2 pt-4 border-t border-slate-100 mt-auto">
+                                <a href="#"
+                                    class="flex-1 flex justify-center items-center gap-2 bg-slate-900 text-white py-2 rounded-lg text-xs font-medium hover:bg-slate-800 transition-colors">
+                                    <i data-lucide="github" class="w-3.5 h-3.5"></i> Code source
+                                </a>
+                                <a href="https://preinscriptions.uninet.cm" target="_blank" rel="noreferrer"
+                                    class="flex-1 flex justify-center items-center gap-2 bg-blue-50 text-blue-700 py-2 rounded-lg text-xs font-medium hover:bg-blue-100 transition-colors">
+                                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Visiter le site
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="text-center mt-8">
-                        <a href="projets.html"
-                            class="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors">
-                            Voir tous mes projets <i data-lucide="arrow-right" class="w-4 h-4"></i>
+
+                    <div class="text-center mt-10">
+                        <a href="projects.html"
+                            class="inline-flex items-center gap-2 bg-white border border-slate-200 text-slate-700 font-semibold px-6 py-3 rounded-full hover:border-blue-300 hover:text-blue-600 transition-all shadow-sm">
+                            Découvrir tous mes projets <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
                     </div>
                 </div>
@@ -461,7 +604,7 @@
                                     <i data-lucide="award" class="text-emerald-400 w-6 h-6"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold">Fondateur GDSC Univ. Yaoundé</h4>
+                                    <h4 class="text-xl font-bold">Fondateur GDSC Université de Yaoundé I</h4>
                                     <p class="text-slate-400 text-sm mt-1">Création du premier club étudiant, formation
                                         de l'équipe Core et organisation de dizaines d'ateliers pratiques.</p>
                                 </div>
@@ -490,14 +633,8 @@
                             </div>
 
                             <div
-                                class="text-center z-10 bg-slate-900/80 backdrop-blur-md p-8 rounded-2xl border border-slate-700">
-                                <div
-                                    class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 mb-2">
-                                    Google
-                                </div>
-                                <div class="text-xl font-medium text-slate-300 uppercase tracking-widest mb-4">
-                                    Developer Groups
-                                </div>
+                                class="text-center z-10 bg-slate-900/80 backdrop-blur-md p-8 rounded-2xl border border-slate-700 flex flex-col items-center">
+                                <img src="google for developers logo.svg" alt="Google for Developers" class="h-16 mb-6">
                                 <div
                                     class="inline-block px-4 py-1 border border-slate-600 rounded-full text-sm text-slate-400">
                                     Yaoundé Chapter Lead
