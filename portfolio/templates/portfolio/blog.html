@@ -1,376 +1,273 @@
+{% extends 'portfolio/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes Articles | Abdel Aziz Mfossa</title>
+{% block title %}Mes Articles | Abdel Aziz Mfossa{% endblock %}
 
-    <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+{% block content %}
+<!-- HEADER DE LA PAGE -->
+<section class="pt-20 pb-12 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-4 text-center md:text-left">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight transition-colors">Articles & <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300">Tutoriels</span>
+        </h1>
+        <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl transition-colors">
+            Je partage régulièrement mes découvertes, mes astuces de code et mes réflexions sur l'écosystème
+            Google, l'automatisation et l'intelligence artificielle sur Medium.
+        </p>
 
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Configuration Tailwind -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="{% static 'portfolio/images/logo abdelmfossa.svg' %}">
-    <link rel="alternate icon" type="image/png" href="{% static 'portfolio/images/logo abdelmfossa.png' %}">
-</head>
-
-<body class="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-blue-200 flex flex-col">
-
-    <!-- HEADER / NAVIGATION -->
-    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="{% url 'home' %}" class="flex items-center gap-2 group">
-                <img src="{% static 'portfolio/images/logo abdelmfossa.svg' %}" alt="Logo Abdel Mfossa"
-                    class="h-10 w-auto group-hover:scale-105 transition-transform duration-300">
-                <span class="text-xl font-bold text-slate-900 tracking-tighter">
-                    Abdel<span class="text-blue-700">Mfossa.</span>
-                </span>
-            </a>
-            <!-- Menu Desktop -->
-            <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
-                <a href="{% url 'home' %}" class="hover:text-blue-600 transition-colors">Accueil</a>
-                <a href="{% url 'projects' %}" class="hover:text-blue-600 transition-colors">Projets</a>
-                <a href="{% url 'blog' %}" class="text-blue-600 transition-colors">Articles</a>
-                <a href="{% url 'events' %}" class="hover:text-blue-600 transition-colors">Événements</a>
-                <a href="{% url 'videos' %}" class="hover:text-blue-600 transition-colors">Vidéos</a>
-            </nav>
-            <a href="#contact"
-                class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm">
-                Me contacter
+        <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
+            <a href="http://medium.com/@abdelmfossa" target="_blank"
+                class="flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-6 py-3 rounded-xl font-medium hover:bg-slate-800 dark:hover:bg-slate-200 transition-all shadow-md">
+                <i data-lucide="book-open" class="w-5 h-5"></i>
+                S'abonner sur Medium
             </a>
         </div>
-    </header>
+    </div>
+</section>
 
-    <main class="flex-grow">
-        <!-- HEADER DE LA PAGE -->
-        <section class="pt-20 pb-12 bg-white border-b border-slate-200">
-            <div class="max-w-6xl mx-auto px-4 text-center md:text-left">
-                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">Articles & <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Tutoriels</span>
-                </h1>
-                <p class="text-lg text-slate-600 max-w-2xl">
-                    Je partage régulièrement mes découvertes, mes astuces de code et mes réflexions sur l'écosystème
-                    Google, l'automatisation et l'intelligence artificielle sur Medium.
-                </p>
+<!-- GRILLE DES ARTICLES -->
+<section class="py-16 bg-slate-50 dark:bg-slate-800/50 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-4">
 
-                <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
-                    <a href="http://medium.com/@abdelmfossa" target="_blank"
-                        class="flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-xl font-medium hover:bg-slate-800 transition-all shadow-md">
-                        <i data-lucide="book-open" class="w-5 h-5"></i>
-                        S'abonner sur Medium
-                    </a>
-                </div>
-            </div>
-        </section>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        <!-- GRILLE DES ARTICLES -->
-        <section class="py-16">
-            <div class="max-w-6xl mx-auto px-4">
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                    <!-- ARTICLE 1 -->
-                    <article
-                        class="bg-white border border-slate-200 rounded-2xl flex flex-col overflow-hidden group hover:shadow-xl hover:border-blue-300 transition-all duration-300">
-                        <!-- Image -->
-                        <div class="h-48 relative overflow-hidden bg-slate-100">
-                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                                alt="Bureau et code"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                            <!-- Overlay pour catégorie -->
-                            <div class="absolute top-4 left-4">
-                                <span
-                                    class="text-xs font-bold px-3 py-1 bg-white/90 text-blue-700 rounded-md shadow-sm backdrop-blur-sm">Google
-                                    Apps Script</span>
-                            </div>
-                        </div>
-
-                        <!-- Contenu -->
-                        <div class="p-6 flex-grow flex flex-col">
-                            <!-- Méta (Date & Temps) -->
-                            <div class="flex items-center gap-3 text-xs text-slate-500 mb-3 font-medium">
-                                <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3"></i> 15
-                                    Mars 2024</span>
-                                <span>•</span>
-                                <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> 5 min
-                                    de lecture</span>
-                            </div>
-
-                            <!-- Titre -->
-                            <h2
-                                class="text-xl font-bold text-slate-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors">
-                                Comment automatiser la création de rapports Google Docs avec Apps Script
-                            </h2>
-
-                            <!-- Extrait (tronqué à 3 lignes) -->
-                            <p class="text-slate-600 text-sm mb-6 line-clamp-3 leading-relaxed flex-grow">
-                                Dans ce tutoriel complet, nous allons explorer comment utiliser Google Apps Script pour
-                                générer automatiquement des rapports mensuels en PDF à partir de données extraites de
-                                Google Sheets, et les envoyer par email de manière totalement automatisée.
-                            </p>
-
-                            <!-- Tags -->
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span
-                                    class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded">Automatisation</span>
-                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded">Tutoriel</span>
-                            </div>
-
-                            <!-- Footer Card (Lien) -->
-                            <div class="mt-auto pt-4 border-t border-slate-100">
-                                <a href="http://medium.com/@abdelmfossa/ton-article-url" target="_blank"
-                                    class="flex items-center justify-between text-sm font-semibold text-slate-900 hover:text-blue-600 transition-colors w-full">
-                                    <span>Lire sur Medium</span>
-                                    <div
-                                        class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
-                                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- ARTICLE 2 -->
-                    <article
-                        class="bg-white border border-slate-200 rounded-2xl flex flex-col overflow-hidden group hover:shadow-xl hover:border-blue-300 transition-all duration-300">
-                        <div class="h-48 relative overflow-hidden bg-slate-100">
-                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                                alt="Sécurité Cloud"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                            <div class="absolute top-4 left-4">
-                                <span
-                                    class="text-xs font-bold px-3 py-1 bg-white/90 text-emerald-700 rounded-md shadow-sm backdrop-blur-sm">Administration</span>
-                            </div>
-                        </div>
-
-                        <div class="p-6 flex-grow flex flex-col">
-                            <div class="flex items-center gap-3 text-xs text-slate-500 mb-3 font-medium">
-                                <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3"></i> 02
-                                    Fév 2024</span>
-                                <span>•</span>
-                                <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> 8 min
-                                    de lecture</span>
-                            </div>
-
-                            <h2
-                                class="text-xl font-bold text-slate-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors">
-                                Retour d'expérience : Gérer 80 000+ utilisateurs sur Google Workspace
-                            </h2>
-
-                            <p class="text-slate-600 text-sm mb-6 line-clamp-3 leading-relaxed flex-grow">
-                                Déployer et sécuriser un environnement Google Workspace pour une université entière
-                                n'est pas une mince affaire. Voici mes stratégies, les pièges à éviter et les politiques
-                                de sécurité (2FA, MDM) que j'ai implémentées.
-                            </p>
-
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded">Sécurité</span>
-                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded">Étude de cas</span>
-                            </div>
-
-                            <div class="mt-auto pt-4 border-t border-slate-100">
-                                <a href="http://medium.com/@abdelmfossa/ton-article-url" target="_blank"
-                                    class="flex items-center justify-between text-sm font-semibold text-slate-900 hover:text-blue-600 transition-colors w-full">
-                                    <span>Lire sur Medium</span>
-                                    <div
-                                        class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
-                                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- ARTICLE 3 -->
-                    <article
-                        class="bg-white border border-slate-200 rounded-2xl flex flex-col overflow-hidden group hover:shadow-xl hover:border-blue-300 transition-all duration-300">
-                        <div class="h-48 relative overflow-hidden bg-slate-100">
-                            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                                alt="Intelligence Artificielle"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                            <div class="absolute top-4 left-4">
-                                <span
-                                    class="text-xs font-bold px-3 py-1 bg-white/90 text-purple-700 rounded-md shadow-sm backdrop-blur-sm">Intelligence
-                                    Artificielle</span>
-                            </div>
-                        </div>
-
-                        <div class="p-6 flex-grow flex flex-col">
-                            <div class="flex items-center gap-3 text-xs text-slate-500 mb-3 font-medium">
-                                <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3"></i> 28
-                                    Jan 2024</span>
-                                <span>•</span>
-                                <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> 6 min
-                                    de lecture</span>
-                            </div>
-
-                            <h2
-                                class="text-xl font-bold text-slate-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors">
-                                NotebookLM : L'assistant IA ultime pour l'analyse de documents
-                            </h2>
-
-                            <p class="text-slate-600 text-sm mb-6 line-clamp-3 leading-relaxed flex-grow">
-                                J'ai eu l'opportunité de présenter NotebookLM lors du DevFest Yaoundé. Dans cet article,
-                                je vous montre comment cet outil propulsé par Gemini peut révolutionner la façon dont
-                                vous interagissez avec vos sources de données complexes.
-                            </p>
-
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded">Gemini</span>
-                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded">NotebookLM</span>
-                            </div>
-
-                            <div class="mt-auto pt-4 border-t border-slate-100">
-                                <a href="http://medium.com/@abdelmfossa/ton-article-url" target="_blank"
-                                    class="flex items-center justify-between text-sm font-semibold text-slate-900 hover:text-blue-600 transition-colors w-full">
-                                    <span>Lire sur Medium</span>
-                                    <div
-                                        class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
-                                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- ARTICLE 4 -->
-                    <article
-                        class="bg-white border border-slate-200 rounded-2xl flex flex-col overflow-hidden group hover:shadow-xl hover:border-blue-300 transition-all duration-300">
-                        <div class="h-48 relative overflow-hidden bg-slate-100">
-                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                                alt="Code Python"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                            <div class="absolute top-4 left-4">
-                                <span
-                                    class="text-xs font-bold px-3 py-1 bg-white/90 text-slate-700 rounded-md shadow-sm backdrop-blur-sm">Python</span>
-                            </div>
-                        </div>
-
-                        <div class="p-6 flex-grow flex flex-col">
-                            <div class="flex items-center gap-3 text-xs text-slate-500 mb-3 font-medium">
-                                <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3"></i> 10
-                                    Déc 2023</span>
-                                <span>•</span>
-                                <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> 4 min
-                                    de lecture</span>
-                            </div>
-
-                            <h2
-                                class="text-xl font-bold text-slate-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors">
-                                5 bibliothèques Python indispensables pour l'automatisation IT
-                            </h2>
-
-                            <p class="text-slate-600 text-sm mb-6 line-clamp-3 leading-relaxed flex-grow">
-                                Pour les administrateurs systèmes, Python est le couteau suisse par excellence.
-                                Découvrons ensemble 5 librairies méconnues mais redoutablement efficaces pour scripter
-                                vos tâches quotidiennes et gagner un temps précieux.
-                            </p>
-
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded">DevOps</span>
-                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded">Scripting</span>
-                            </div>
-
-                            <div class="mt-auto pt-4 border-t border-slate-100">
-                                <a href="http://medium.com/@abdelmfossa/ton-article-url" target="_blank"
-                                    class="flex items-center justify-between text-sm font-semibold text-slate-900 hover:text-blue-600 transition-colors w-full">
-                                    <span>Lire sur Medium</span>
-                                    <div
-                                        class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
-                                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
+            <!-- ARTICLE 1 -->
+            <article
+                class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl flex flex-col overflow-hidden group hover:shadow-xl dark:shadow-none hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-300">
+                <!-- Image -->
+                <div class="h-48 relative overflow-hidden bg-slate-100 dark:bg-slate-700">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Bureau et code"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    <!-- Overlay pour catégorie -->
+                    <div class="absolute top-4 left-4 z-10">
+                        <span
+                            class="text-xs font-bold px-3 py-1 bg-white/90 dark:bg-slate-900/90 text-blue-700 dark:text-blue-400 rounded-md shadow-sm backdrop-blur-sm transition-colors">Google
+                            Apps Script</span>
+                    </div>
                 </div>
 
-                <!-- Pagination (Design uniquement) -->
-                <div class="mt-12 flex justify-center gap-2">
-                    <button
-                        class="w-10 h-10 rounded-lg border border-slate-300 flex items-center justify-center text-slate-400 cursor-not-allowed">
-                        <i data-lucide="chevron-left" class="w-5 h-5"></i>
-                    </button>
-                    <button
-                        class="w-10 h-10 rounded-lg bg-blue-600 text-white font-medium flex items-center justify-center">1</button>
-                    <button
-                        class="w-10 h-10 rounded-lg border border-slate-300 text-slate-600 hover:border-blue-600 hover:text-blue-600 font-medium flex items-center justify-center transition-colors">2</button>
-                    <button
-                        class="w-10 h-10 rounded-lg border border-slate-300 text-slate-600 hover:border-blue-600 hover:text-blue-600 flex items-center justify-center transition-colors">
-                        <i data-lucide="chevron-right" class="w-5 h-5"></i>
-                    </button>
+                <!-- Contenu -->
+                <div class="p-6 flex-grow flex flex-col relative z-20">
+                    <!-- Méta (Date & Temps) -->
+                    <div class="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 mb-3 font-medium transition-colors">
+                        <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3"></i> 15
+                            Mars 2024</span>
+                        <span>•</span>
+                        <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> 5 min
+                            de lecture</span>
+                    </div>
+
+                    <!-- Titre -->
+                    <h2
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-3 leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                        Comment automatiser la création de rapports Google Docs avec Apps Script
+                    </h2>
+
+                    <!-- Extrait (tronqué à 3 lignes) -->
+                    <p class="text-slate-600 dark:text-slate-300 text-sm mb-6 line-clamp-3 leading-relaxed flex-grow transition-colors">
+                        Dans ce tutoriel complet, nous allons explorer comment utiliser Google Apps Script pour
+                        générer automatiquement des rapports mensuels en PDF à partir de données extraites de
+                        Google Sheets, et les envoyer par email de manière totalement automatisée.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span
+                            class="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-1 rounded transition-colors">Automatisation</span>
+                        <span class="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-1 rounded transition-colors">Tutoriel</span>
+                    </div>
+
+                    <!-- Footer Card (Lien) -->
+                    <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700 transition-colors">
+                        <a href="http://medium.com/@abdelmfossa/ton-article-url" target="_blank"
+                            class="flex items-center justify-between text-sm font-semibold text-slate-900 dark:text-slate-300 hover:text-blue-600 dark:hover:text-white transition-colors w-full">
+                            <span>Lire sur Medium</span>
+                            <div
+                                class="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-700 flex items-center justify-center group-hover:bg-blue-50 dark:group-hover:bg-blue-900 transition-colors text-slate-600 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-300">
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ARTICLE 2 -->
+            <article
+                class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl flex flex-col overflow-hidden group hover:shadow-xl dark:shadow-none hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-300">
+                <div class="h-48 relative overflow-hidden bg-slate-100 dark:bg-slate-700">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Sécurité Cloud"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    <div class="absolute top-4 left-4 z-10">
+                        <span
+                            class="text-xs font-bold px-3 py-1 bg-white/90 dark:bg-slate-900/90 text-emerald-700 dark:text-emerald-400 rounded-md shadow-sm backdrop-blur-sm transition-colors">Administration</span>
+                    </div>
                 </div>
 
-            </div>
-        </section>
+                <div class="p-6 flex-grow flex flex-col relative z-20">
+                    <div class="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 mb-3 font-medium transition-colors">
+                        <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3"></i> 02
+                            Fév 2024</span>
+                        <span>•</span>
+                        <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> 8 min
+                            de lecture</span>
+                    </div>
 
-    </main>
+                    <h2
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-3 leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                        Retour d'expérience : Gérer 80 000+ utilisateurs sur Google Workspace
+                    </h2>
 
-    <!-- FOOTER -->
-    <footer id="contact" class="bg-slate-900 text-white pt-20 pb-10">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6">Me contacter</h2>
-            <p class="text-slate-400 mb-10 max-w-lg mx-auto">
-                Que ce soit pour une migration complexe, de l'automatisation sur mesure ou une intervention en tant que
-                speaker, discutons de votre projet.
-            </p>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm mb-6 line-clamp-3 leading-relaxed flex-grow transition-colors">
+                        Déployer et sécuriser un environnement Google Workspace pour une université entière
+                        n'est pas une mince affaire. Voici mes stratégies, les pièges à éviter et les politiques
+                        de sécurité (2FA, MDM) que j'ai implémentées.
+                    </p>
 
-            <div class="flex flex-col md:flex-row justify-center gap-6 mb-16">
-                <a href="mailto:abdelemfossa@gmail.com"
-                    class="flex items-center justify-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20">
-                    <i data-lucide="mail" class="w-5 h-5"></i>
-                    abdelemfossa@gmail.com
-                </a>
-                <a href="tel:+237699016727"
-                    class="flex items-center justify-center gap-3 bg-slate-800 text-white px-8 py-4 rounded-xl font-bold hover:bg-slate-700 transition-colors border border-slate-700">
-                    <i data-lucide="phone" class="w-5 h-5"></i>
-                    (+237) 699 016 727
-                </a>
-            </div>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-1 rounded transition-colors">Sécurité</span>
+                        <span class="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-1 rounded transition-colors">Étude de cas</span>
+                    </div>
 
-            <div
-                class="border-t border-slate-800 pt-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-                <div>
-                    &copy; 2024 Abdel Aziz MFOSSA. Tous droits réservés.
+                    <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700 transition-colors">
+                        <a href="http://medium.com/@abdelmfossa/ton-article-url" target="_blank"
+                            class="flex items-center justify-between text-sm font-semibold text-slate-900 dark:text-slate-300 hover:text-blue-600 dark:hover:text-white transition-colors w-full">
+                            <span>Lire sur Medium</span>
+                            <div
+                                class="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-700 flex items-center justify-center group-hover:bg-blue-50 dark:group-hover:bg-blue-900 transition-colors text-slate-600 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-300">
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div class="flex gap-4">
-                    <a href="https://linkedin.com/in/AbdelMfossa" class="hover:text-blue-500"><i data-lucide="linkedin"
-                            class="w-5 h-5"></i></a>
-                    <a href="https://twitter.com/AbdelMfossa" class="hover:text-blue-400"><i data-lucide="twitter"
-                            class="w-5 h-5"></i></a>
-                    <a href="http://medium.com/@abdelmfossa" class="hover:text-white"><i data-lucide="book-open"
-                            class="w-5 h-5"></i></a>
+            </article>
+
+            <!-- ARTICLE 3 -->
+            <article
+                class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl flex flex-col overflow-hidden group hover:shadow-xl dark:shadow-none hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-300">
+                <div class="h-48 relative overflow-hidden bg-slate-100 dark:bg-slate-700">
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Intelligence Artificielle"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    <div class="absolute top-4 left-4 z-10">
+                        <span
+                            class="text-xs font-bold px-3 py-1 bg-white/90 dark:bg-slate-900/90 text-purple-700 dark:text-purple-400 rounded-md shadow-sm backdrop-blur-sm transition-colors">Intelligence
+                            Artificielle</span>
+                    </div>
                 </div>
-            </div>
+
+                <div class="p-6 flex-grow flex flex-col relative z-20">
+                    <div class="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 mb-3 font-medium transition-colors">
+                        <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3"></i> 28
+                            Jan 2024</span>
+                        <span>•</span>
+                        <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> 6 min
+                            de lecture</span>
+                    </div>
+
+                    <h2
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-3 leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                        NotebookLM : L'assistant IA ultime pour l'analyse de documents
+                    </h2>
+
+                    <p class="text-slate-600 dark:text-slate-300 text-sm mb-6 line-clamp-3 leading-relaxed flex-grow transition-colors">
+                        J'ai eu l'opportunité de présenter NotebookLM lors du DevFest Yaoundé. Dans cet article,
+                        je vous montre comment cet outil propulsé par Gemini peut révolutionner la façon dont
+                        vous interagissez avec vos sources de données complexes.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-1 rounded transition-colors">Gemini</span>
+                        <span class="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-1 rounded transition-colors">NotebookLM</span>
+                    </div>
+
+                    <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700 transition-colors">
+                        <a href="http://medium.com/@abdelmfossa/ton-article-url" target="_blank"
+                            class="flex items-center justify-between text-sm font-semibold text-slate-900 dark:text-slate-300 hover:text-blue-600 dark:hover:text-white transition-colors w-full">
+                            <span>Lire sur Medium</span>
+                            <div
+                                class="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-700 flex items-center justify-center group-hover:bg-blue-50 dark:group-hover:bg-blue-900 transition-colors text-slate-600 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-300">
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ARTICLE 4 -->
+            <article
+                class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl flex flex-col overflow-hidden group hover:shadow-xl dark:shadow-none hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-300">
+                <div class="h-48 relative overflow-hidden bg-slate-100 dark:bg-slate-700">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Code Python"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    <div class="absolute top-4 left-4 z-10">
+                        <span
+                            class="text-xs font-bold px-3 py-1 bg-white/90 dark:bg-slate-900/90 text-slate-700 dark:text-slate-300 rounded-md shadow-sm backdrop-blur-sm transition-colors">Python</span>
+                    </div>
+                </div>
+
+                <div class="p-6 flex-grow flex flex-col relative z-20">
+                    <div class="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 mb-3 font-medium transition-colors">
+                        <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3"></i> 10
+                            Déc 2023</span>
+                        <span>•</span>
+                        <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> 4 min
+                            de lecture</span>
+                    </div>
+
+                    <h2
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-3 leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                        5 bibliothèques Python indispensables pour l'automatisation IT
+                    </h2>
+
+                    <p class="text-slate-600 dark:text-slate-300 text-sm mb-6 line-clamp-3 leading-relaxed flex-grow transition-colors">
+                        Pour les administrateurs systèmes, Python est le couteau suisse par excellence.
+                        Découvrons ensemble 5 librairies méconnues mais redoutablement efficaces pour scripter
+                        vos tâches quotidiennes et gagner un temps précieux.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-1 rounded transition-colors">DevOps</span>
+                        <span class="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-1 rounded transition-colors">Scripting</span>
+                    </div>
+
+                    <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700 transition-colors">
+                        <a href="http://medium.com/@abdelmfossa/ton-article-url" target="_blank"
+                            class="flex items-center justify-between text-sm font-semibold text-slate-900 dark:text-slate-300 hover:text-blue-600 dark:hover:text-white transition-colors w-full">
+                            <span>Lire sur Medium</span>
+                            <div
+                                class="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-700 flex items-center justify-center group-hover:bg-blue-50 dark:group-hover:bg-blue-900 transition-colors text-slate-600 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-300">
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
         </div>
-    </footer>
 
-    <!-- Initialisation des icônes Lucide -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-        });
-    </script>
-</body>
+        <!-- Pagination (Design uniquement) -->
+        <div class="mt-12 flex justify-center gap-2">
+            <button
+                class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-700 flex items-center justify-center text-slate-400 dark:text-slate-500 cursor-not-allowed transition-colors">
+                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+            </button>
+            <button
+                class="w-10 h-10 rounded-lg bg-blue-600 text-white font-medium flex items-center justify-center shadow-md">1</button>
+            <button
+                class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-blue-600 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 font-medium flex items-center justify-center transition-colors">2</button>
+            <button
+                class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-blue-600 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 flex items-center justify-center transition-colors">
+                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </button>
+        </div>
 
-</html>
+    </div>
+</section>
+{% endblock %}

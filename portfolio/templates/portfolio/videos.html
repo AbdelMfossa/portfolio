@@ -1,380 +1,267 @@
+{% extends 'portfolio/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes Vidéos & Tutoriels | Abdel Aziz Mfossa</title>
+{% block title %}Mes Vidéos & Tutoriels | Abdel Aziz Mfossa{% endblock %}
 
-    <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+{% block extra_head %}
+<!-- Surclassement des couleurs pour YouTube -->
+<style>
+    .bg-youtube {
+        background-color: #FF0000;
+    }
+    .text-youtube {
+        color: #FF0000;
+    }
+</style>
+{% endblock %}
 
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Configuration Tailwind -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        youtube: '#FF0000',
-                    }
-                }
-            }
-        }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="{% static 'portfolio/images/logo abdelmfossa.svg' %}">
-    <link rel="alternate icon" type="image/png" href="{% static 'portfolio/images/logo abdelmfossa.png' %}">
-</head>
-
-<body class="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-blue-200 flex flex-col">
-
-    <!-- HEADER / NAVIGATION -->
-    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="{% url 'home' %}" class="flex items-center gap-2 group">
-                <img src="{% static 'portfolio/images/logo abdelmfossa.svg' %}" alt="Logo Abdel Mfossa"
-                    class="h-10 w-auto group-hover:scale-105 transition-transform duration-300">
-                <span class="text-xl font-bold text-slate-900 tracking-tighter">
-                    Abdel<span class="text-blue-700">Mfossa.</span>
-                </span>
-            </a>
-            <!-- Menu Desktop -->
-            <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
-                <a href="{% url 'home' %}" class="hover:text-blue-600 transition-colors">Accueil</a>
-                <a href="{% url 'projects' %}" class="hover:text-blue-600 transition-colors">Projets</a>
-                <a href="{% url 'blog' %}" class="hover:text-blue-600 transition-colors">Articles</a>
-                <a href="{% url 'events' %}" class="hover:text-blue-600 transition-colors">Événements</a>
-                <a href="{% url 'videos' %}" class="text-blue-600 transition-colors">Vidéos</a>
-            </nav>
-            <a href="#contact"
-                class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm">
-                Me contacter
-            </a>
-        </div>
-    </header>
-
-    <main class="flex-grow">
-        <!-- HEADER DE LA PAGE -->
-        <section class="pt-20 pb-12 bg-white border-b border-slate-200">
-            <div
-                class="max-w-6xl mx-auto px-4 text-center md:text-left flex flex-col md:flex-row md:items-center justify-between gap-8">
-                <div class="max-w-2xl">
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">Vidéos & <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">Tutoriels</span>
-                    </h1>
-                    <p class="text-lg text-slate-600">
-                        Apprenez à automatiser vos tâches quotidiennes et maîtrisez l'écosystème Google Workspace grâce
-                        à mes tutoriels vidéo étape par étape sur YouTube.
-                    </p>
-                </div>
-
-                <div class="flex-shrink-0 flex justify-center md:justify-end">
-                    <a href="https://youtube.com/@TonLienYouTube" target="_blank"
-                        class="flex items-center gap-2 bg-youtube text-white px-6 py-3 rounded-xl font-bold hover:bg-red-700 transition-colors shadow-lg shadow-red-500/30">
-                        <i data-lucide="youtube" class="w-5 h-5"></i>
-                        S'abonner à la chaîne
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- VIDÉO À LA UNE (Dernière vidéo ou vidéo principale) -->
-        <section class="pt-12 pb-8">
-            <div class="max-w-6xl mx-auto px-4">
-                <div class="flex items-center gap-2 mb-6">
-                    <i data-lucide="sparkles" class="w-5 h-5 text-blue-600"></i>
-                    <h2 class="text-xl font-bold text-slate-900">À la une</h2>
-                </div>
-
-                <article
-                    class="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col lg:flex-row group">
-                    <!-- Miniature Grande -->
-                    <a href="#" target="_blank"
-                        class="w-full lg:w-3/5 h-64 lg:h-[400px] relative overflow-hidden bg-slate-900 flex-shrink-0 block cursor-pointer">
-                        <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                            alt="Miniature Vidéo"
-                            class="w-full h-full object-cover group-hover:scale-105 group-hover:opacity-80 transition-all duration-700">
-
-                        <!-- Overlay Play Button -->
-                        <div
-                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <div
-                                class="w-20 h-20 bg-youtube/90 text-white rounded-full flex items-center justify-center pl-1 shadow-2xl backdrop-blur-sm">
-                                <i data-lucide="play" class="w-10 h-10 fill-current"></i>
-                            </div>
-                        </div>
-
-                        <!-- Badge Durée -->
-                        <div
-                            class="absolute bottom-4 right-4 bg-black/80 text-white text-xs font-bold px-2 py-1 rounded">
-                            14:25
-                        </div>
-                    </a>
-
-                    <!-- Contenu -->
-                    <div class="p-6 lg:p-10 flex flex-col justify-center flex-grow">
-                        <div class="flex items-center gap-3 text-xs text-slate-500 font-medium mb-3">
-                            <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-4 h-4"></i> Il y a
-                                2 jours</span>
-                            <span
-                                class="px-2 py-1 bg-red-50 text-red-600 rounded-md font-bold text-[10px] uppercase tracking-wider border border-red-100">Nouveau</span>
-                        </div>
-
-                        <h3
-                            class="text-2xl lg:text-3xl font-bold text-slate-900 mb-4 leading-tight group-hover:text-blue-600 transition-colors">
-                            <a href="#" target="_blank">Créer une application web avec Google Apps Script de A à Z</a>
-                        </h3>
-
-                        <p class="text-slate-600 mb-8 leading-relaxed text-sm lg:text-base">
-                            Découvrez comment transformer une simple feuille de calcul Google Sheets en une véritable
-                            application web fonctionnelle avec interface HTML et CSS. Ce tutoriel couvre le backend
-                            (Apps Script), le frontend et le déploiement.
-                        </p>
-
-                        <div class="flex flex-wrap gap-2 mb-8">
-                            <span class="text-xs font-medium bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg">Apps
-                                Script</span>
-                            <span class="text-xs font-medium bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg">Web
-                                App</span>
-                            <span
-                                class="text-xs font-medium bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg">HTML/CSS</span>
-                        </div>
-
-                        <div class="mt-auto">
-                            <a href="#" target="_blank"
-                                class="inline-flex items-center gap-2 text-sm bg-slate-900 text-white px-5 py-2.5 rounded-lg font-bold hover:bg-youtube transition-colors w-fit">
-                                <i data-lucide="play-circle" class="w-5 h-5"></i> Regarder la vidéo
-                            </a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- GRILLE DES VIDÉOS (Historique) -->
-        <section class="py-12 mb-10">
-            <div class="max-w-6xl mx-auto px-4">
-                <div class="flex items-center justify-between mb-8 border-b border-slate-200 pb-4">
-                    <h2 class="text-xl font-bold text-slate-900">Tous les tutoriels</h2>
-                    <!-- Filtres basiques pour Django -->
-                    <div class="hidden md:flex gap-4 text-sm font-medium">
-                        <a href="#" class="text-blue-600 border-b-2 border-blue-600 pb-1">Les plus récentes</a>
-                        <a href="#" class="text-slate-500 hover:text-slate-800 transition-colors pb-1">Les plus
-                            populaires</a>
-                    </div>
-                </div>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                    <!-- VIDÉO 1 -->
-                    <article class="flex flex-col group">
-                        <!-- Miniature -->
-                        <a href="#" target="_blank"
-                            class="w-full aspect-video relative overflow-hidden bg-slate-100 rounded-xl mb-4 block cursor-pointer border border-slate-200">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                alt="Miniature"
-                                class="w-full h-full object-cover group-hover:scale-105 group-hover:opacity-90 transition-all duration-500">
-
-                            <!-- Overlay Play (Petit) -->
-                            <div
-                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <div
-                                    class="w-14 h-14 bg-youtube/90 text-white rounded-full flex items-center justify-center pl-1 shadow-lg backdrop-blur-sm">
-                                    <i data-lucide="play" class="w-6 h-6 fill-current"></i>
-                                </div>
-                            </div>
-                            <!-- Durée -->
-                            <div
-                                class="absolute bottom-2 right-2 bg-black/80 text-white text-xs font-bold px-1.5 py-0.5 rounded">
-                                08:12</div>
-                        </a>
-
-                        <!-- Infos -->
-                        <div class="flex gap-3">
-                            <!-- Icône YouTube au lieu de l'avatar de chaîne pour rester épuré -->
-                            <div
-                                class="w-10 h-10 rounded-full bg-red-50 text-youtube flex-shrink-0 flex items-center justify-center border border-red-100 mt-1">
-                                <i data-lucide="video" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h3
-                                    class="font-bold text-slate-900 mb-1 leading-tight line-clamp-2 group-hover:text-blue-600 transition-colors">
-                                    <a href="#" target="_blank">Automatiser l'envoi d'emails depuis Google Sheets avec
-                                        Python</a>
-                                </h3>
-                                <div class="text-xs text-slate-500 mb-2">
-                                    Abdel Aziz Mfossa • Il y a 2 semaines
-                                </div>
-                                <div class="flex gap-2">
-                                    <span
-                                        class="text-[10px] font-medium bg-slate-100 text-slate-600 px-2 py-1 rounded">Python</span>
-                                    <span
-                                        class="text-[10px] font-medium bg-slate-100 text-slate-600 px-2 py-1 rounded">Gmail
-                                        API</span>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- VIDÉO 2 -->
-                    <article class="flex flex-col group">
-                        <a href="#" target="_blank"
-                            class="w-full aspect-video relative overflow-hidden bg-slate-100 rounded-xl mb-4 block cursor-pointer border border-slate-200">
-                            <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                alt="Miniature"
-                                class="w-full h-full object-cover group-hover:scale-105 group-hover:opacity-90 transition-all duration-500">
-
-                            <div
-                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <div
-                                    class="w-14 h-14 bg-youtube/90 text-white rounded-full flex items-center justify-center pl-1 shadow-lg backdrop-blur-sm">
-                                    <i data-lucide="play" class="w-6 h-6 fill-current"></i>
-                                </div>
-                            </div>
-                            <div
-                                class="absolute bottom-2 right-2 bg-black/80 text-white text-xs font-bold px-1.5 py-0.5 rounded">
-                                22:45</div>
-                        </a>
-
-                        <div class="flex gap-3">
-                            <div
-                                class="w-10 h-10 rounded-full bg-red-50 text-youtube flex-shrink-0 flex items-center justify-center border border-red-100 mt-1">
-                                <i data-lucide="video" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h3
-                                    class="font-bold text-slate-900 mb-1 leading-tight line-clamp-2 group-hover:text-blue-600 transition-colors">
-                                    <a href="#" target="_blank">Comment sécuriser un domaine Google Workspace (Tuto
-                                        Admin)</a>
-                                </h3>
-                                <div class="text-xs text-slate-500 mb-2">
-                                    Abdel Aziz Mfossa • Il y a 1 mois
-                                </div>
-                                <div class="flex gap-2">
-                                    <span
-                                        class="text-[10px] font-medium bg-slate-100 text-slate-600 px-2 py-1 rounded">Admin
-                                        Console</span>
-                                    <span
-                                        class="text-[10px] font-medium bg-slate-100 text-slate-600 px-2 py-1 rounded">Sécurité</span>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- VIDÉO 3 -->
-                    <article class="flex flex-col group">
-                        <a href="#" target="_blank"
-                            class="w-full aspect-video relative overflow-hidden bg-slate-100 rounded-xl mb-4 block cursor-pointer border border-slate-200">
-                            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                alt="Miniature"
-                                class="w-full h-full object-cover group-hover:scale-105 group-hover:opacity-90 transition-all duration-500">
-
-                            <div
-                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <div
-                                    class="w-14 h-14 bg-youtube/90 text-white rounded-full flex items-center justify-center pl-1 shadow-lg backdrop-blur-sm">
-                                    <i data-lucide="play" class="w-6 h-6 fill-current"></i>
-                                </div>
-                            </div>
-                            <div
-                                class="absolute bottom-2 right-2 bg-black/80 text-white text-xs font-bold px-1.5 py-0.5 rounded">
-                                11:30</div>
-                        </a>
-
-                        <div class="flex gap-3">
-                            <div
-                                class="w-10 h-10 rounded-full bg-red-50 text-youtube flex-shrink-0 flex items-center justify-center border border-red-100 mt-1">
-                                <i data-lucide="video" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h3
-                                    class="font-bold text-slate-900 mb-1 leading-tight line-clamp-2 group-hover:text-blue-600 transition-colors">
-                                    <a href="#" target="_blank">Introduction à NotebookLM : Analysez vos documents avec
-                                        l'IA</a>
-                                </h3>
-                                <div class="text-xs text-slate-500 mb-2">
-                                    Abdel Aziz Mfossa • Il y a 2 mois
-                                </div>
-                                <div class="flex gap-2">
-                                    <span
-                                        class="text-[10px] font-medium bg-slate-100 text-slate-600 px-2 py-1 rounded">IA
-                                        / Gemini</span>
-                                    <span
-                                        class="text-[10px] font-medium bg-slate-100 text-slate-600 px-2 py-1 rounded">NotebookLM</span>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                </div>
-
-                <!-- Pagination / Load More -->
-                <div class="mt-12 text-center">
-                    <button
-                        class="inline-flex items-center gap-2 bg-white border border-slate-200 text-slate-700 px-6 py-3 rounded-full font-medium hover:bg-slate-50 hover:text-blue-600 transition-all shadow-sm">
-                        Charger plus de vidéos <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer id="contact" class="bg-slate-900 text-white pt-20 pb-10">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6">Me contacter</h2>
-            <p class="text-slate-400 mb-10 max-w-lg mx-auto">
-                Que ce soit pour une migration complexe, de l'automatisation sur mesure ou une intervention en tant que
-                speaker, discutons de votre projet.
+{% block content %}
+<!-- HEADER DE LA PAGE -->
+<section class="pt-20 pb-12 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+    <div
+        class="max-w-6xl mx-auto px-4 text-center md:text-left flex flex-col md:flex-row md:items-center justify-between gap-8">
+        <div class="max-w-2xl">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight transition-colors">Vidéos & <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600 dark:from-red-400 dark:to-red-500">Tutoriels</span>
+            </h1>
+            <p class="text-lg text-slate-600 dark:text-slate-400 transition-colors">
+                Apprenez à automatiser vos tâches quotidiennes et maîtrisez l'écosystème Google Workspace grâce
+                à mes tutoriels vidéo étape par étape sur YouTube.
             </p>
+        </div>
 
-            <div class="flex flex-col md:flex-row justify-center gap-6 mb-16">
-                <a href="mailto:abdelemfossa@gmail.com"
-                    class="flex items-center justify-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20">
-                    <i data-lucide="mail" class="w-5 h-5"></i>
-                    abdelemfossa@gmail.com
-                </a>
-                <a href="tel:+237699016727"
-                    class="flex items-center justify-center gap-3 bg-slate-800 text-white px-8 py-4 rounded-xl font-bold hover:bg-slate-700 transition-colors border border-slate-700">
-                    <i data-lucide="phone" class="w-5 h-5"></i>
-                    (+237) 699 016 727
-                </a>
+        <div class="flex-shrink-0 flex justify-center md:justify-end">
+            <a href="https://youtube.com/@abdelmfossa" target="_blank"
+                class="flex items-center gap-2 bg-youtube text-white px-6 py-3 rounded-xl font-bold hover:bg-red-700 transition-colors shadow-lg shadow-red-500/30">
+                <i data-lucide="youtube" class="w-5 h-5"></i>
+                S'abonner à la chaîne
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- VIDÉO À LA UNE -->
+<section class="pt-12 pb-8 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex items-center gap-2 mb-6">
+            <i data-lucide="sparkles" class="w-5 h-5 text-blue-600 dark:text-blue-400"></i>
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white transition-colors">À la une</h2>
+        </div>
+
+        <article
+            class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-xl dark:shadow-none hover:border-red-300 dark:hover:border-red-500 transition-all duration-300 flex flex-col lg:flex-row group">
+            <!-- Miniature Grande -->
+            <a href="#" target="_blank"
+                class="w-full lg:w-3/5 h-64 lg:h-[400px] relative overflow-hidden bg-slate-900 flex-shrink-0 block cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                    alt="Miniature Vidéo"
+                    class="w-full h-full object-cover group-hover:scale-105 group-hover:opacity-80 transition-all duration-700">
+
+                <div
+                    class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div
+                        class="w-20 h-20 bg-youtube/90 text-white rounded-full flex items-center justify-center pl-1 shadow-2xl backdrop-blur-sm">
+                        <i data-lucide="play" class="w-10 h-10 fill-current"></i>
+                    </div>
+                </div>
+
+                <div
+                    class="absolute bottom-4 right-4 bg-black/80 text-white text-xs font-bold px-2 py-1 rounded">
+                    14:25
+                </div>
+            </a>
+
+            <!-- Contenu -->
+            <div class="p-6 lg:p-10 flex flex-col justify-center flex-grow relative z-20">
+                <div class="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 font-medium mb-3 transition-colors">
+                    <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-4 h-4"></i> Il y a
+                        2 jours</span>
+                    <span
+                        class="px-2 py-1 bg-red-50 dark:bg-red-900/40 text-red-600 dark:text-red-400 rounded-md font-bold text-[10px] uppercase tracking-wider border border-red-100 dark:border-red-800 transition-colors">Nouveau</span>
+                </div>
+
+                <h3
+                    class="text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-tight group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
+                    <a href="#" target="_blank">Créer une application web avec Google Apps Script de A à Z</a>
+                </h3>
+
+                <p class="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed text-sm lg:text-base transition-colors">
+                    Découvrez comment transformer une simple feuille de calcul Google Sheets en une véritable
+                    application web fonctionnelle avec interface HTML et CSS. Ce tutoriel couvre le backend
+                    (Apps Script), le frontend et le déploiement.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-3 py-1.5 rounded-lg transition-colors">Apps
+                        Script</span>
+                    <span class="text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-3 py-1.5 rounded-lg transition-colors">Web
+                        App</span>
+                    <span
+                        class="text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-3 py-1.5 rounded-lg transition-colors">HTML/CSS</span>
+                </div>
+
+                <div class="mt-auto">
+                    <a href="#" target="_blank"
+                        class="inline-flex items-center gap-2 text-sm bg-slate-900 dark:bg-slate-700 text-white px-5 py-2.5 rounded-lg font-bold hover:bg-youtube dark:hover:bg-youtube transition-colors w-fit">
+                        <i data-lucide="play-circle" class="w-5 h-5"></i> Regarder la vidéo
+                    </a>
+                </div>
             </div>
+        </article>
+    </div>
+</section>
 
-            <div
-                class="border-t border-slate-800 pt-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-                <div>
-                    &copy; 2026 Abdel Aziz MFOSSA. Tous droits réservés.
-                </div>
-                <div class="flex gap-4">
-                    <a href="https://linkedin.com/in/AbdelMfossa" class="hover:text-blue-500"><i data-lucide="linkedin"
-                            class="w-5 h-5"></i></a>
-                    <a href="https://twitter.com/AbdelMfossa" class="hover:text-blue-400"><i data-lucide="twitter"
-                            class="w-5 h-5"></i></a>
-                    <a href="http://medium.com/@abdelmfossa" class="hover:text-white"><i data-lucide="book-open"
-                            class="w-5 h-5"></i></a>
-                </div>
+<!-- GRILLE DES VIDÉOS (Historique) -->
+<section class="py-12 mb-10 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex items-center justify-between mb-8 border-b border-slate-200 dark:border-slate-800 pb-4 transition-colors">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white transition-colors">Tous les tutoriels</h2>
+            <div class="hidden md:flex gap-4 text-sm font-medium">
+                <a href="#" class="text-red-600 dark:text-red-500 border-b-2 border-red-600 dark:border-red-500 pb-1 transition-colors">Les plus récentes</a>
+                <a href="#" class="text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white transition-colors pb-1">Les plus
+                    populaires</a>
             </div>
         </div>
-    </footer>
 
-    <!-- Initialisation des icônes Lucide -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-        });
-    </script>
-</body>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-</html>
+            <!-- VIDÉO 1 -->
+            <article class="flex flex-col group">
+                <a href="#" target="_blank"
+                    class="w-full aspect-video relative overflow-hidden bg-slate-100 dark:bg-slate-800 rounded-xl mb-4 block cursor-pointer border border-slate-200 dark:border-slate-800 transition-colors">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Miniature"
+                        class="w-full h-full object-cover group-hover:scale-105 group-hover:opacity-90 transition-all duration-500">
+
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div
+                            class="w-14 h-14 bg-youtube/90 text-white rounded-full flex items-center justify-center pl-1 shadow-lg backdrop-blur-sm">
+                            <i data-lucide="play" class="w-6 h-6 fill-current"></i>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute bottom-2 right-2 bg-black/80 text-white text-xs font-bold px-1.5 py-0.5 rounded">
+                        08:12</div>
+                </a>
+
+                <div class="flex gap-3 relative z-20">
+                    <div
+                        class="w-10 h-10 rounded-full bg-red-50 dark:bg-red-900/20 text-youtube flex-shrink-0 flex items-center justify-center border border-red-100 dark:border-red-900/50 mt-1 transition-colors">
+                        <i data-lucide="video" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3
+                            class="font-bold text-slate-900 dark:text-white mb-1 leading-tight line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
+                            <a href="#" target="_blank">Automatiser l'envoi d'emails depuis Google Sheets avec
+                                Python</a>
+                        </h3>
+                        <div class="text-xs text-slate-500 dark:text-slate-400 mb-2 transition-colors">
+                            Abdel Aziz Mfossa • Il y a 2 semaines
+                        </div>
+                        <div class="flex gap-2">
+                            <span
+                                class="text-[10px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-1 rounded transition-colors">Python</span>
+                            <span
+                                class="text-[10px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-1 rounded transition-colors">Gmail
+                                API</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- VIDÉO 2 -->
+            <article class="flex flex-col group">
+                <a href="#" target="_blank"
+                    class="w-full aspect-video relative overflow-hidden bg-slate-100 dark:bg-slate-800 rounded-xl mb-4 block cursor-pointer border border-slate-200 dark:border-slate-800 transition-colors">
+                    <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Miniature"
+                        class="w-full h-full object-cover group-hover:scale-105 group-hover:opacity-90 transition-all duration-500">
+
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div
+                            class="w-14 h-14 bg-youtube/90 text-white rounded-full flex items-center justify-center pl-1 shadow-lg backdrop-blur-sm">
+                            <i data-lucide="play" class="w-6 h-6 fill-current"></i>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute bottom-2 right-2 bg-black/80 text-white text-xs font-bold px-1.5 py-0.5 rounded">
+                        22:45</div>
+                </a>
+
+                <div class="flex gap-3 relative z-20">
+                    <div
+                        class="w-10 h-10 rounded-full bg-red-50 dark:bg-red-900/20 text-youtube flex-shrink-0 flex items-center justify-center border border-red-100 dark:border-red-900/50 mt-1 transition-colors">
+                        <i data-lucide="video" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3
+                            class="font-bold text-slate-900 dark:text-white mb-1 leading-tight line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
+                            <a href="#" target="_blank">Comment sécuriser un domaine Google Workspace (Tuto
+                                Admin)</a>
+                        </h3>
+                        <div class="text-xs text-slate-500 dark:text-slate-400 mb-2 transition-colors">
+                            Abdel Aziz Mfossa • Il y a 1 mois
+                        </div>
+                        <div class="flex gap-2">
+                            <span
+                                class="text-[10px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-1 rounded transition-colors">Admin
+                                Console</span>
+                            <span
+                                class="text-[10px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-1 rounded transition-colors">Sécurité</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- VIDÉO 3 -->
+            <article class="flex flex-col group">
+                <a href="#" target="_blank"
+                    class="w-full aspect-video relative overflow-hidden bg-slate-100 dark:bg-slate-800 rounded-xl mb-4 block cursor-pointer border border-slate-200 dark:border-slate-800 transition-colors">
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Miniature"
+                        class="w-full h-full object-cover group-hover:scale-105 group-hover:opacity-90 transition-all duration-500">
+
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div
+                            class="w-14 h-14 bg-youtube/90 text-white rounded-full flex items-center justify-center pl-1 shadow-lg backdrop-blur-sm">
+                            <i data-lucide="play" class="w-6 h-6 fill-current"></i>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute bottom-2 right-2 bg-black/80 text-white text-xs font-bold px-1.5 py-0.5 rounded">
+                        11:30</div>
+                </a>
+
+                <div class="flex gap-3 relative z-20">
+                    <div
+                        class="w-10 h-10 rounded-full bg-red-50 dark:bg-red-900/20 text-youtube flex-shrink-0 flex items-center justify-center border border-red-100 dark:border-red-900/50 mt-1 transition-colors">
+                        <i data-lucide="video" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3
+                            class="font-bold text-slate-900 dark:text-white mb-1 leading-tight line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
+                            <a href="#" target="_blank">Introduction à NotebookLM : Analysez vos documents avec
+                                l'IA</a>
+                        </h3>
+                        <div class="text-xs text-slate-500 dark:text-slate-400 mb-2 transition-colors">
+                            Abdel Aziz Mfossa • Il y a 2 mois
+                        </div>
+                        <div class="flex gap-2">
+                            <span
+                                class="text-[10px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-1 rounded transition-colors">IA
+                                / Gemini</span>
+                            <span
+                                class="text-[10px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-1 rounded transition-colors">NotebookLM</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+{% endblock %}
