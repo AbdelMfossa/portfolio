@@ -1,189 +1,10 @@
+{% extends 'portfolio/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdel Aziz Mfossa | Portfolio</title>
-    <meta name="description"
-        content="Portfolio de Abdel Aziz Mfossa, Ingénieur Google Workspace, passionné d'automatisation et Lead du GDG Yaoundé.">
-    <meta property="og:title" content="Abdel Aziz Mfossa | Portfolio">
-    <meta property="og:description" content="Ingénieur Google Workspace & Transformateur Digital.">
-    <meta property="og:type" content="website">
+{% block title %}Abdel Aziz Mfossa | Accueil{% endblock %}
 
-    <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Configuration Tailwind (Optionnel pour customiser) -->
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Script pour éviter le clignotement lors du chargement initial en mode sombre -->
-    <script>
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark')
-        }
-    </script>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="{% static 'portfolio/images/logo abdelmfossa.svg' %}">
-    <link rel="alternate icon" type="image/png" href="{% static 'portfolio/images/logo abdelmfossa.png' %}">
-
-    <style>
-        /* Utilitaire pour cacher la barre de défilement tout en gardant le scroll actif */
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        /* Animation personnalisée pour le loader */
-        @keyframes loader-scale {
-
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 1;
-                filter: drop-shadow(0 0 10px rgba(37, 99, 235, 0.2));
-            }
-
-            50% {
-                transform: scale(1.15);
-                opacity: 0.9;
-                filter: drop-shadow(0 0 25px rgba(37, 99, 235, 0.5));
-            }
-        }
-
-        .animate-loader {
-            animation: loader-scale 2s ease-in-out infinite;
-        }
-
-        /* Animation de flottaison pour l'Hero Section */
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-15px);
-            }
-        }
-
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-    </style>
-</head>
-
-<body
-    class="min-h-screen bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-200 font-sans selection:bg-blue-200 overflow-hidden transition-colors duration-300"
-    id="body-content">
-
-    <!-- PAGE LOADER -->
-    <div id="page-loader"
-        class="fixed inset-0 z-[100] bg-slate-50 dark:bg-slate-900 flex flex-col items-center justify-center transition-all duration-700 ease-in-out">
-        <div class="relative flex flex-col items-center justify-center w-32 h-32">
-            <!-- Cercle d'animation (pulse background) -->
-            <div class="absolute inset-0 bg-blue-100/50 rounded-full animate-ping"></div>
-            <!-- Logo principal -->
-            <div class="relative z-10 animate-loader">
-                <img src="{% static 'portfolio/images/logo abdelmfossa.svg' %}" alt="Chargement"
-                    class="w-16 h-auto dark:invert transition-all duration-300">
-            </div>
-        </div>
-        <div class="mt-4 text-blue-600 font-semibold tracking-[0.3em] text-xs uppercase animate-pulse">
-            Chargement
-        </div>
-    </div>
-
-    <!-- HEADER / NAVIGATION -->
-    <header
-        class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="{% url 'home' %}" class="flex items-center gap-2 group">
-                <img src="{% static 'portfolio/images/logo abdelmfossa.svg' %}" alt="Logo Abdel Mfossa"
-                    class="h-10 w-auto group-hover:scale-105 transition-all duration-300 dark:invert">
-                <span class="text-xl font-bold text-slate-900 dark:text-white tracking-tighter transition-colors">
-                    Abdel<span class="text-blue-700 dark:text-blue-500">Mfossa.</span>
-                </span>
-            </a>
-            <!-- Menu Desktop -->
-            <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
-                <a href="{% url 'home' %}" class="text-blue-600 dark:text-blue-500 transition-colors">Accueil</a>
-                <a href="{% url 'projects' %}"
-                    class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projets</a>
-                <a href="{% url 'blog' %}" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Articles</a>
-                <a href="{% url 'events' %}"
-                    class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Événements</a>
-                <a href="{% url 'videos' %}" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Vidéos</a>
-            </nav>
-            <div class="flex items-center gap-4">
-                <!-- Toggle Mode Sombre -->
-                <button id="theme-toggle" type="button"
-                    class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700 rounded-lg text-sm p-2 transition-colors">
-                    <i id="theme-toggle-dark-icon" data-lucide="moon" class="hidden w-5 h-5"></i>
-                    <i id="theme-toggle-light-icon" data-lucide="sun" class="hidden w-5 h-5"></i>
-                </button>
-
-                <a href="#contact"
-                    class="hidden md:inline-flex bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm">
-                    Me contacter
-                </a>
-
-                <!-- Bouton Burger Mobile -->
-                <button id="mobile-menu-btn"
-                    class="md:hidden p-2 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-slate-700">
-                    <i data-lucide="menu" id="icon-menu" class="w-6 h-6"></i>
-                    <i data-lucide="x" id="icon-x" class="w-6 h-6 hidden"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Menu Mobile (Caché par défaut) -->
-        <div id="mobile-menu"
-            class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-xl z-40 transition-all">
-            <nav class="flex flex-col py-6 gap-6 text-sm font-medium text-slate-700 dark:text-slate-200 items-center">
-                <a href="{% url 'home' %}"
-                    class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors">Accueil</a>
-                <a href="{% url 'projects' %}"
-                    class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projets</a>
-                <a href="{% url 'blog' %}" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Articles</a>
-                <a href="{% url 'events' %}"
-                    class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Événements</a>
-                <a href="{% url 'videos' %}" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Vidéos</a>
-                <a href="#contact"
-                    class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors shadow-sm mt-2 text-base">
-                    Me contacter
-                </a>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <!-- HERO SECTION -->
+{% block content %}
+<!-- HERO SECTION -->
         <section class="pt-24 pb-20 px-4 overflow-hidden relative">
             <div class="max-w-6xl mx-auto">
                 <div class="grid lg:grid-cols-5 gap-12 lg:gap-8 items-center">
@@ -1005,220 +826,48 @@
                 </div>
             </div>
         </section>
+{% endblock %}
 
-    </main>
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Script pour les onglets Expériences / Projets
+        const btnExp = document.getElementById('tab-btn-exp');
+        const btnProj = document.getElementById('tab-btn-proj');
+        const contentExp = document.getElementById('tab-content-exp');
+        const contentProj = document.getElementById('tab-content-proj');
 
-    <!-- FOOTER -->
-    <footer id="contact" class="bg-slate-900 text-white pt-20 pb-10 mt-10">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6">Prêt à optimiser vos processus ?</h2>
-            <p class="text-slate-400 mb-10 max-w-lg mx-auto">
-                Que ce soit pour une migration complexe, de l'automatisation sur mesure ou une intervention en tant que
-                speaker, discutons de votre projet.
-            </p>
-
-            <div class="flex flex-col md:flex-row justify-center gap-6 mb-16">
-                <!-- Email obfusqué pour éviter le spam (généré par JS) -->
-                <a href="#" id="contact-email"
-                    class="flex items-center justify-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20">
-                    <i data-lucide="mail" class="w-5 h-5"></i>
-                    <span id="contact-email-text">Email</span>
-                </a>
-                <a href="tel:+237699016727"
-                    class="flex items-center justify-center gap-3 bg-slate-800 text-white px-8 py-4 rounded-xl font-bold hover:bg-slate-700 transition-colors border border-slate-700">
-                    <i data-lucide="phone" class="w-5 h-5"></i>
-                    (+237) 699 016 727
-                </a>
-            </div>
-
-            <div
-                class="border-t border-slate-800 pt-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-                <div>
-                    &copy; 2024 Abdel Aziz MFOSSA. Tous droits réservés.
-                </div>
-                <div class="flex gap-4">
-                    <a href="https://www.youtube.com/@abdelmfossa" class="hover:text-red-500"><i data-lucide="youtube"
-                            class="w-5 h-5"></i></a>
-                    <a href="https://facebook.com/abdelmfossa" class="hover:text-blue-500"><i data-lucide="facebook"
-                            class="w-5 h-5"></i></a>
-                    <a href="https://github.com/AbdelMfossa" class="hover:text-white"><i data-lucide="github"
-                            class="w-5 h-5"></i></a>
-                    <a href="https://linkedin.com/in/AbdelMfossa" class="hover:text-blue-500"><i data-lucide="linkedin"
-                            class="w-5 h-5"></i></a>
-                    <a href="https://twitter.com/AbdelMfossa" class="hover:text-blue-400"><i data-lucide="twitter"
-                            class="w-5 h-5"></i></a>
-                    <a href="http://medium.com/@abdelmfossa" class="hover:text-white"><i data-lucide="book-open"
-                            class="w-5 h-5"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bouton Retour en haut -->
-    <button id="back-to-top" aria-label="Retour en haut"
-        class="fixed bottom-6 right-6 w-12 h-12 bg-blue-600 text-white rounded-full shadow-lg flex items-center justify-center opacity-0 translate-y-10 invisible transition-all duration-300 z-50 hover:bg-blue-700 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-400 group">
-        <i data-lucide="arrow-up" class="w-5 h-5 group-hover:-translate-y-1 transition-transform"></i>
-    </button>
-
-    <!-- Initialisation des icônes Lucide et des onglets -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialiser les icônes
-            lucide.createIcons();
-
-            // Script pour les onglets Expériences / Projets
-            const btnExp = document.getElementById('tab-btn-exp');
-            const btnProj = document.getElementById('tab-btn-proj');
-            const contentExp = document.getElementById('tab-content-exp');
-            const contentProj = document.getElementById('tab-content-proj');
-
-            function switchTab(tabId) {
-                if (tabId === 'exp') {
-                    btnExp.className = "px-6 py-2 rounded-full font-medium transition-colors bg-slate-900 text-white dark:bg-blue-600 dark:text-white";
-                    btnProj.className = "px-6 py-2 rounded-full font-medium transition-colors bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700";
-                    contentExp.classList.remove('hidden');
-                    contentProj.classList.add('hidden');
-                } else {
-                    btnProj.className = "px-6 py-2 rounded-full font-medium transition-colors bg-slate-900 text-white dark:bg-blue-600 dark:text-white";
-                    btnExp.className = "px-6 py-2 rounded-full font-medium transition-colors bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700";
-                    contentProj.classList.remove('hidden');
-                    contentExp.classList.add('hidden');
-                }
+        function switchTab(tabId) {
+            if (tabId === 'exp') {
+                btnExp.className = "px-6 py-2 rounded-full font-medium transition-colors bg-slate-900 text-white dark:bg-blue-600 dark:text-white";
+                btnProj.className = "px-6 py-2 rounded-full font-medium transition-colors bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700";
+                contentExp.classList.remove('hidden');
+                contentProj.classList.add('hidden');
+            } else {
+                btnProj.className = "px-6 py-2 rounded-full font-medium transition-colors bg-slate-900 text-white dark:bg-blue-600 dark:text-white";
+                btnExp.className = "px-6 py-2 rounded-full font-medium transition-colors bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700";
+                contentProj.classList.remove('hidden');
+                contentExp.classList.add('hidden');
             }
+        }
 
-            // Attacher les événements proprement
-            if (btnExp) {
-                btnExp.addEventListener('click', () => switchTab('exp'));
-            }
-            if (btnProj) {
-                btnProj.addEventListener('click', () => switchTab('proj'));
-            }
+        if (btnExp) btnExp.addEventListener('click', () => switchTab('exp'));
+        if (btnProj) btnProj.addEventListener('click', () => switchTab('proj'));
 
-            // Script pour le carrousel de Certifications
-            const carousel = document.getElementById('cert-carousel');
-            const btnPrevCert = document.getElementById('btn-prev-cert');
-            const btnNextCert = document.getElementById('btn-next-cert');
+        // Script pour le carrousel de Certifications
+        const carousel = document.getElementById('cert-carousel');
+        const btnPrevCert = document.getElementById('btn-prev-cert');
+        const btnNextCert = document.getElementById('btn-next-cert');
 
-            if (carousel && btnPrevCert && btnNextCert) {
-                // Largeur de scroll = largeur d'une carte (320px) + le gap (24px) = 344px
-                const scrollAmount = 344;
-
-                btnPrevCert.addEventListener('click', () => {
-                    carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                });
-
-                btnNextCert.addEventListener('click', () => {
-                    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                });
-            }
-
-            // Gestion du Menu Mobile
-            const btnMenuMobile = document.getElementById('mobile-menu-btn');
-            const menuMobile = document.getElementById('mobile-menu');
-            const iconMenu = document.getElementById('icon-menu');
-            const iconX = document.getElementById('icon-x');
-
-            if (btnMenuMobile && menuMobile) {
-                btnMenuMobile.addEventListener('click', () => {
-                    menuMobile.classList.toggle('hidden');
-                    iconMenu.classList.toggle('hidden');
-                    iconX.classList.toggle('hidden');
-                });
-            }
-
-            // Protection de l'email contre les robots (obfuscation)
-            const emailSpan = document.getElementById('contact-email-text');
-            const emailLink = document.getElementById('contact-email');
-
-            if (emailSpan && emailLink) {
-                // Reconstitution dynamique de l'email
-                const user = 'abdelemfossa';
-                const domain = 'gmail.com';
-                const secureEmail = user + '@' + domain;
-
-                emailSpan.textContent = secureEmail;
-                emailLink.href = 'mailto:' + secureEmail;
-            }
-
-            // Gestion Dark Mode
-            const themeToggleBtn = document.getElementById('theme-toggle');
-            const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-            const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-
-            if (themeToggleBtn && themeToggleDarkIcon && themeToggleLightIcon) {
-                // Change les icônes en fonction de l'état actuel
-                if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                    themeToggleLightIcon.classList.remove('hidden');
-                } else {
-                    themeToggleDarkIcon.classList.remove('hidden');
-                }
-
-                // Bascule lors du clic
-                themeToggleBtn.addEventListener('click', function () {
-                    themeToggleDarkIcon.classList.toggle('hidden');
-                    themeToggleLightIcon.classList.toggle('hidden');
-
-                    if (localStorage.getItem('color-theme')) {
-                        if (localStorage.getItem('color-theme') === 'light') {
-                            document.documentElement.classList.add('dark');
-                            localStorage.setItem('color-theme', 'dark');
-                        } else {
-                            document.documentElement.classList.remove('dark');
-                            localStorage.setItem('color-theme', 'light');
-                        }
-                    } else {
-                        if (document.documentElement.classList.contains('dark')) {
-                            document.documentElement.classList.remove('dark');
-                            localStorage.setItem('color-theme', 'light');
-                        } else {
-                            document.documentElement.classList.add('dark');
-                            localStorage.setItem('color-theme', 'dark');
-                        }
-                    }
-                });
-            }
-
-            // Gestion du bouton Retour en Haut
-            const backToTopBtn = document.getElementById('back-to-top');
-            if (backToTopBtn) {
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY > 400) {
-                        backToTopBtn.classList.remove('opacity-0', 'translate-y-10', 'invisible');
-                        backToTopBtn.classList.add('opacity-100', 'translate-y-0', 'visible');
-                    } else {
-                        backToTopBtn.classList.add('opacity-0', 'translate-y-10', 'invisible');
-                        backToTopBtn.classList.remove('opacity-100', 'translate-y-0', 'visible');
-                    }
-                });
-
-                backToTopBtn.addEventListener('click', () => {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                });
-            }
-        });
-
-        // Disparition du Loader une fois la page chargée
-        window.addEventListener('load', () => {
-            const loader = document.getElementById('page-loader');
-            const body = document.getElementById('body-content');
-
-            if (loader) {
-                // Optionnel : un délai minime pour l'effet visuel
-                setTimeout(() => {
-                    loader.classList.add('opacity-0', 'invisible');
-                    body.classList.remove('overflow-hidden'); // On réactive le scroll
-
-                    // On retire le loader du DOM après la transition
-                    setTimeout(() => {
-                        loader.style.display = 'none';
-                    }, 700); // 700ms doit correspondre au duration-700 de Tailwind
-                }, 500);
-            }
-        });
-    </script>
-</body>
-
-</html>
+        if (carousel && btnPrevCert && btnNextCert) {
+            const scrollAmount = 344;
+            btnPrevCert.addEventListener('click', () => {
+                carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+            btnNextCert.addEventListener('click', () => {
+                carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+        }
+    });
+</script>
+{% endblock %}

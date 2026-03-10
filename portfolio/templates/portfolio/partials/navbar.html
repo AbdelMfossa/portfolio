@@ -1,0 +1,63 @@
+{% load static %}
+<!-- HEADER / NAVIGATION -->
+<header
+    class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="{% url 'home' %}" class="flex items-center gap-2 group">
+            <img src="{% static 'portfolio/images/logo abdelmfossa.svg' %}" alt="Logo Abdel Mfossa"
+                class="h-10 w-auto group-hover:scale-105 transition-all duration-300 dark:invert">
+            <span class="text-xl font-bold text-slate-900 dark:text-white tracking-tighter transition-colors">
+                Abdel<span class="text-blue-700 dark:text-blue-500">Mfossa.</span>
+            </span>
+        </a>
+        <!-- Menu Desktop -->
+        <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+            <a href="{% url 'home' %}" class="text-blue-600 dark:text-blue-500 transition-colors">Accueil</a>
+            <a href="{% url 'projects' %}"
+                class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projets</a>
+            <a href="{% url 'blog' %}" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Articles</a>
+            <a href="{% url 'events' %}"
+                class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Événements</a>
+            <a href="{% url 'videos' %}" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Vidéos</a>
+        </nav>
+        <div class="flex items-center gap-4">
+            <!-- Toggle Mode Sombre -->
+            <button id="theme-toggle" type="button"
+                class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700 rounded-lg text-sm p-2 transition-colors">
+                <i id="theme-toggle-dark-icon" data-lucide="moon" class="hidden w-5 h-5"></i>
+                <i id="theme-toggle-light-icon" data-lucide="sun" class="hidden w-5 h-5"></i>
+            </button>
+
+            <a href="#contact"
+                class="hidden md:inline-flex bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm">
+                Me contacter
+            </a>
+
+            <!-- Bouton Burger Mobile -->
+            <button id="mobile-menu-btn"
+                class="md:hidden p-2 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-100 dark:focus:ring-slate-700">
+                <i data-lucide="menu" id="icon-menu" class="w-6 h-6"></i>
+                <i data-lucide="x" id="icon-x" class="w-6 h-6 hidden"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Menu Mobile (Caché par défaut) -->
+    <div id="mobile-menu"
+        class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-xl z-40 transition-all">
+        <nav class="flex flex-col py-6 gap-6 text-sm font-medium text-slate-700 dark:text-slate-200 items-center">
+            <a href="{% url 'home' %}"
+                class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors">Accueil</a>
+            <a href="{% url 'projects' %}"
+                class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projets</a>
+            <a href="{% url 'blog' %}" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Articles</a>
+            <a href="{% url 'events' %}"
+                class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Événements</a>
+            <a href="{% url 'videos' %}" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Vidéos</a>
+            <a href="#contact"
+                class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors shadow-sm mt-2 text-base">
+                Me contacter
+            </a>
+        </nav>
+    </div>
+</header>

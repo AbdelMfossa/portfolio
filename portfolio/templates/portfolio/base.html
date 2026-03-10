@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Abdel Aziz Mfossa | Portfolio{% endblock %}</title>
+    <meta name="description"
+        content="Portfolio de Abdel Aziz Mfossa, Ingénieur Google Workspace, passionné d'automatisation et Lead du GDG Yaoundé.">
+    <meta property="og:title" content="Abdel Aziz Mfossa | Portfolio">
+    <meta property="og:description" content="Ingénieur Google Workspace & Transformateur Digital.">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Configuration Tailwind (Optionnel pour customiser) -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Script pour éviter le clignotement lors du chargement initial en mode sombre -->
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{% static 'portfolio/images/logo abdelmfossa.svg' %}">
+    <link rel="alternate icon" type="image/png" href="{% static 'portfolio/images/logo abdelmfossa.png' %}">
+
+    <style>
+        /* Utilitaire pour cacher la barre de défilement tout en gardant le scroll actif */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Animation personnalisée pour le loader */
+        @keyframes loader-scale {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+                filter: drop-shadow(0 0 10px rgba(37, 99, 235, 0.2));
+            }
+
+            50% {
+                transform: scale(1.15);
+                opacity: 0.9;
+                filter: drop-shadow(0 0 25px rgba(37, 99, 235, 0.5));
+            }
+        }
+
+        .animate-loader {
+            animation: loader-scale 2s ease-in-out infinite;
+        }
+
+        /* Animation de flottaison pour l'Hero Section */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body
+    class="min-h-screen bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-200 font-sans selection:bg-blue-200 overflow-hidden transition-colors duration-300"
+    id="body-content">
+
+    {% include 'portfolio/partials/loader.html' %}
+    {% include 'portfolio/partials/navbar.html' %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include 'portfolio/partials/footer.html' %}
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
