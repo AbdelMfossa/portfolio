@@ -3,22 +3,22 @@
 Ce dossier contient les fichiers de configuration nécessaires pour que ton application Django tourne en permanence (Gunicorn via Systemd) et réponde sur le web (via Nginx).
 
 **Hypothèses** :
-- Le nom d'utilisateur Ubuntu est `ubuntu` (adapter dans `gunicorn.service` si c'est `root` ou autre).
+- Le nom d'utilisateur Ubuntu est `ubuntu` (adapter dans `gunicorn_abdelmfossa.service` si c'est `root` ou autre).
 - Le projet sera cloné dans `/var/www/abdelmfossa`.
 
 ## 1. Copie des fichiers Systemd (pour Gunicorn)
 Exécute ces commandes depuis le dossier racine du projet sur ton serveur :
 
 ```bash
-sudo cp deployment/gunicorn.socket /etc/systemd/system/
-sudo cp deployment/gunicorn.service /etc/systemd/system/
+sudo cp deployment/gunicorn_abdelmfossa.socket /etc/systemd/system/
+sudo cp deployment/gunicorn_abdelmfossa.service /etc/systemd/system/
 ```
 
 Activer et démarrer Gunicorn :
 ```bash
-sudo systemctl start gunicorn.socket
-sudo systemctl enable gunicorn.socket
-sudo systemctl status gunicorn.socket
+sudo systemctl start gunicorn_abdelmfossa.socket
+sudo systemctl enable gunicorn_abdelmfossa.socket
+sudo systemctl status gunicorn_abdelmfossa.socket
 ```
 *(Si ça dit active/running, c'est parfait !)*
 

@@ -16,6 +16,6 @@ server {
     # Transfère tout le reste du trafic web à notre application Django via Gunicorn
     location / {
         include proxy_params;
-        proxy_pass http://unix:/run/gunicorn.sock;
+        proxy_pass http://unix:/run/gunicorn_abdelmfossa.sock;
     }
 }

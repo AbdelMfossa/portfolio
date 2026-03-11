@@ -1,6 +1,6 @@
 [Unit]
 Description=gunicorn daemon for abdelmfossa
-Requires=gunicorn.socket
+Requires=gunicorn_abdelmfossa.socket
 After=network.target
 
 [Service]
@@ -10,7 +10,7 @@ WorkingDirectory=/var/www/abdelmfossa
 ExecStart=/var/www/abdelmfossa/venv/bin/gunicorn \
           --access-logfile - \
           --workers 3 \
-          --bind unix:/run/gunicorn.sock \
+          --bind unix:/run/gunicorn_abdelmfossa.sock \
           config.wsgi:application
 
 [Install]
