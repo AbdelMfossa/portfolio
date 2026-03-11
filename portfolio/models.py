@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 from django.utils.text import slugify
+import os
+from PIL import Image
 
 class Tag(models.Model):
     name = models.CharField(max_length=50, unique=True, verbose_name="Nom du tag")
@@ -46,6 +48,22 @@ class Project(models.Model):
     def __str__(self):
         return self.title
 
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        if self.image:
+            try:
+                img = Image.open(self.image.path)
+                if img.height > 1080 or img.width > 1920:
+                    output_size = (1920, 1080)
+                    img.thumbnail(output_size, Image.Resampling.LANCZOS)
+                
+                if img.mode in ("RGBA", "P"):
+                    img = img.convert("RGB")
+                    
+                img.save(self.image.path, optimize=True, quality=80)
+            except Exception:
+                pass
+
 class Article(models.Model):
     title = models.CharField(max_length=200, verbose_name="Titre de l'article")
     summary = models.TextField(verbose_name="Extrait / Résumé")
@@ -67,6 +85,22 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        if self.image:
+            try:
+                img = Image.open(self.image.path)
+                if img.height > 800 or img.width > 1200:
+                    output_size = (1200, 800)
+                    img.thumbnail(output_size, Image.Resampling.LANCZOS)
+                
+                if img.mode in ("RGBA", "P"):
+                    img = img.convert("RGB")
+                
+                img.save(self.image.path, optimize=True, quality=80)
+            except Exception:
+                pass
 
 class Event(models.Model):
     title = models.CharField(max_length=200, verbose_name="Nom de l'événement")
@@ -94,6 +128,18 @@ class Event(models.Model):
     def __str__(self):
         return self.title
 
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        if self.image:
+            try:
+                img = Image.open(self.image.path)
+                if img.height > 1080 or img.width > 1920:
+                    output_size = (1920, 1080)
+                    img.thumbnail(output_size, Image.Resampling.LANCZOS)
+                    img.save(self.image.path, optimize=True, quality=80)
+            except Exception:
+                pass
+
 class Video(models.Model):
     title = models.CharField(max_length=200, verbose_name="Titre de la vidéo")
     description = models.TextField(blank=True, null=True, verbose_name="Description")
@@ -117,6 +163,22 @@ class Video(models.Model):
     def __str__(self):
         return self.title
 
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        if self.thumbnail:
+            try:
+                img = Image.open(self.thumbnail.path)
+                if img.height > 720 or img.width > 1280:
+                    output_size = (1280, 720)
+                    img.thumbnail(output_size, Image.Resampling.LANCZOS)
+                
+                if img.mode in ("RGBA", "P"):
+                    img = img.convert("RGB")
+                    
+                img.save(self.thumbnail.path, optimize=True, quality=80)
+            except Exception:
+                pass
+
 class Certification(models.Model):
     title = models.CharField(max_length=200, verbose_name="Titre de la certification")
     provider = models.CharField(max_length=100, verbose_name="Fournisseur (ex: Google, Coursera)")
@@ -138,6 +200,15 @@ class Certification(models.Model):
 
     def __str__(self):
         return f"{self.title} - {self.provider}"
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        if self.image:
+            img = Image.open(self.image.path)
+            if img.height > 1000 or img.width > 1000:
+                output_size = (1000, 1000)
+                img.thumbnail(output_size, Image.Resampling.LANCZOS)
+                img.save(self.image.path, optimize=True, quality=80)
 
 class Skill(models.Model):
     title = models.CharField(max_length=100, verbose_name="Titre de la compétence")
