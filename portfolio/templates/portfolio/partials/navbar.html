@@ -28,7 +28,7 @@
                 <i id="theme-toggle-light-icon" data-lucide="sun" class="hidden w-5 h-5"></i>
             </button>
 
-            <a href="#contact"
+            <a href="{% url 'contact' %}"
                 class="hidden md:inline-flex bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm">
                 Me contacter
             </a>
@@ -54,7 +54,7 @@
             <a href="{% url 'events' %}"
                 class="{% if request.resolver_match.url_name == 'events' %}text-blue-600 dark:text-blue-400 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-300{% endif %} transition-colors">Événements</a>
             <a href="{% url 'videos' %}" class="{% if request.resolver_match.url_name == 'videos' %}text-blue-600 dark:text-blue-400 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-300{% endif %} transition-colors">Vidéos</a>
-            <a href="#contact"
+            <a href="{% url 'contact' %}"
                 class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors shadow-sm mt-2 text-base">
                 Me contacter
             </a>

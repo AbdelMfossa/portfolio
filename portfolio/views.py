@@ -47,3 +47,6 @@ def videos(request):
         'featured_video': featured_video,
         'videos': videos_list
     })
+
+def contact(request):
+    return render(request, 'portfolio/contact.html')
