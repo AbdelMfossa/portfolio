@@ -13,6 +13,7 @@ This dynamic website is built with **Django** and **Tailwind CSS**, designed to 
 *   **Modern UI/UX:** Built with Tailwind CSS, featuring a responsive design, smooth animations, glassmorphism effects, and a fully functional Dark/Light mode toggle.
 *   **Integrated Contact Flow:** Features an embedded Google Form for structured lead generation and direct Google Calendar booking integration.
 *   **SEO Optimized:** Includes dynamic OpenGraph meta tags for beautiful social media link previews.
+*   **Security Focused:** Obfuscated Django Admin URL via environment variables to prevent brute-force attacks on the default `/admin` path.
 *   **Production Ready:** Configured with Whitenoise, Gunicorn, python-dotenv, and comes with Nginx and Systemd configuration templates for easy VPS deployment.
 
 ## Tech Stack
@@ -54,7 +55,7 @@ Follow these steps to run the project locally on your machine.
     ```bash
     cp .env.example .env
     ```
-    *(For local development, ensure `DEBUG=True` in your `.env` file.)*
+    *(Ensure you set a unique path for `ADMIN_URL` and set `DEBUG=True` for local development.)*
 
 5.  **Run database migrations:**
     ```bash

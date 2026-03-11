@@ -50,3 +50,7 @@ def videos(request):
 
 def contact(request):
     return render(request, 'portfolio/contact.html')
+
+def trigger_error(request):
+    """Fonction temporaire pour simuler une erreur 500"""
+    raise Exception("Simulated Server Error")

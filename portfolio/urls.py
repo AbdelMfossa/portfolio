@@ -8,4 +8,5 @@ urlpatterns = [
     path('events/', views.events, name='events'),
     path('videos/', views.videos, name='videos'),
     path('contact/', views.contact, name='contact'),
+    path('trigger-error/', views.trigger_error),
 ]
