@@ -1,6 +1,6 @@
 # Abdel Aziz Mfossa - Personal Portfolio & Custom URL Shortener
 
-![Portfolio Preview](portfolio/static/portfolio/images/logo%20abdelmfossa.png)
+<img src="portfolio/static/portfolio/images/landing%20page.png" alt="Portfolio Preview" width="800">
 
 Welcome to the source code of my personal portfolio and blog. I am Abdel Aziz Mfossa, a Google Workspace Engineer, Automation Enthusiast, and Lead of GDG Yaoundé.
 
