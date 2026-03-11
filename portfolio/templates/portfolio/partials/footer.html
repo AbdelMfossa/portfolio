@@ -28,17 +28,17 @@
                 &copy; 2024 Abdel Aziz MFOSSA. Tous droits réservés.
             </div>
             <div class="flex gap-4">
-                <a href="https://www.youtube.com/@abdelmfossa" class="hover:text-red-500"><i data-lucide="youtube"
+                <a href="https://www.youtube.com/@abdelmfossa" aria-label="Chaîne YouTube" class="hover:text-red-500"><i data-lucide="youtube"
                         class="w-5 h-5"></i></a>
-                <a href="https://facebook.com/abdelmfossa" class="hover:text-blue-500"><i data-lucide="facebook"
+                <a href="https://facebook.com/abdelmfossa" aria-label="Page Facebook" class="hover:text-blue-500"><i data-lucide="facebook"
                         class="w-5 h-5"></i></a>
-                <a href="https://github.com/AbdelMfossa" class="hover:text-white"><i data-lucide="github"
+                <a href="https://github.com/AbdelMfossa" aria-label="Profil GitHub" class="hover:text-white"><i data-lucide="github"
                         class="w-5 h-5"></i></a>
-                <a href="https://linkedin.com/in/AbdelMfossa" class="hover:text-blue-500"><i data-lucide="linkedin"
+                <a href="https://linkedin.com/in/AbdelMfossa" aria-label="Profil LinkedIn" class="hover:text-blue-500"><i data-lucide="linkedin"
                         class="w-5 h-5"></i></a>
-                <a href="https://twitter.com/AbdelMfossa" class="hover:text-blue-400"><i data-lucide="twitter"
+                <a href="https://twitter.com/AbdelMfossa" aria-label="Compte Twitter" class="hover:text-blue-400"><i data-lucide="twitter"
                         class="w-5 h-5"></i></a>
-                <a href="http://medium.com/@abdelmfossa" class="hover:text-white"><i data-lucide="book-open"
+                <a href="http://medium.com/@abdelmfossa" aria-label="Articles Medium" class="hover:text-white"><i data-lucide="book-open"
                         class="w-5 h-5"></i></a>
             </div>
         </div>
@@ -51,113 +51,4 @@
     <i data-lucide="arrow-up" class="w-5 h-5 group-hover:-translate-y-1 transition-transform"></i>
 </button>
 
-<!-- Initialisation des icônes Lucide et des onglets -->
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Initialiser les icônes
-        lucide.createIcons();
-
-        // Gestion du Menu Mobile
-        const btnMenuMobile = document.getElementById('mobile-menu-btn');
-        const menuMobile = document.getElementById('mobile-menu');
-        const iconMenu = document.getElementById('icon-menu');
-        const iconX = document.getElementById('icon-x');
-
-        if (btnMenuMobile && menuMobile) {
-            btnMenuMobile.addEventListener('click', () => {
-                menuMobile.classList.toggle('hidden');
-                iconMenu.classList.toggle('hidden');
-                iconX.classList.toggle('hidden');
-            });
-        }
-
-        // Protection de l'email contre les robots (obfuscation)
-        const emailSpan = document.getElementById('contact-email-text');
-        const emailLink = document.getElementById('contact-email');
-
-        if (emailSpan && emailLink) {
-            // Reconstitution dynamique de l'email
-            const user = 'abdelemfossa';
-            const domain = 'gmail.com';
-            const secureEmail = user + '@' + domain;
-
-            emailSpan.textContent = secureEmail;
-            emailLink.href = 'mailto:' + secureEmail;
-        }
-
-        // Gestion Dark Mode
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-
-        if (themeToggleBtn && themeToggleDarkIcon && themeToggleLightIcon) {
-            // Change les icônes en fonction de l'état actuel
-            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                themeToggleLightIcon.classList.remove('hidden');
-            } else {
-                themeToggleDarkIcon.classList.remove('hidden');
-            }
-
-            // Bascule lors du clic
-            themeToggleBtn.addEventListener('click', function () {
-                themeToggleDarkIcon.classList.toggle('hidden');
-                themeToggleLightIcon.classList.toggle('hidden');
-
-                if (localStorage.getItem('color-theme')) {
-                    if (localStorage.getItem('color-theme') === 'light') {
-                        document.documentElement.classList.add('dark');
-                        localStorage.setItem('color-theme', 'dark');
-                    } else {
-                        document.documentElement.classList.remove('dark');
-                        localStorage.setItem('color-theme', 'light');
-                    }
-                } else {
-                    if (document.documentElement.classList.contains('dark')) {
-                        document.documentElement.classList.remove('dark');
-                        localStorage.setItem('color-theme', 'light');
-                    } else {
-                        document.documentElement.classList.add('dark');
-                        localStorage.setItem('color-theme', 'dark');
-                    }
-                }
-            });
-        }
-
-        // Gestion du bouton Retour en Haut
-        const backToTopBtn = document.getElementById('back-to-top');
-        if (backToTopBtn) {
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 400) {
-                    backToTopBtn.classList.remove('opacity-0', 'translate-y-10', 'invisible');
-                    backToTopBtn.classList.add('opacity-100', 'translate-y-0', 'visible');
-                } else {
-                    backToTopBtn.classList.add('opacity-0', 'translate-y-10', 'invisible');
-                    backToTopBtn.classList.remove('opacity-100', 'translate-y-0', 'visible');
-                }
-            });
-
-            backToTopBtn.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        }
-    });
-
-    // Disparition du Loader une fois la page chargée
-    window.addEventListener('load', () => {
-        const loader = document.getElementById('page-loader');
-        const body = document.getElementById('body-content');
-
-        if (loader) {
-            setTimeout(() => {
-                loader.classList.add('opacity-0', 'invisible');
-                if (body) body.classList.remove('overflow-hidden');
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                }, 700);
-            }, 500);
-        }
-    });
-</script>
+<!-- Le script d'initialisation a été déplacé vers portfolio/js/main.js -->
