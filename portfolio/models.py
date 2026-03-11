@@ -138,3 +138,50 @@ class Certification(models.Model):
 
     def __str__(self):
         return f"{self.title} - {self.provider}"
+
+class Skill(models.Model):
+    title = models.CharField(max_length=100, verbose_name="Titre de la compétence")
+    icon = models.CharField(max_length=50, default='cloud', verbose_name="Icône Lucide")
+    color = models.CharField(max_length=20, default='blue', help_text="Couleur Tailwind (ex: blue, emerald, purple, red)", verbose_name="Couleur principale")
+    description = models.TextField(blank=True, null=True, verbose_name="Description optionnelle")
+    
+    # Pour stocker les points de la liste, on peut utiliser un TextField où chaque ligne est un point
+    bullets = models.TextField(help_text="Un point par ligne", verbose_name="Points clés de la compétence")
+    
+    order = models.PositiveIntegerField(default=0, verbose_name="Ordre d'affichage")
+
+    class Meta:
+        verbose_name = "Expertise (Skill)"
+        verbose_name_plural = "Expertises (Skills)"
+        ordering = ['order']
+
+    def __str__(self):
+        return self.title
+        
+    def get_bullets_list(self):
+        return [b.strip() for b in self.bullets.split('\n') if b.strip()]
+
+class Experience(models.Model):
+    job_title = models.CharField(max_length=200, verbose_name="Titre du poste")
+    company = models.CharField(max_length=200, verbose_name="Entreprise / Organisation")
+    period = models.CharField(max_length=100, verbose_name="Période (ex: Mai 2022 - Présent)")
+    location = models.CharField(max_length=200, verbose_name="Lieu")
+    
+    description = models.TextField(verbose_name="Description détaillée")
+    bullets = models.TextField(help_text="Un point par ligne", verbose_name="Tâches / Réalisations")
+    
+    icon = models.CharField(max_length=50, default='briefcase', verbose_name="Icône Lucide")
+    color = models.CharField(max_length=20, default='blue-600', help_text="Couleur ex: blue-600, slate-400, purple-500", verbose_name="Couleur d'accent")
+    
+    order = models.PositiveIntegerField(default=0, verbose_name="Ordre d'affichage")
+
+    class Meta:
+        verbose_name = "Expérience"
+        verbose_name_plural = "Expériences"
+        ordering = ['order']
+
+    def __str__(self):
+        return f"{self.job_title} chez {self.company}"
+        
+    def get_bullets_list(self):
+        return [b.strip() for b in self.bullets.split('\n') if b.strip()]
