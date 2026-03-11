@@ -12,6 +12,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ request.build_absolute_uri }}">
     <meta property="og:image" content="{% block og_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'portfolio/images/logo abdelmfossa.png' %}{% endblock %}">
+    <link rel="canonical" href="{{ request.build_absolute_uri }}">
 
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>

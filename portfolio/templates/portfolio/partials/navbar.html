@@ -29,7 +29,7 @@
             </button>
 
             <a href="{% url 'contact' %}"
-                class="hidden md:inline-flex bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm">
+                class="hidden md:inline-flex {% if request.resolver_match.url_name == 'contact' %}bg-white text-blue-600 border border-blue-600{% else %}bg-blue-600 text-white border border-transparent hover:bg-blue-700{% endif %} px-5 py-2 rounded-full text-sm font-medium transition-colors shadow-sm">
                 Me contacter
             </a>
 
@@ -55,7 +55,7 @@
                 class="{% if request.resolver_match.url_name == 'events' %}text-blue-600 dark:text-blue-400 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-300{% endif %} transition-colors">Événements</a>
             <a href="{% url 'videos' %}" class="{% if request.resolver_match.url_name == 'videos' %}text-blue-600 dark:text-blue-400 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-300{% endif %} transition-colors">Vidéos</a>
             <a href="{% url 'contact' %}"
-                class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors shadow-sm mt-2 text-base">
+                class="{% if request.resolver_match.url_name == 'contact' %}bg-white border text-blue-600 border-blue-600{% else %}bg-blue-600 border border-transparent text-white hover:bg-blue-700{% endif %} px-8 py-3 rounded-full transition-colors shadow-sm mt-2 text-base">
                 Me contacter
             </a>
         </nav>
