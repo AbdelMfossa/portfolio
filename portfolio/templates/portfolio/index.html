@@ -420,113 +420,60 @@
                 <div id="tab-content-proj" class="hidden">
                     <!-- Modification en 3 colonnes pour les écrans larges -->
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <!-- Projet 1 -->
+                        {% for project in projects %}
+                        <!-- Projet -->
                         <div
-                            class="border border-slate-200 dark:border-slate-700 rounded-xl p-6 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md dark:hover:shadow-slate-900/50 transition-all flex flex-col group bg-white dark:bg-slate-800">
+                            class="border border-slate-200 dark:border-slate-700 rounded-xl p-6 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md dark:hover:shadow-slate-900/50 transition-all flex flex-col group bg-white dark:bg-slate-800{% if forloop.counter == 3 %} md:col-span-2 lg:col-span-1{% endif %}">
                             <div class="flex items-center justify-between mb-4">
-                                <i data-lucide="terminal"
+                                <i data-lucide="{{ project.icon|default:'terminal' }}"
                                     class="text-blue-600 w-7 h-7 group-hover:scale-110 transition-transform"></i>
                                 <span
-                                    class="text-xs font-bold px-2 py-1 bg-blue-50 dark:bg-slate-700/50 text-blue-700 dark:text-blue-400 rounded-md transition-colors">Apps
-                                    Script / Python</span>
+                                    class="text-xs font-bold px-2 py-1 bg-blue-50 dark:bg-slate-700/50 text-blue-700 dark:text-blue-400 rounded-md transition-colors">
+                                    {% for tag in project.tags.all|slice:":2" %}
+                                        {{ tag.name }}{% if not forloop.last %} / {% endif %}
+                                    {% endfor %}
+                                </span>
                             </div>
                             <h3
                                 class="text-lg font-bold mb-2 text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                                Automatisation des Comptes</h3>
+                                {{ project.title }}</h3>
                             <p class="text-slate-600 dark:text-slate-300 text-sm mb-4 flex-grow transition-colors">
-                                Pipeline de scripts automatisant le cycle de vie complet des identités utilisateurs
-                                (création, gestion, archivage, suppression) pour des dizaines de milliers
-                                d'utilisateurs.
+                                {{ project.description }}
                             </p>
+                            {% if project.impact %}
                             <div class="text-sm font-semibold text-emerald-600 flex items-center gap-1 mb-5">
-                                <i data-lucide="check-circle" class="w-4 h-4"></i> Résultat : -70% de temps de gestion
-                                manuel
+                                <i data-lucide="check-circle" class="w-4 h-4"></i> {{ project.impact }}
                             </div>
+                            {% endif %}
 
                             <!-- Liens du projet -->
                             <div
                                 class="flex gap-2 pt-4 border-t border-slate-100 dark:border-slate-700 mt-auto transition-colors">
-                                <a href="#"
+                                {% if project.github_url %}
+                                <a href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer"
                                     class="flex-1 flex justify-center items-center gap-2 bg-slate-900 dark:bg-slate-700 text-white py-2 rounded-lg text-xs font-medium hover:bg-slate-800 dark:hover:bg-slate-600 transition-colors">
                                     <i data-lucide="github" class="w-3.5 h-3.5"></i> Code source
                                 </a>
-                                <a href="#"
-                                    class="flex-1 flex justify-center items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 py-2 rounded-lg text-xs font-medium hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors">
-                                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Démo Live
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Projet 2 -->
-                        <div
-                            class="border border-slate-200 dark:border-slate-700 rounded-xl p-6 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md dark:hover:shadow-slate-900/50 transition-all flex flex-col group bg-white dark:bg-slate-800">
-                            <div class="flex items-center justify-between mb-4">
-                                <i data-lucide="cloud"
-                                    class="text-blue-600 w-7 h-7 group-hover:scale-110 transition-transform"></i>
-                                <span
-                                    class="text-xs font-bold px-2 py-1 bg-blue-50 dark:bg-slate-700/50 text-blue-700 dark:text-blue-400 rounded-md transition-colors">API
-                                    Google</span>
-                            </div>
-                            <h3
-                                class="text-lg font-bold mb-2 text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                                Sauvegarde Contacts Auto</h3>
-                            <p class="text-slate-600 dark:text-slate-300 text-sm mb-4 flex-grow transition-colors">
-                                Outil scripté conçu pour la synchronisation et la sauvegarde automatique et sécurisée
-                                des contacts téléphoniques vers Google Contacts de manière transparente.
-                            </p>
-                            <div class="text-sm font-semibold text-emerald-600 flex items-center gap-1 mb-5">
-                                <i data-lucide="shield-check" class="w-4 h-4"></i> Fiabilité et sécurité des données
-                            </div>
-
-                            <!-- Liens du projet -->
-                            <div
-                                class="flex gap-2 pt-4 border-t border-slate-100 dark:border-slate-700 mt-auto transition-colors">
-                                <a href="#"
-                                    class="flex-1 flex justify-center items-center gap-2 bg-slate-900 dark:bg-slate-700 text-white py-2 rounded-lg text-xs font-medium hover:bg-slate-800 dark:hover:bg-slate-600 transition-colors">
-                                    <i data-lucide="github" class="w-3.5 h-3.5"></i> Code source
-                                </a>
-                                <a href="#"
-                                    class="flex-1 flex justify-center items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 py-2 rounded-lg text-xs font-medium hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors">
-                                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Voir le script
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Projet 3 (Nouveau) -->
-                        <div
-                            class="border border-slate-200 dark:border-slate-700 rounded-xl p-6 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md dark:hover:shadow-slate-900/50 transition-all flex flex-col group bg-white dark:bg-slate-800 md:col-span-2 lg:col-span-1">
-                            <div class="flex items-center justify-between mb-4">
-                                <i data-lucide="layout"
-                                    class="text-blue-600 w-7 h-7 group-hover:scale-110 transition-transform"></i>
-                                <span
-                                    class="text-xs font-bold px-2 py-1 bg-blue-50 dark:bg-slate-700/50 text-blue-700 dark:text-blue-400 rounded-md transition-colors">Django
-                                    /
-                                    JS</span>
-                            </div>
-                            <h3
-                                class="text-lg font-bold mb-2 text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                                Plateforme de Pré-inscription</h3>
-                            <p class="text-slate-600 dark:text-slate-300 text-sm mb-4 flex-grow transition-colors">
-                                Développement complet d'un site web de gestion des pré-inscriptions universitaires.
-                                Fonctionnalités multilingues et gestion multi-bases de données.
-                            </p>
-                            <div class="text-sm font-semibold text-emerald-600 flex items-center gap-1 mb-5">
-                                <i data-lucide="monitor-check" class="w-4 h-4"></i> Adopté par des milliers d'étudiants
-                            </div>
-
-                            <!-- Liens du projet -->
-                            <div
-                                class="flex gap-2 pt-4 border-t border-slate-100 dark:border-slate-700 mt-auto transition-colors">
-                                <a href="#"
-                                    class="flex-1 flex justify-center items-center gap-2 bg-slate-900 dark:bg-slate-700 text-white py-2 rounded-lg text-xs font-medium hover:bg-slate-800 dark:hover:bg-slate-600 transition-colors">
-                                    <i data-lucide="github" class="w-3.5 h-3.5"></i> Code source
-                                </a>
-                                <a href="https://preinscriptions.uninet.cm" target="_blank" rel="noopener noreferrer" rel="noreferrer"
+                                {% endif %}
+                                {% if project.demo_url %}
+                                <a href="{{ project.demo_url }}" target="_blank" rel="noopener noreferrer" rel="noreferrer"
                                     class="flex-1 flex justify-center items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 py-2 rounded-lg text-xs font-medium hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors">
                                     <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Visiter le site
                                 </a>
+                                {% endif %}
+                                {% if project.article_url and not project.github_url and not project.demo_url %}
+                                <a href="{{ project.article_url }}" target="_blank" rel="noopener noreferrer" rel="noreferrer"
+                                    class="flex-1 flex justify-center items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 py-2 rounded-lg text-xs font-medium hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors">
+                                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Voir l'article
+                                </a>
+                                {% endif %}
                             </div>
                         </div>
+                        {% empty %}
+                        <div class="col-span-1 md:col-span-2 lg:col-span-3 text-center py-8">
+                            <p class="text-slate-500 dark:text-slate-400">Aucun projet à afficher pour le moment.</p>
+                        </div>
+                        {% endfor %}
                     </div>
 
                     <div class="text-center mt-10">

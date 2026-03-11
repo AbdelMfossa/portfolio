@@ -39,21 +39,23 @@
 
         <div class="grid md:grid-cols-2 gap-8">
 
-            <!-- PROJET 1 -->
+            {% for project in projects %}
+            <!-- PROJET -->
             <article
                 class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-xl dark:shadow-none transition-all duration-300 flex flex-col overflow-hidden group">
                 <!-- Image de couverture -->
                 <div class="h-56 relative overflow-hidden bg-slate-100 dark:bg-slate-700">
-                    <img loading="lazy" src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="Code Python sur un écran"
+                    <img loading="lazy" src="{% if project.image %}{{ project.image.url }}{% elif project.image_url %}{{ project.image_url }}{% else %}{% static 'portfolio/images/default_project.jpg' %}{% endif %}"
+                        alt="{{ project.title }}"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
 
                     <!-- Badge Statut -->
                     <div class="absolute top-4 right-4 z-10">
                         <span
-                            class="text-xs font-bold px-3 py-1 bg-emerald-500/90 text-white rounded-full shadow-md backdrop-blur-sm">En
-                            production</span>
+                            class="text-xs font-bold px-3 py-1 {% if project.status == 'production' %}bg-emerald-500/90{% elif project.status == 'poc' %}bg-amber-500/90{% else %}bg-blue-500/90{% endif %} text-white rounded-full shadow-md backdrop-blur-sm">
+                            {{ project.get_status_display }}
+                        </span>
                     </div>
                 </div>
 
@@ -62,223 +64,62 @@
                     <!-- Icône superposée -->
                     <div
                         class="w-14 h-14 bg-white dark:bg-slate-900 text-blue-600 dark:text-blue-400 rounded-xl flex items-center justify-center border border-slate-100 dark:border-slate-700 shadow-lg -mt-7 mb-6 relative transition-colors">
-                        <i data-lucide="users" class="w-7 h-7"></i>
+                        <i data-lucide="{{ project.icon }}" class="w-7 h-7"></i>
                     </div>
 
-                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">Automatisation du cycle de vie des
-                        comptes</h2>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">{{ project.title }}</h2>
 
                     <p class="text-slate-600 dark:text-slate-400 mb-6 flex-grow leading-relaxed transition-colors">
-                        Développement d'un pipeline complet de scripts pour automatiser la création, la gestion
-                        des accès, l'archivage et la suppression sécurisée des comptes utilisateurs au sein
-                        d'une organisation.
+                        {{ project.description }}
                     </p>
 
                     <!-- Impact -->
+                    {% if project.impact %}
                     <div class="bg-slate-50 dark:bg-slate-700/50 rounded-xl p-4 mb-6 border border-slate-100 dark:border-slate-700 transition-colors">
                         <div class="text-sm font-semibold text-slate-900 dark:text-white mb-1 flex items-center gap-2 transition-colors">
                             <i data-lucide="trending-up" class="w-4 h-4 text-blue-600 dark:text-blue-400"></i> Impact métier
                         </div>
-                        <p class="text-sm text-slate-600 dark:text-slate-300 transition-colors">Réduction de <strong class="dark:text-white">70%</strong> du temps de gestion
-                            manuel par les administrateurs et élimination des erreurs de saisie.</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 transition-colors">{{ project.impact }}</p>
                     </div>
+                    {% endif %}
 
                     <!-- Tags -->
                     <div class="flex flex-wrap gap-2 mb-8">
-                        <span
-                            class="text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2.5 py-1 rounded-md transition-colors">Python</span>
-                        <span
-                            class="text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2.5 py-1 rounded-md transition-colors">Google
-                            Workspace Admin SDK</span>
-                        <span
-                            class="text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2.5 py-1 rounded-md transition-colors">Bash</span>
+                        {% for tag in project.tags.all %}
+                        <span class="text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2.5 py-1 rounded-md transition-colors">{{ tag.name }}</span>
+                        {% endfor %}
                     </div>
 
                     <!-- Actions -->
                     <div class="flex items-center gap-4 mt-auto pt-4 border-t border-slate-100 dark:border-slate-700 transition-colors">
-                        <a href="#"
+                        {% if project.github_url %}
+                        <a href="{{ project.github_url }}" rel="noopener noreferrer" target="_blank"
                             class="flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-slate-300 hover:text-blue-600 dark:hover:text-white transition-colors">
                             <i data-lucide="github" class="w-4 h-4"></i> Code source
                         </a>
-                        <a href="#"
-                            class="flex items-center gap-2 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors ml-auto">
-                            Lire l'étude de cas <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- PROJET 2 -->
-            <article
-                class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-xl dark:shadow-none transition-all duration-300 flex flex-col overflow-hidden group">
-                <div class="h-56 relative overflow-hidden bg-slate-100 dark:bg-slate-700">
-                    <img loading="lazy" src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="Sauvegarde Cloud"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                    <div class="absolute top-4 right-4 z-10">
-                        <span
-                            class="text-xs font-bold px-3 py-1 bg-emerald-500/90 text-white rounded-full shadow-md backdrop-blur-sm">En
-                            production</span>
-                    </div>
-                </div>
-
-                <div class="p-6 md:p-8 pt-0 md:pt-0 flex-grow flex flex-col relative z-20">
-                    <div
-                        class="w-14 h-14 bg-white dark:bg-slate-900 text-cyan-600 dark:text-cyan-400 rounded-xl flex items-center justify-center border border-slate-100 dark:border-slate-700 shadow-lg -mt-7 mb-6 relative transition-colors">
-                        <i data-lucide="contact" class="w-7 h-7"></i>
-                    </div>
-
-                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">Synchronisation & Sauvegarde de Contacts
-                    </h2>
-
-                    <p class="text-slate-600 dark:text-slate-400 mb-6 flex-grow leading-relaxed transition-colors">
-                        Conception d'un outil automatisé exploitant les API Google pour assurer la sauvegarde
-                        systématique et la synchronisation bidirectionnelle des contacts téléphoniques vers
-                        l'annuaire Google Contacts.
-                    </p>
-
-                    <div class="bg-slate-50 dark:bg-slate-700/50 rounded-xl p-4 mb-6 border border-slate-100 dark:border-slate-700 transition-colors">
-                        <div class="text-sm font-semibold text-slate-900 dark:text-white mb-1 flex items-center gap-2 transition-colors">
-                            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600 dark:text-emerald-400"></i> Impact métier
-                        </div>
-                        <p class="text-sm text-slate-600 dark:text-slate-300 transition-colors">Sécurisation à 100% du répertoire professionnel et
-                            prévention des pertes de données liées aux pannes d'appareils.</p>
-                    </div>
-
-                    <div class="flex flex-wrap gap-2 mb-8">
-                        <span
-                            class="text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2.5 py-1 rounded-md transition-colors">Google
-                            Apps Script</span>
-                        <span
-                            class="text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2.5 py-1 rounded-md transition-colors">People
-                            API</span>
-                        <span
-                            class="text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2.5 py-1 rounded-md transition-colors">Automatisation</span>
-                    </div>
-
-                    <div class="flex items-center gap-4 mt-auto pt-4 border-t border-slate-100 dark:border-slate-700 transition-colors">
-                        <a href="#"
-                            class="flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-slate-300 hover:text-blue-600 dark:hover:text-white transition-colors">
-                            <i data-lucide="github" class="w-4 h-4"></i> Code source
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- PROJET 3 -->
-            <article
-                class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-xl dark:shadow-none transition-all duration-300 flex flex-col overflow-hidden group">
-                <div class="h-56 relative overflow-hidden bg-slate-100 dark:bg-slate-700">
-                    <img loading="lazy" src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="Réunion d'équipe"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                    <div class="absolute top-4 right-4 z-10">
-                        <span
-                            class="text-xs font-bold px-3 py-1 bg-amber-500/90 text-white rounded-full shadow-md backdrop-blur-sm">PoC
-                            / Démo</span>
-                    </div>
-                </div>
-
-                <div class="p-6 md:p-8 pt-0 md:pt-0 flex-grow flex flex-col relative z-20">
-                    <div
-                        class="w-14 h-14 bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 rounded-xl flex items-center justify-center border border-slate-100 dark:border-slate-700 shadow-lg -mt-7 mb-6 relative transition-colors">
-                        <i data-lucide="bot" class="w-7 h-7"></i>
-                    </div>
-
-                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">Workflow d'Onboarding RH Automatisé</h2>
-
-                    <p class="text-slate-600 dark:text-slate-400 mb-6 flex-grow leading-relaxed transition-colors">
-                        Création d'un système déclenché par un Google Form qui génère automatiquement les
-                        contrats (Docs), crée le dossier de l'employé (Drive), et envoie le mail de bienvenue
-                        (Gmail).
-                    </p>
-
-                    <div class="bg-slate-50 dark:bg-slate-700/50 rounded-xl p-4 mb-6 border border-slate-100 dark:border-slate-700 transition-colors">
-                        <div class="text-sm font-semibold text-slate-900 dark:text-white mb-1 flex items-center gap-2 transition-colors">
-                            <i data-lucide="zap" class="w-4 h-4 text-purple-600 dark:text-purple-400"></i> Impact métier
-                        </div>
-                        <p class="text-sm text-slate-600 dark:text-slate-300 transition-colors">Processus d'intégration des nouveaux employés accéléré
-                            de 2h à moins de 5 minutes par recrue.</p>
-                    </div>
-
-                    <div class="flex flex-wrap gap-2 mb-8">
-                        <span
-                            class="text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2.5 py-1 rounded-md transition-colors">Google
-                            Apps Script</span>
-                        <span
-                            class="text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2.5 py-1 rounded-md transition-colors">Drive
-                            API</span>
-                        <span
-                            class="text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2.5 py-1 rounded-md transition-colors">Triggers</span>
-                    </div>
-
-                    <div class="flex items-center gap-4 mt-auto pt-4 border-t border-slate-100 dark:border-slate-700 transition-colors">
-                        <a href="#"
+                        {% endif %}
+                        
+                        {% if project.demo_url %}
+                        <a href="{{ project.demo_url }}" rel="noopener noreferrer" target="_blank"
                             class="flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-slate-300 hover:text-blue-600 dark:hover:text-white transition-colors">
                             <i data-lucide="external-link" class="w-4 h-4"></i> Voir la démo
                         </a>
-                    </div>
-                </div>
-            </article>
+                        {% endif %}
 
-            <!-- PROJET 4 -->
-            <article
-                class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-xl dark:shadow-none transition-all duration-300 flex flex-col overflow-hidden group">
-                <div class="h-56 relative overflow-hidden bg-slate-100 dark:bg-slate-700">
-                    <img loading="lazy" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="Tableau de bord de données"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                    <div class="absolute top-4 right-4 z-10">
-                        <span
-                            class="text-xs font-bold px-3 py-1 bg-emerald-500/90 text-white rounded-full shadow-md backdrop-blur-sm">En
-                            production</span>
-                    </div>
-                </div>
-
-                <div class="p-6 md:p-8 pt-0 md:pt-0 flex-grow flex flex-col relative z-20">
-                    <div
-                        class="w-14 h-14 bg-white dark:bg-slate-900 text-emerald-600 dark:text-emerald-400 rounded-xl flex items-center justify-center border border-slate-100 dark:border-slate-700 shadow-lg -mt-7 mb-6 relative transition-colors">
-                        <i data-lucide="bar-chart-3" class="w-7 h-7"></i>
-                    </div>
-
-                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3 transition-colors">Analytics pour Google Classroom</h2>
-
-                    <p class="text-slate-600 dark:text-slate-400 mb-6 flex-grow leading-relaxed transition-colors">
-                        Script Python extrayant les métriques d'engagement depuis l'API Google Classroom pour
-                        alimenter un dashboard de suivi académique interactif destiné aux décideurs de
-                        l'université.
-                    </p>
-
-                    <div class="bg-slate-50 dark:bg-slate-700/50 rounded-xl p-4 mb-6 border border-slate-100 dark:border-slate-700 transition-colors">
-                        <div class="text-sm font-semibold text-slate-900 dark:text-white mb-1 flex items-center gap-2 transition-colors">
-                            <i data-lucide="eye" class="w-4 h-4 text-emerald-600 dark:text-emerald-400"></i> Impact métier
-                        </div>
-                        <p class="text-sm text-slate-600 dark:text-slate-300 transition-colors">Visibilité en temps réel sur l'activité de +80 000
-                            utilisateurs, facilitant la prise de décision académique.</p>
-                    </div>
-
-                    <div class="flex flex-wrap gap-2 mb-8">
-                        <span
-                            class="text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2.5 py-1 rounded-md transition-colors">Python</span>
-                        <span
-                            class="text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2.5 py-1 rounded-md transition-colors">Classroom
-                            API</span>
-                        <span
-                            class="text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2.5 py-1 rounded-md transition-colors">Looker
-                            Studio</span>
-                    </div>
-
-                    <div class="flex items-center gap-4 mt-auto pt-4 border-t border-slate-100 dark:border-slate-700 transition-colors">
-                        <a href="#"
-                            class="flex items-center gap-2 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
-                            Lire l'article Medium <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        {% if project.article_url %}
+                        <a href="{{ project.article_url }}" rel="noopener noreferrer" target="_blank"
+                            class="flex items-center gap-2 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors ml-auto">
+                            Lire <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
+                        {% endif %}
                     </div>
                 </div>
             </article>
+            {% empty %}
+            <div class="col-span-1 md:col-span-2 text-center py-12">
+                <p class="text-slate-500 dark:text-slate-400 text-lg">Aucun projet trouvé.</p>
+            </div>
+            {% endfor %}
 
         </div>
     </div>

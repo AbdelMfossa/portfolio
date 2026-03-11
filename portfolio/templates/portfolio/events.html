@@ -37,24 +37,25 @@
 
         <div class="space-y-12">
 
-            <!-- EVENT 1 -->
+            {% for event in events %}
+            <!-- EVENT -->
             <article
                 class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-xl dark:shadow-none hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-300 flex flex-col md:flex-row group">
                 <!-- Image & Date -->
                 <div class="w-full md:w-2/5 h-64 md:h-auto relative overflow-hidden bg-slate-100 dark:bg-slate-900 flex-shrink-0">
-                    <img loading="lazy" src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="DevFest Conférence"
+                    <img loading="lazy" src="{% if event.image %}{{ event.image.url }}{% elif event.image_url %}{{ event.image_url }}{% else %}{% static 'portfolio/images/default_event.jpg' %}{% endif %}"
+                        alt="{{ event.title }}"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
 
                     <!-- Bloc Date flottant -->
                     <div
                         class="absolute top-4 left-4 bg-white/95 dark:bg-slate-900/90 backdrop-blur text-center rounded-xl shadow-lg border border-slate-100 dark:border-slate-700 overflow-hidden transition-colors">
                         <div
-                            class="bg-red-500 text-white text-[10px] font-bold uppercase tracking-widest py-1 px-3">
-                            2025</div>
+                            class="bg-blue-600 text-white text-[10px] font-bold uppercase tracking-widest py-1 px-3">
+                            {{ event.date|date:"Y" }}</div>
                         <div class="px-4 py-2">
-                            <div class="text-2xl font-black text-slate-900 dark:text-white leading-none transition-colors">15</div>
-                            <div class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase transition-colors">Nov</div>
+                            <div class="text-2xl font-black text-slate-900 dark:text-white leading-none transition-colors">{{ event.date|date:"d" }}</div>
+                            <div class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase transition-colors">{{ event.date|date:"M" }}</div>
                         </div>
                     </div>
                 </div>
@@ -63,148 +64,63 @@
                 <div class="p-6 md:p-8 flex flex-col flex-grow relative z-20">
                     <div class="flex items-start justify-between mb-4">
                         <div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 font-medium transition-colors">
-                            <i data-lucide="map-pin" class="w-4 h-4 text-blue-600 dark:text-blue-400"></i> Yaoundé, Cameroun
+                            <i data-lucide="map-pin" class="w-4 h-4 text-blue-600 dark:text-blue-400"></i> {{ event.location }}
                         </div>
                         <!-- Badge Rôle -->
+                        {% if event.role %}
                         <span
                             class="text-xs font-bold px-3 py-1 bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 rounded-full border border-purple-200 dark:border-purple-800 flex items-center gap-1 transition-colors">
-                            <i data-lucide="mic" class="w-3 h-3"></i> Speaker & Lead Orga
+                            <i data-lucide="{{ event.role_icon|default:'mic' }}" class="w-3 h-3"></i> {{ event.role }}
                         </span>
+                        {% endif %}
                     </div>
 
                     <h2
                         class="text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                        DevFest Yaoundé 2025
+                        {{ event.title }}
                     </h2>
 
                     <p class="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed flex-grow transition-colors">
-                        En tant que Lead GDG, j'ai coordonné l'organisation globale du plus grand événement tech
-                        de la ville. J'ai également animé une keynote très suivie sur l'utilisation de
-                        <strong class="dark:text-white">NotebookLM</strong> et l'IA générative pour transformer l'analyse de documents.
+                        {{ event.description }}
                     </p>
 
                     <!-- Footer Card (Liens d'action) -->
                     <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100 dark:border-slate-700 transition-colors">
-                        <a href="#" target="_blank" rel="noopener noreferrer"
+                        {% if event.official_site_url %}
+                        <a href="{{ event.official_site_url }}" target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-sm bg-slate-900 dark:bg-slate-700 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-600 dark:hover:bg-slate-600 transition-colors">
                             <i data-lucide="external-link" class="w-4 h-4"></i> Site officiel
                         </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center gap-2 text-sm bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 px-4 py-2 rounded-lg font-medium hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors">
-                            <i data-lucide="linkedin" class="w-4 h-4"></i> Post LinkedIn
-                        </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-medium ml-auto transition-colors">
-                            <i data-lucide="youtube" class="w-4 h-4"></i> Replay vidéo
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- EVENT 2 -->
-            <article
-                class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-xl dark:shadow-none hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-300 flex flex-col md:flex-row group">
-                <div class="w-full md:w-2/5 h-64 md:h-auto relative overflow-hidden bg-slate-100 dark:bg-slate-900 flex-shrink-0">
-                    <img loading="lazy" src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="Atelier IA"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-
-                    <div
-                        class="absolute top-4 left-4 bg-white/95 dark:bg-slate-900/90 backdrop-blur text-center rounded-xl shadow-lg border border-slate-100 dark:border-slate-700 overflow-hidden transition-colors">
-                        <div
-                            class="bg-blue-600 text-white text-[10px] font-bold uppercase tracking-widest py-1 px-3">
-                            2024</div>
-                        <div class="px-4 py-2">
-                            <div class="text-2xl font-black text-slate-900 dark:text-white leading-none transition-colors">20</div>
-                            <div class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase transition-colors">Avr</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-6 md:p-8 flex flex-col flex-grow relative z-20">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 font-medium transition-colors">
-                            <i data-lucide="map-pin" class="w-4 h-4 text-blue-600 dark:text-blue-400"></i> Yaoundé, Cameroun
-                        </div>
-                        <span
-                            class="text-xs font-bold px-3 py-1 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-400 rounded-full border border-emerald-200 dark:border-emerald-800 flex items-center gap-1 transition-colors">
-                            <i data-lucide="users" class="w-3 h-3"></i> Organisateur
-                        </span>
-                    </div>
-
-                    <h2
-                        class="text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                        Campagne "Build with AI"
-                    </h2>
-
-                    <p class="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed flex-grow transition-colors">
-                        Pilotage de l'initiative locale "Build with AI" propulsée par Google. Une journée
-                        entière dédiée à la formation des développeurs locaux sur les API Gemini, permettant la
-                        création de solutions basées sur l'intelligence artificielle.
-                    </p>
-
-                    <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100 dark:border-slate-700 transition-colors">
-                        <a href="#" target="_blank" rel="noopener noreferrer"
+                        {% endif %}
+                        
+                        {% if event.photos_url %}
+                        <a href="{{ event.photos_url }}" target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-sm bg-slate-900 dark:bg-slate-700 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-600 dark:hover:bg-slate-600 transition-colors">
                             <i data-lucide="image" class="w-4 h-4"></i> Voir les photos
                         </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer"
+                        {% endif %}
+
+                        {% if event.linkedin_url %}
+                        <a href="{{ event.linkedin_url }}" target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-sm bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 px-4 py-2 rounded-lg font-medium hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors">
-                            <i data-lucide="twitter" class="w-4 h-4"></i> Thread X (Twitter)
+                            <i data-lucide="linkedin" class="w-4 h-4"></i> Post LinkedIn
                         </a>
+                        {% endif %}
+                        
+                        {% if event.video_url %}
+                        <a href="{{ event.video_url }}" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-medium ml-auto transition-colors">
+                            <i data-lucide="youtube" class="w-4 h-4"></i> Replay vidéo
+                        </a>
+                        {% endif %}
                     </div>
                 </div>
             </article>
-
-            <!-- EVENT 3 -->
-            <article
-                class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-xl dark:shadow-none hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-300 flex flex-col md:flex-row group">
-                <div class="w-full md:w-2/5 h-64 md:h-auto relative overflow-hidden bg-slate-100 dark:bg-slate-900 flex-shrink-0">
-                    <img loading="lazy" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                        alt="Étudiants développeurs"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-
-                    <div
-                        class="absolute top-4 left-4 bg-white/95 dark:bg-slate-900/90 backdrop-blur text-center rounded-xl shadow-lg border border-slate-100 dark:border-slate-700 overflow-hidden transition-colors">
-                        <div
-                            class="bg-slate-800 text-white text-[10px] font-bold uppercase tracking-widest py-1 px-3">
-                            Saison</div>
-                        <div class="px-4 py-2">
-                            <div class="text-lg font-black text-slate-900 dark:text-white leading-none mt-1 transition-colors">20-21</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-6 md:p-8 flex flex-col flex-grow relative z-20">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 font-medium transition-colors">
-                            <i data-lucide="building" class="w-4 h-4 text-blue-600 dark:text-blue-400"></i> Université de Yaoundé I
-                        </div>
-                        <span
-                            class="text-xs font-bold px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 rounded-full border border-blue-200 dark:border-blue-800 flex items-center gap-1 transition-colors">
-                            <i data-lucide="award" class="w-3 h-3"></i> Fondateur & Lead
-                        </span>
-                    </div>
-
-                    <h2
-                        class="text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                        Lancement du Google Developer Student Club (GDSC)
-                    </h2>
-
-                    <p class="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed flex-grow transition-colors">
-                        Création du tout premier club étudiant de l'Université de Yaoundé I. J'ai formé l'équipe
-                        Core (bureau), organisé des dizaines d'ateliers sur le dev Web/Mobile et aidé les
-                        étudiants à créer des solutions tech pour des ONG locales.
-                    </p>
-
-                    <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100 dark:border-slate-700 transition-colors">
-                        <a href="#" target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center gap-2 text-sm bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 px-4 py-2 rounded-lg font-medium hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors">
-                            <i data-lucide="linkedin" class="w-4 h-4"></i> Rétrospective LinkedIn
-                        </a>
-                    </div>
-                </div>
-            </article>
+            {% empty %}
+            <div class="text-center py-12">
+                <p class="text-slate-500 dark:text-slate-400 text-lg">Aucun événement n'est listé pour le moment.</p>
+            </div>
+            {% endfor %}
 
         </div>
     </div>
