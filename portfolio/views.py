@@ -1,17 +1,19 @@
 from django.shortcuts import render
-from .models import Project, Article, Event, Video
+from .models import Project, Article, Event, Video, Certification
 
 def home(request):
     projects = Project.objects.filter(status='production')[:2]
     articles = Article.objects.all()[:3]
     recent_videos = Video.objects.all()[:3]
     events = Event.objects.all()[:3]
+    certifications = Certification.objects.all()
     
     return render(request, 'portfolio/index.html', {
         'projects': projects,
         'articles': articles,
         'videos': recent_videos,
         'events': events,
+        'certifications': certifications,
     })
 
 def projects(request):

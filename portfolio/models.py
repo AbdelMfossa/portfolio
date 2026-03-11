@@ -116,3 +116,25 @@ class Video(models.Model):
 
     def __str__(self):
         return self.title
+
+class Certification(models.Model):
+    title = models.CharField(max_length=200, verbose_name="Titre de la certification")
+    provider = models.CharField(max_length=100, verbose_name="Fournisseur (ex: Google, Coursera)")
+    issue_date = models.DateField(default=timezone.now, verbose_name="Date d'obtention")
+    description = models.TextField(verbose_name="Description")
+    
+    image = models.ImageField(upload_to='certifications/', blank=True, null=True, verbose_name="Image de fond")
+    image_url = models.URLField(blank=True, null=True, verbose_name="URL de l'image (Ex: Unsplash)")
+    icon = models.CharField(max_length=50, default='award', verbose_name="Icône Lucide (ex: cloud, shield-check)")
+    
+    verify_url = models.URLField(blank=True, null=True, verbose_name="Lien de vérification")
+    
+    tags = models.ManyToManyField(Tag, related_name='certifications', blank=True)
+
+    class Meta:
+        verbose_name = "Certification"
+        verbose_name_plural = "Certifications"
+        ordering = ['-issue_date']
+
+    def __str__(self):
+        return f"{self.title} - {self.provider}"

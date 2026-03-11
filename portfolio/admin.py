@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Tag, Project, Article, Event, Video
+from .models import Tag, Project, Article, Event, Video, Certification
 
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
@@ -31,4 +31,11 @@ class VideoAdmin(admin.ModelAdmin):
     list_display = ('title', 'published_date', 'duration', 'is_featured')
     list_filter = ('is_featured', 'published_date', 'tags')
     search_fields = ('title', 'description')
+    filter_horizontal = ('tags',)
+
+@admin.register(Certification)
+class CertificationAdmin(admin.ModelAdmin):
+    list_display = ('title', 'provider', 'issue_date')
+    list_filter = ('provider', 'issue_date', 'tags')
+    search_fields = ('title', 'provider', 'description')
     filter_horizontal = ('tags',)
