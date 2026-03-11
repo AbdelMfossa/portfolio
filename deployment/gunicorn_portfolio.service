@@ -1,0 +1,17 @@
+[Unit]
+Description=gunicorn daemon for portfolio
+Requires=gunicorn_portfolio.socket
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/var/www/portfolio
+ExecStart=/var/www/portfolio/venv/bin/gunicorn \
+          --access-logfile - \
+          --workers 3 \
+          --bind unix:/run/gunicorn_portfolio.sock \
+          config.wsgi:application
+
+[Install]
+WantedBy=multi-user.target

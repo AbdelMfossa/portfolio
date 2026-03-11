@@ -80,8 +80,8 @@ Follow these steps to run the project locally on your machine.
 This project includes configuration files for deploying on an Ubuntu VPS using Nginx and Gunicorn.
 
 Check the `deployment/` directory for detailed configuration templates:
-*   `deployment/gunicorn_abdelmfossa.service`: Systemd service configuration
-*   `deployment/gunicorn_abdelmfossa.socket`: Systemd socket configuration
+*   `deployment/gunicorn_portfolio.service`: Systemd service configuration
+*   `deployment/gunicorn_portfolio.socket`: Systemd socket configuration
 *   `deployment/abdelmfossa.com`: Nginx server block configuration
 *   `deployment/README.md`: Step-by-step instructions for server configuration and SSL setup (Certbot).
 
