@@ -20,5 +20,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('portfolio.urls')),
-    path('s/', include('shortener.urls')),  # Les raccourcis seront de la forme abdelmfossa.com/s/spotify
+    path('', include('shortener.urls')),  # Les raccourcis seront directement à la racine (ex: abdelmfossa.com/spotify)
 ]
