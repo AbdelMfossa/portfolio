@@ -6,7 +6,7 @@ Welcome to the source code of my personal portfolio and blog. I am Abdel Aziz Mf
 
 This dynamic website is built with **Django** and **Tailwind CSS**, designed to showcase my projects, articles, speaking engagements, and expertise in Cloud Engineering and Automation. It also includes a built-in Custom URL Shortener.
 
-## ✨ Key Features
+## Key Features
 
 *   **Dynamic Content Management:** Easily manage Skills, Experiences, Projects, Medium Articles, YouTube Videos, and Events directly from the Django Admin Panel.
 *   **Custom URL Shortener (`/shortener`):** A custom-built linking tool to create, track, and manage branded short links (e.g., `abdelmfossa.com/spotify`), completely replacing the need for services like Bitly.
@@ -15,14 +15,14 @@ This dynamic website is built with **Django** and **Tailwind CSS**, designed to 
 *   **SEO Optimized:** Includes dynamic OpenGraph meta tags for beautiful social media link previews.
 *   **Production Ready:** Configured with Whitenoise, Gunicorn, python-dotenv, and comes with Nginx and Systemd configuration templates for easy VPS deployment.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 *   **Backend:** Python 3.11, Django 4.2
 *   **Frontend:** HTML5, Tailwind CSS (via CDN), Lucide Icons
 *   **Database:** SQLite (Development) / Ready for PostgreSQL (Production)
 *   **Deployment:** Gunicorn, Nginx, Systemd, Whitenoise (Static Files)
 
-## 🚀 Local Development Setup
+## Local Development Setup
 
 Follow these steps to run the project locally on your machine.
 
@@ -75,7 +75,7 @@ Follow these steps to run the project locally on your machine.
     *   Website: `http://127.0.0.1:8000/`
     *   Admin Panel: `http://127.0.0.1:8000/admin/`
 
-## 🌍 Deployment (Ubuntu VPS)
+## Deployment (Ubuntu VPS)
 
 This project includes configuration files for deploying on an Ubuntu VPS using Nginx and Gunicorn.
 
@@ -85,13 +85,15 @@ Check the `deployment/` directory for detailed configuration templates:
 *   `deployment/abdelmfossa.com`: Nginx server block configuration
 *   `deployment/README.md`: Step-by-step instructions for server configuration and SSL setup (Certbot).
 
-## 📄 License
+## License
 
 This project is open-source and available under the [MIT License](LICENSE). Feel free to use it as inspiration for your own portfolio!
 
-## 🤝 Contact & Connections
+## Contact & Connections
 
 *   **Website:** [abdelmfossa.com](https://abdelmfossa.com)
 *   **LinkedIn:** [linkedin.com/in/AbdelMfossa](https://linkedin.com/in/AbdelMfossa)
 *   **YouTube:** [@abdelmfossa](https://youtube.com/@abdelmfossa)
 *   **Medium:** [@abdelmfossa](https://medium.com/@abdelmfossa)
+*   **GitHub:** [github.com/AbdelMfossa](https://github.com/AbdelMfossa)
+*   **Twitter:** [@abdelmfossa](https://twitter.com/abdelmfossa)
