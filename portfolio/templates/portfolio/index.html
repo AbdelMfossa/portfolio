@@ -1,10 +1,10 @@
 {% extends 'portfolio/base.html' %}
-{% load static %}
+{% load static i18n %}
 
-{% block title %}Abdel Aziz Mfossa | Accueil{% endblock %}
-{% block meta_description %}Portfolio de Abdel Aziz Mfossa, Ingénieur Google Workspace, passionné d'automatisation et Lead du GDG Yaoundé.{% endblock %}
-{% block og_title %}Abdel Aziz Mfossa | Accueil{% endblock %}
-{% block og_description %}Ingénieur Google Workspace & Transformateur Digital.{% endblock %}
+{% block title %}{% trans "Abdel Aziz Mfossa | Accueil" %}{% endblock %}
+{% block meta_description %}{% trans "Portfolio de Abdel Aziz Mfossa, Ingénieur Google Workspace, passionné d'automatisation et Lead du GDG Yaoundé." %}{% endblock %}
+{% block og_title %}{% trans "Abdel Aziz Mfossa | Accueil" %}{% endblock %}
+{% block og_description %}{% trans "Ingénieur Google Workspace & Transformateur Digital." %}{% endblock %}
 
 {% block content %}
 <!-- HERO SECTION -->
@@ -18,34 +18,33 @@
                             class="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50 rounded-full text-sm font-semibold tracking-wide shadow-sm mb-6 transition-colors">
                             <span
                                 class="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400 inline-block animate-pulse"></span>
-                            Disponible pour de nouveaux défis
+                            {% trans "Disponible pour de nouveaux défis" %}
                         </div>
 
                         <h1
                             class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-2 transition-colors">
-                            Hello, je suis <span
+                            {% blocktrans %}Hello, je suis <span
                                 class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Abdel
-                                Aziz</span>
+                                Aziz</span>{% endblocktrans %}
                         </h1>
 
                         <h2
                             class="text-3xl md:text-4xl lg:text-4xl font-extrabold tracking-tight text-slate-800 dark:text-slate-200 mb-6 mt-4 leading-tight transition-colors">
-                            Consultant <span
+                            {% blocktrans %}Consultant <span
                                 class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500">Google
-                                Workspace</span> <br class="hidden lg:block" />& Transformateur Digital
+                                Workspace</span> <br class="hidden lg:block" />& Transformateur Digital{% endblocktrans %}
                         </h2>
 
                         <p
                             class="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed transition-colors">
-                            Je conçois des solutions sur mesure pour optimiser vos processus métiers tout en animant
-                            activement l'écosystème tech.
+                            {% trans "Je conçois des solutions sur mesure pour optimiser vos processus métiers tout en animant activement l'écosystème tech." %}
                         </p>
 
                         <div class="flex flex-wrap justify-center lg:justify-start gap-4 mb-10">
                             <a href="{% url 'contact' %}"
                                 class="group flex items-center gap-2 bg-slate-900 dark:bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-slate-800 dark:hover:bg-blue-700 transition-all shadow-md hover:shadow-lg">
                                 <i data-lucide="mail" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
-                                Démarrons un projet
+                                {% trans "Démarrons un projet" %}
                             </a>
                             <a href="{% static 'portfolio/cv/CV-Abdel Aziz Mfossa- Google Workspace Engineer-EN-20260311.pdf' %}" 
                                 #download="CV-Abdel Aziz Mfossa- Google Workspace Engineer-EN-20260311.pdf"
@@ -53,7 +52,7 @@
                                 class="group flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 px-6 py-3 rounded-xl font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-all shadow-sm hover:shadow-md">
                                 <i data-lucide="download"
                                     class="w-5 h-5 text-blue-600 dark:text-blue-400 group-hover:-translate-y-1 transition-transform"></i>
-                                Télécharger mon CV
+                                {% trans "Télécharger mon CV" %}
                             </a>
                         </div>
 
@@ -122,28 +121,25 @@
             <div class="max-w-6xl mx-auto px-4">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white transition-colors">Plus qu'un
+                        <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white transition-colors">{% blocktrans %}Plus qu'un
                             ingénieur, <br />un accélérateur
-                            de productivité.</h2>
+                            de productivité.{% endblocktrans %}</h2>
                         <p class="text-slate-600 dark:text-slate-300 mb-4 text-lg leading-relaxed transition-colors">
-                            Ingénieur Google Workspace certifié et Software Developer (Google Apps Script,
-                            Python, Javascript), je transforme les défis techniques complexes en processus fluides.
+                            {% trans "Ingénieur Google Workspace certifié et Software Developer (Google Apps Script, Python, Javascript), je transforme les défis techniques complexes en processus fluides." %}
                         </p>
                         <p class="text-slate-600 dark:text-slate-300 mb-6 text-lg leading-relaxed transition-colors">
-                            Au-delà du code, je suis un leader communautaire engagé (Lead GDG Yaoundé), speaker et
-                            créateur de contenu. Ce double profil me permet de résoudre des problèmes techniques tout en
-                            inspirant et en formant les équipes.
+                            {% trans "Au-delà du code, je suis un leader communautaire engagé (Lead GDG Yaoundé), speaker et créateur de contenu. Ce double profil me permet de résoudre des problèmes techniques tout en inspirant et en formant les équipes." %}
                         </p>
                         <div class="grid grid-cols-2 gap-4 mt-8">
                             <div
                                 class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 transition-colors">
                                 <div class="text-3xl font-bold text-blue-600 mb-1">80k+</div>
-                                <div class="text-sm text-slate-500 dark:text-slate-400">Utilisateurs gérés</div>
+                                <div class="text-sm text-slate-500 dark:text-slate-400">{% trans "Utilisateurs gérés" %}</div>
                             </div>
                             <div
                                 class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 transition-colors">
                                 <div class="text-3xl font-bold text-blue-600 mb-1">70%</div>
-                                <div class="text-sm text-slate-500 dark:text-slate-400">Gain de temps via automatisation
+                                <div class="text-sm text-slate-500 dark:text-slate-400">{% trans "Gain de temps via automatisation" %}
                                 </div>
                             </div>
                         </div>
@@ -184,11 +180,9 @@
             class="py-20 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white transition-colors mb-4">Mon Expertise
+                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white transition-colors mb-4">{% trans "Mon Expertise" %}
                     </h2>
-                    <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto transition-colors">Un mix parfait
-                        entre administration système,
-                        développement et intelligence artificielle.</p>
+                    <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto transition-colors">{% trans "Un mix parfait entre administration système, développement et intelligence artificielle." %}</p>
                 </div>
 
                 <!-- Tailwind Safe List:
@@ -228,11 +222,11 @@
                 <div class="flex justify-center gap-4 mb-12">
                     <button id="tab-btn-exp"
                         class="px-6 py-2 rounded-full font-medium transition-colors bg-slate-900 text-white dark:bg-blue-600 dark:text-white">
-                        Expériences
+                        {% trans "Expériences" %}
                     </button>
                     <button id="tab-btn-proj"
                         class="px-6 py-2 rounded-full font-medium transition-colors bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700">
-                        Projets Clés
+                        {% trans "Projets Clés" %}
                     </button>
                 </div>
 
@@ -350,26 +344,26 @@
                                 {% if project.github_url %}
                                 <a href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer"
                                     class="flex-1 flex justify-center items-center gap-2 bg-slate-900 dark:bg-slate-700 text-white py-2 rounded-lg text-xs font-medium hover:bg-slate-800 dark:hover:bg-slate-600 transition-colors">
-                                    <i data-lucide="github" class="w-3.5 h-3.5"></i> Code source
+                                    <i data-lucide="github" class="w-3.5 h-3.5"></i> {% trans "Code source" %}
                                 </a>
                                 {% endif %}
                                 {% if project.demo_url %}
                                 <a href="{{ project.demo_url }}" target="_blank" rel="noopener noreferrer" rel="noreferrer"
                                     class="flex-1 flex justify-center items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 py-2 rounded-lg text-xs font-medium hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors">
-                                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Visiter le site
+                                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i> {% trans "Visiter le site" %}
                                 </a>
                                 {% endif %}
                                 {% if project.article_url and not project.github_url and not project.demo_url %}
                                 <a href="{{ project.article_url }}" target="_blank" rel="noopener noreferrer" rel="noreferrer"
                                     class="flex-1 flex justify-center items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 py-2 rounded-lg text-xs font-medium hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors">
-                                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Voir l'article
+                                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i> {% trans "Voir l'article" %}
                                 </a>
                                 {% endif %}
                             </div>
                         </div>
                         {% empty %}
                         <div class="col-span-1 md:col-span-2 lg:col-span-3 text-center py-8">
-                            <p class="text-slate-500 dark:text-slate-400">Aucun projet à afficher pour le moment.</p>
+                            <p class="text-slate-500 dark:text-slate-400">{% trans "Aucun projet à afficher pour le moment." %}</p>
                         </div>
                         {% endfor %}
                     </div>
@@ -377,7 +371,7 @@
                     <div class="text-center mt-10">
                         <a href="{% url 'projects' %}"
                             class="inline-flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold px-6 py-3 rounded-full hover:border-blue-300 dark:hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-all shadow-sm">
-                            Découvrir tous mes projets <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            {% trans "Découvrir tous mes projets" %} <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
                     </div>
                 </div>
@@ -389,10 +383,9 @@
             <div class="max-w-6xl mx-auto px-4">
                 <div class="grid md:grid-cols-2 gap-16 items-center">
                     <div>
-                        <h2 class="text-3xl font-bold mb-6">Leadership & Communauté</h2>
+                        <h2 class="text-3xl font-bold mb-6">{% trans "Leadership & Communauté" %}</h2>
                         <p class="text-slate-300 mb-8 text-lg">
-                            Je crois fermement que le savoir grandit quand il est partagé. Je m'investis pour dynamiser
-                            l'écosystème technologique et accompagner la prochaine génération de développeurs.
+                            {% trans "Je crois fermement que le savoir grandit quand il est partagé. Je m'investis pour dynamiser l'écosystème technologique et accompagner la prochaine génération de développeurs." %}
                         </p>
 
                         <div class="space-y-6">
@@ -401,10 +394,8 @@
                                     <i data-lucide="users" class="text-blue-400 w-6 h-6"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold">Lead GDG Yaoundé (2023 - Présent)</h4>
-                                    <p class="text-slate-400 text-sm mt-1">Organisation d'événements majeurs (DevFest),
-                                        pilotage de la campagne "Build with AI", mentoring et développement de
-                                        partenariats.</p>
+                                    <h4 class="text-xl font-bold">{% trans "Lead GDG Yaoundé (2023 - Présent)" %}</h4>
+                                    <p class="text-slate-400 text-sm mt-1">{% trans "Organisation d'événements majeurs (DevFest), pilotage de la campagne 'Build with AI', mentoring et développement de partenariats." %}</p>
                                 </div>
                             </div>
 
@@ -413,9 +404,8 @@
                                     <i data-lucide="mic" class="text-purple-400 w-6 h-6"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold">Speaker & Créateur de contenu</h4>
-                                    <p class="text-slate-400 text-sm mt-1">Keynote Speaker sur "NotebookLM" au DevFest
-                                        Yaoundé. Rédaction d'articles techniques sur Medium et création de tutoriels.
+                                    <h4 class="text-xl font-bold">{% trans "Speaker & Créateur de contenu" %}</h4>
+                                    <p class="text-slate-400 text-sm mt-1">{% trans "Keynote Speaker sur 'NotebookLM' au DevFest Yaoundé. Rédaction d'articles techniques sur Medium et création de tutoriels." %}
                                     </p>
                                 </div>
                             </div>
@@ -425,9 +415,8 @@
                                     <i data-lucide="award" class="text-emerald-400 w-6 h-6"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold">Fondateur GDSC Université de Yaoundé I</h4>
-                                    <p class="text-slate-400 text-sm mt-1">Création du premier club étudiant, formation
-                                        de l'équipe Core et organisation de dizaines d'ateliers pratiques.</p>
+                                    <h4 class="text-xl font-bold">{% trans "Fondateur GDSC Université de Yaoundé I" %}</h4>
+                                    <p class="text-slate-400 text-sm mt-1">{% trans "Création du premier club étudiant, formation de l'équipe Core et organisation de dizaines d'ateliers pratiques." %}</p>
                                 </div>
                             </div>
                         </div>
@@ -435,7 +424,7 @@
                         <div class="mt-10">
                             <a href="{% url 'events' %}"
                                 class="inline-flex items-center gap-2 text-blue-400 font-semibold hover:text-blue-300 transition-colors">
-                                Découvrir mes interventions <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                {% trans "Découvrir mes interventions" %} <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </a>
                         </div>
                     </div>
@@ -474,9 +463,8 @@
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
                     <div>
                         <h2 class="text-3xl font-bold text-slate-900 dark:text-white transition-colors mb-4">
-                            Certifications</h2>
-                        <p class="text-slate-600 dark:text-slate-400 transition-colors">Validation de mes compétences
-                            par les leaders de l'industrie.</p>
+                            {% trans "Certifications" %}</h2>
+                        <p class="text-slate-600 dark:text-slate-400 transition-colors">{% trans "Validation de mes compétences par les leaders de l'industrie." %}</p>
                     </div>
 
                     <!-- Ligne décorative et Contrôles du Carrousel -->
@@ -548,7 +536,7 @@
                             <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700 transition-colors">
                                 <a href="{{ cert.verify_url }}" target="_blank" rel="noopener noreferrer"
                                     class="inline-flex items-center gap-2 text-sm text-blue-600 dark:text-blue-400 font-bold hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
-                                    Vérifier le badge <i data-lucide="external-link" class="w-4 h-4"></i>
+                                    {% trans "Vérifier le badge" %} <i data-lucide="external-link" class="w-4 h-4"></i>
                                 </a>
                             </div>
                             {% endif %}
@@ -556,7 +544,7 @@
                     </div>
                     {% empty %}
                     <div class="w-full text-center py-8">
-                        <p class="text-slate-500 dark:text-slate-400">Aucune certification n'est disponible pour le moment.</p>
+                        <p class="text-slate-500 dark:text-slate-400">{% trans "Aucune certification n'est disponible pour le moment." %}</p>
                     </div>
                     {% endfor %}
 

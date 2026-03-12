@@ -1,10 +1,10 @@
 {% extends 'portfolio/base.html' %}
-{% load static %}
+{% load static i18n %}
 
-{% block title %}Événements & Communauté | Abdel Aziz Mfossa{% endblock %}
-{% block meta_description %}Découvrez mes interventions, conférences et mon engagement communautaire avec le GDG Yaoundé.{% endblock %}
-{% block og_title %}Événements & Communauté | Abdel Aziz Mfossa{% endblock %}
-{% block og_description %}Mes interventions, conférences et engagement tech communautaire.{% endblock %}
+{% block title %}{% trans "Événements & Communauté | Abdel Aziz Mfossa" %}{% endblock %}
+{% block meta_description %}{% trans "Découvrez mes interventions, conférences et mon engagement communautaire avec le GDG Yaoundé." %}{% endblock %}
+{% block og_title %}{% trans "Événements & Communauté | Abdel Aziz Mfossa" %}{% endblock %}
+{% block og_description %}{% trans "Mes interventions, conférences et engagement tech communautaire." %}{% endblock %}
 
 {% block content %}
 <!-- HEADER DE LA PAGE (Thème sombre pour l'impact) -->
@@ -19,14 +19,13 @@
         <div
             class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20 text-blue-300 rounded-full text-sm font-semibold tracking-wide mb-6">
             <i data-lucide="users" class="w-4 h-4"></i>
-            Google Developer Groups Lead
+            {% trans "Google Developer Groups Lead" %}
         </div>
-        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">Communauté & <span
-                class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Interventions</span>
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">{% blocktrans %}Communauté & <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Interventions</span>{% endblocktrans %}
         </h1>
         <p class="text-lg text-slate-300 max-w-2xl">
-            Mon engagement pour l'écosystème tech africain. Découvrez mes conférences, les événements que
-            j'organise avec le GDG Yaoundé et mes actions de mentoring.
+            {% trans "Mon engagement pour l'écosystème tech africain. Découvrez mes conférences, les événements que j'organise avec le GDG Yaoundé et mes actions de mentoring." %}
         </p>
     </div>
 </section>
@@ -89,28 +88,28 @@
                         {% if event.official_site_url %}
                         <a href="{{ event.official_site_url }}" target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-sm bg-slate-900 dark:bg-slate-700 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-600 dark:hover:bg-slate-600 transition-colors">
-                            <i data-lucide="external-link" class="w-4 h-4"></i> Site officiel
+                            <i data-lucide="external-link" class="w-4 h-4"></i> {% trans "Site officiel" %}
                         </a>
                         {% endif %}
                         
                         {% if event.photos_url %}
                         <a href="{{ event.photos_url }}" target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-sm bg-slate-900 dark:bg-slate-700 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-600 dark:hover:bg-slate-600 transition-colors">
-                            <i data-lucide="image" class="w-4 h-4"></i> Voir les photos
+                            <i data-lucide="image" class="w-4 h-4"></i> {% trans "Voir les photos" %}
                         </a>
                         {% endif %}
 
                         {% if event.linkedin_url %}
                         <a href="{{ event.linkedin_url }}" target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-sm bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 px-4 py-2 rounded-lg font-medium hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors">
-                            <i data-lucide="linkedin" class="w-4 h-4"></i> Post LinkedIn
+                            <i data-lucide="linkedin" class="w-4 h-4"></i> {% trans "Post LinkedIn" %}
                         </a>
                         {% endif %}
                         
                         {% if event.video_url %}
                         <a href="{{ event.video_url }}" target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-medium ml-auto transition-colors">
-                            <i data-lucide="youtube" class="w-4 h-4"></i> Replay vidéo
+                            <i data-lucide="youtube" class="w-4 h-4"></i> {% trans "Replay vidéo" %}
                         </a>
                         {% endif %}
                     </div>
@@ -118,7 +117,7 @@
             </article>
             {% empty %}
             <div class="text-center py-12">
-                <p class="text-slate-500 dark:text-slate-400 text-lg">Aucun événement n'est listé pour le moment.</p>
+                <p class="text-slate-500 dark:text-slate-400 text-lg">{% trans "Aucun événement n'est listé pour le moment." %}</p>
             </div>
             {% endfor %}
 

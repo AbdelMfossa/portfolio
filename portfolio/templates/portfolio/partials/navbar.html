@@ -1,4 +1,4 @@
-{% load static %}
+{% load static i18n %}
 <!-- HEADER / NAVIGATION -->
 <header
     class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
@@ -12,15 +12,44 @@
         </a>
         <!-- Menu Desktop -->
         <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
-            <a href="{% url 'home' %}" class="{% if request.resolver_match.url_name == 'home' %}text-blue-600 dark:text-blue-500 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-400{% endif %} transition-colors">Accueil</a>
+            <a href="{% url 'home' %}" class="{% if request.resolver_match.url_name == 'home' %}text-blue-600 dark:text-blue-500 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-400{% endif %} transition-colors">{% trans "Accueil" %}</a>
             <a href="{% url 'projects' %}"
-                class="{% if request.resolver_match.url_name == 'projects' %}text-blue-600 dark:text-blue-500 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-400{% endif %} transition-colors">Projets</a>
-            <a href="{% url 'blog' %}" class="{% if request.resolver_match.url_name == 'blog' %}text-blue-600 dark:text-blue-500 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-400{% endif %} transition-colors">Articles</a>
+                class="{% if request.resolver_match.url_name == 'projects' %}text-blue-600 dark:text-blue-500 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-400{% endif %} transition-colors">{% trans "Projets" %}</a>
+            <a href="{% url 'blog' %}" class="{% if request.resolver_match.url_name == 'blog' %}text-blue-600 dark:text-blue-500 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-400{% endif %} transition-colors">{% trans "Articles" %}</a>
             <a href="{% url 'events' %}"
-                class="{% if request.resolver_match.url_name == 'events' %}text-blue-600 dark:text-blue-500 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-400{% endif %} transition-colors">Événements</a>
-            <a href="{% url 'videos' %}" class="{% if request.resolver_match.url_name == 'videos' %}text-blue-600 dark:text-blue-500 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-400{% endif %} transition-colors">Vidéos</a>
+                class="{% if request.resolver_match.url_name == 'events' %}text-blue-600 dark:text-blue-500 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-400{% endif %} transition-colors">{% trans "Événements" %}</a>
+            <a href="{% url 'videos' %}" class="{% if request.resolver_match.url_name == 'videos' %}text-blue-600 dark:text-blue-500 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-400{% endif %} transition-colors">{% trans "Vidéos" %}</a>
         </nav>
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2">
+            <!-- Sélecteur de langue -->
+            <div class="flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg p-1 mr-2">
+                <form action="{% url 'set_language' %}" method="post" class="flex gap-1">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{% if request.LANGUAGE_CODE != 'fr' %}{{ request.get_full_path|slice:'3:' }}{% else %}{{ request.get_full_path }}{% endif %}">
+                    <button type="submit" name="language" value="fr" 
+                        class="flex items-center gap-2 px-2.5 py-1.5 rounded-md text-xs font-bold transition-all {% if request.LANGUAGE_CODE == 'fr' %}bg-white dark:bg-slate-700 text-blue-600 shadow-sm{% else %}text-slate-400 hover:text-slate-600 dark:hover:text-slate-200{% endif %}">
+                        <svg class="w-3.5 h-3.5 rounded-full overflow-hidden border border-slate-200 dark:border-slate-600" viewBox="0 0 3 2">
+                            <rect width="1" height="2" fill="#002395"/>
+                            <rect width="1" height="2" x="1" fill="#fff"/>
+                            <rect width="1" height="2" x="2" fill="#ed2939"/>
+                        </svg>
+                        FR
+                    </button>
+                    <button type="submit" name="language" value="en" 
+                        class="flex items-center gap-2 px-2.5 py-1.5 rounded-md text-xs font-bold transition-all {% if request.LANGUAGE_CODE == 'en' %}bg-white dark:bg-slate-700 text-blue-600 shadow-sm{% else %}text-slate-400 hover:text-slate-600 dark:hover:text-slate-200{% endif %}">
+                        <svg class="w-3.5 h-3.5 rounded-full overflow-hidden border border-slate-200 dark:border-slate-600" viewBox="0 0 60 30">
+                            <clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
+                            <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" clip-path="url(#s)"/>
+                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4" clip-path="url(#s)"/>
+                            <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+                            <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
+                        </svg>
+                        EN
+                    </button>
+                </form>
+            </div>
+
             <!-- Toggle Mode Sombre -->
             <button id="theme-toggle" type="button"
                 class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700 rounded-lg text-sm p-2 transition-colors">
@@ -30,7 +59,7 @@
 
             <a href="{% url 'contact' %}"
                 class="hidden md:inline-flex {% if request.resolver_match.url_name == 'contact' %}bg-white text-blue-600 border border-blue-600{% else %}bg-blue-600 text-white border border-transparent hover:bg-blue-700{% endif %} px-5 py-2 rounded-full text-sm font-medium transition-colors shadow-sm">
-                Me contacter
+                {% trans "Me contacter" %}
             </a>
 
             <!-- Bouton Burger Mobile -->
@@ -47,16 +76,16 @@
         class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-xl z-40 transition-all">
         <nav class="flex flex-col py-6 gap-6 text-sm font-medium text-slate-700 dark:text-slate-200 items-center">
             <a href="{% url 'home' %}"
-                class="{% if request.resolver_match.url_name == 'home' %}text-blue-600 dark:text-blue-400 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-300{% endif %} transition-colors">Accueil</a>
+                class="{% if request.resolver_match.url_name == 'home' %}text-blue-600 dark:text-blue-400 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-300{% endif %} transition-colors">{% trans "Accueil" %}</a>
             <a href="{% url 'projects' %}"
-                class="{% if request.resolver_match.url_name == 'projects' %}text-blue-600 dark:text-blue-400 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-300{% endif %} transition-colors">Projets</a>
-            <a href="{% url 'blog' %}" class="{% if request.resolver_match.url_name == 'blog' %}text-blue-600 dark:text-blue-400 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-300{% endif %} transition-colors">Articles</a>
+                class="{% if request.resolver_match.url_name == 'projects' %}text-blue-600 dark:text-blue-400 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-300{% endif %} transition-colors">{% trans "Projets" %}</a>
+            <a href="{% url 'blog' %}" class="{% if request.resolver_match.url_name == 'blog' %}text-blue-600 dark:text-blue-400 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-300{% endif %} transition-colors">{% trans "Articles" %}</a>
             <a href="{% url 'events' %}"
-                class="{% if request.resolver_match.url_name == 'events' %}text-blue-600 dark:text-blue-400 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-300{% endif %} transition-colors">Événements</a>
-            <a href="{% url 'videos' %}" class="{% if request.resolver_match.url_name == 'videos' %}text-blue-600 dark:text-blue-400 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-300{% endif %} transition-colors">Vidéos</a>
+                class="{% if request.resolver_match.url_name == 'events' %}text-blue-600 dark:text-blue-400 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-300{% endif %} transition-colors">{% trans "Événements" %}</a>
+            <a href="{% url 'videos' %}" class="{% if request.resolver_match.url_name == 'videos' %}text-blue-600 dark:text-blue-400 font-bold{% else %}hover:text-blue-600 dark:hover:text-blue-300{% endif %} transition-colors">{% trans "Vidéos" %}</a>
             <a href="{% url 'contact' %}"
                 class="{% if request.resolver_match.url_name == 'contact' %}bg-white border text-blue-600 border-blue-600{% else %}bg-blue-600 border border-transparent text-white hover:bg-blue-700{% endif %} px-8 py-3 rounded-full transition-colors shadow-sm mt-2 text-base">
-                Me contacter
+                {% trans "Me contacter" %}
             </a>
         </nav>
     </div>

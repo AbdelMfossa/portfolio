@@ -1,0 +1,1960 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-12 00:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: config/settings.py:125
+msgid "French"
+msgstr "French"
+
+#: config/settings.py:126
+msgid "English"
+msgstr "English"
+
+#: portfolio/templates/404.html:4
+msgid "Page non trouvée | Abdel Aziz Mfossa"
+msgstr "Page Not Found | Abdel Aziz Mfossa"
+
+#: portfolio/templates/404.html:22
+msgid "Oups ! Cette page s'est envolée."
+msgstr "Oops! This page has flown away."
+
+#: portfolio/templates/404.html:24
+msgid ""
+"La page que vous recherchez n'existe pas ou a été déplacée. Pas "
+"d'inquiétude, vous pouvez retrouver votre chemin facilement."
+msgstr ""
+"The page you are looking for does not exist or has been moved. No "
+"worries, you can find your way back easily."
+
+#: portfolio/templates/404.html:30
+msgid "Retour à l'accueil"
+msgstr "Back to Home"
+
+#: portfolio/templates/404.html:34
+msgid "Voir mes projets"
+msgstr "See my projects"
+
+#: portfolio/templates/500.html:4
+msgid "Erreur Serveur | Abdel Aziz Mfossa"
+msgstr "Server Error | Abdel Aziz Mfossa"
+
+#: portfolio/templates/500.html:22
+msgid "Un petit souci technique..."
+msgstr "A little technical issue..."
+
+#: portfolio/templates/500.html:24
+msgid ""
+"Désolé, une erreur interne est survenue sur nos serveurs. Nous travaillons "
+"déjà à résoudre le problème. Merci de réessayer dans quelques instants."
+msgstr ""
+"Sorry, an internal error occurred on our servers. We are already working to "
+"resolve the issue. Please try again in a few moments."
+
+#: portfolio/templates/500.html:30
+msgid "Actualiser la page"
+msgstr "Refresh page"
+
+#: portfolio/templates/500.html:34
+msgid "Me signaler le bug"
+msgstr "Report bug"
+
+#: portfolio/templates/portfolio/blog.html:4
+#: portfolio/templates/portfolio/blog.html:6
+msgid "Mes Articles | Abdel Aziz Mfossa"
+msgstr "My Articles | Abdel Aziz Mfossa"
+
+#: portfolio/templates/portfolio/blog.html:5
+msgid ""
+"Retrouvez mes articles, tutoriels et réflexions sur Google Workspace, "
+"l'automatisation et l'IA publiés sur Medium."
+msgstr ""
+"Find my articles, tutorials and reflections on Google Workspace, "
+"automation and AI published on Medium."
+
+#: portfolio/templates/portfolio/blog.html:7
+msgid ""
+"Articles, tutoriels et réflexions sur Google Workspace, l'automatisation et "
+"l'IA."
+msgstr ""
+"Articles, tutorials and reflections on Google Workspace, automation and AI."
+
+#: portfolio/templates/portfolio/blog.html:13
+msgid ""
+"Articles & <span\n"
+"                class=\"text-transparent bg-clip-text bg-gradient-to-r from-"
+"blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300\">Tutoriels</span>"
+msgstr ""
+"Articles & <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-"
+"blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300\">Tutorials</span>"
+
+#: portfolio/templates/portfolio/blog.html:17
+msgid ""
+"Je partage régulièrement mes découvertes, mes astuces de code et mes "
+"réflexions sur l'écosystème Google, l'automatisation et l'intelligence "
+"artificielle sur Medium."
+msgstr ""
+"I regularly share my discoveries, my code tips and my thoughts on the "
+"Google ecosystem, automation and artificial intelligence on Medium."
+
+#: portfolio/templates/portfolio/blog.html:24
+msgid "S'abonner sur Medium"
+msgstr "Subscribe on Medium"
+
+#: portfolio/templates/portfolio/blog.html:59
+msgid "min de lecture"
+msgstr "min read"
+
+#: portfolio/templates/portfolio/blog.html:84
+msgid "Lire sur Medium"
+msgstr "Read on Medium"
+
+#: portfolio/templates/portfolio/blog.html:95
+msgid "Aucun article publié pour le moment."
+msgstr "No articles published for the moment."
+
+#: portfolio/templates/portfolio/contact.html:4
+#: portfolio/templates/portfolio/contact.html:6
+msgid "Contact | Abdel Aziz Mfossa"
+msgstr "Contact | Abdel Aziz Mfossa"
+
+#: portfolio/templates/portfolio/contact.html:5
+msgid ""
+"Contactez Abdel Aziz Mfossa pour discuter de votre projet, prendre rendez-"
+"vous, ou simplement échanger sur l'ingénierie Cloud et le développement."
+msgstr ""
+"Contact Abdel Aziz Mfossa to discuss your project, book an appointment, or "
+"simply exchange on Cloud engineering and development."
+
+#: portfolio/templates/portfolio/contact.html:7
+msgid "Discutons de votre projet en ingénierie Cloud et développement."
+msgstr "Let's discuss your Cloud engineering and development project."
+
+#: portfolio/templates/portfolio/contact.html:13
+#, fuzzy
+#| msgid ""
+#| "Hello, je suis <span\n"
+#| "                                class=\"text-transparent bg-clip-text bg-"
+#| "gradient-to-r from-blue-600 to-indigo-600\">Abdel\n"
+#| "                                Aziz</span>"
+msgid ""
+"Travaillons <span class=\"text-transparent bg-clip-text bg-gradient-to-r "
+"from-blue-600 to-indigo-600\">ensemble</span>"
+msgstr ""
+"Working <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-"
+"blue-600 to-indigo-600\">together</span>"
+
+#: portfolio/templates/portfolio/contact.html:15
+msgid ""
+"Remplissez le formulaire ci-dessous pour me parler de votre projet, ou "
+"planifiez directement un échange selon vos disponibilités."
+msgstr ""
+"Fill out the form below to tell me about your project, or schedule an "
+"exchange directly according to your availability."
+
+#: portfolio/templates/portfolio/contact.html:29
+msgid "Laissez-moi un message"
+msgstr "Leave me a message"
+
+#: portfolio/templates/portfolio/contact.html:30
+msgid "Je m'efforce de répondre à toutes les requêtes dans un délai rapide."
+msgstr "I strive to respond to all inquiries in a timely manner."
+
+#: portfolio/templates/portfolio/contact.html:39
+msgid "Chargement du formulaire..."
+msgstr "Loading form..."
+
+#: portfolio/templates/portfolio/contact.html:52
+msgid "Formulaire de contact Abdel Aziz Mfossa"
+msgstr "Abdel Aziz Mfossa Contact Form"
+
+#: portfolio/templates/portfolio/contact.html:65
+msgid "Réserver un call"
+msgstr "Book a call"
+
+#: portfolio/templates/portfolio/contact.html:66
+msgid "Discutons de vive voix de votre projet."
+msgstr "Let's discuss your project live."
+
+#: portfolio/templates/portfolio/events.html:4
+#: portfolio/templates/portfolio/events.html:6
+msgid "Événements & Communauté | Abdel Aziz Mfossa"
+msgstr "Events & Community | Abdel Aziz Mfossa"
+
+#: portfolio/templates/portfolio/events.html:5
+msgid ""
+"Découvrez mes interventions, conférences et mon engagement communautaire "
+"avec le GDG Yaoundé."
+msgstr ""
+"Discover my speaking engagements, conferences and my community involvement "
+"with GDG Yaoundé."
+
+#: portfolio/templates/portfolio/events.html:7
+msgid "Mes interventions, conférences et engagement tech communautaire."
+msgstr "My interventions, conferences and tech community engagement."
+
+#: portfolio/templates/portfolio/events.html:22
+msgid "Google Developer Groups Lead"
+msgstr "Google Developer Groups Lead"
+
+#: portfolio/templates/portfolio/events.html:24
+#, fuzzy
+#| msgid ""
+#| "Hello, je suis <span\n"
+#| "                                class=\"text-transparent bg-clip-text bg-"
+#| "gradient-to-r from-blue-600 to-indigo-600\">Abdel\n"
+#| "                                Aziz</span>"
+msgid ""
+"Communauté & <span\n"
+"                class=\"text-transparent bg-clip-text bg-gradient-to-r from-"
+"blue-400 to-cyan-300\">Interventions</span>"
+msgstr ""
+"Community & <span class=\"text-transparent bg-clip-text bg-gradient-to-r "
+"from-blue-400 to-cyan-300\">Speeches</span>"
+
+#: portfolio/templates/portfolio/events.html:28
+msgid ""
+"Mon engagement pour l'écosystème tech africain. Découvrez mes conférences, "
+"les événements que j'organise avec le GDG Yaoundé et mes actions de "
+"mentoring."
+msgstr ""
+"My commitment to the African tech ecosystem. Discover my conferences, the "
+"events I organize with GDG Yaoundé and my mentoring actions."
+
+#: portfolio/templates/portfolio/events.html:91
+msgid "Site officiel"
+msgstr "Official site"
+
+#: portfolio/templates/portfolio/events.html:98
+msgid "Voir les photos"
+msgstr "See photos"
+
+#: portfolio/templates/portfolio/events.html:105
+msgid "Post LinkedIn"
+msgstr "LinkedIn post"
+
+#: portfolio/templates/portfolio/events.html:112
+msgid "Replay vidéo"
+msgstr "Video replay"
+
+#: portfolio/templates/portfolio/events.html:120
+msgid "Aucun événement n'est listé pour le moment."
+msgstr "No events are listed for the moment."
+
+#: portfolio/templates/portfolio/index.html:4
+#: portfolio/templates/portfolio/index.html:6
+msgid "Abdel Aziz Mfossa | Accueil"
+msgstr "Abdel Aziz Mfossa | Home"
+
+#: portfolio/templates/portfolio/index.html:5
+msgid ""
+"Portfolio de Abdel Aziz Mfossa, Ingénieur Google Workspace, passionné "
+"d'automatisation et Lead du GDG Yaoundé."
+msgstr ""
+"Portfolio of Abdel Aziz Mfossa, Google Workspace Engineer, automation "
+"enthusiast and GDG Yaoundé Lead."
+
+#: portfolio/templates/portfolio/index.html:7
+msgid "Ingénieur Google Workspace & Transformateur Digital."
+msgstr "Google Workspace Engineer & Digital Transformer."
+
+#: portfolio/templates/portfolio/index.html:21
+msgid "Disponible pour de nouveaux défis"
+msgstr "Available for new challenges"
+
+#: portfolio/templates/portfolio/index.html:26
+msgid ""
+"Hello, je suis <span\n"
+"                                class=\"text-transparent bg-clip-text bg-"
+"gradient-to-r from-blue-600 to-indigo-600\">Abdel\n"
+"                                Aziz</span>"
+msgstr ""
+"Hello, I am <span class=\"text-transparent bg-clip-text bg-gradient-to-r "
+"from-blue-600 to-indigo-600\">Abdel Aziz</span>"
+
+#: portfolio/templates/portfolio/index.html:33
+msgid ""
+"Consultant <span\n"
+"                                class=\"text-transparent bg-clip-text bg-"
+"gradient-to-r from-cyan-500 to-blue-500\">Google\n"
+"                                Workspace</span> <br class=\"hidden lg:block"
+"\" />& Transformateur Digital"
+msgstr ""
+"Consultant <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-"
+"cyan-500 to-blue-500\">Google Workspace</span> <br class=\"hidden lg:block"
+"\" />& Digital Transformer"
+
+#: portfolio/templates/portfolio/index.html:40
+msgid ""
+"Je conçois des solutions sur mesure pour optimiser vos processus métiers "
+"tout en animant activement l'écosystème tech."
+msgstr ""
+"I design customized solutions to optimize your business processes while "
+"actively leading the tech ecosystem."
+
+#: portfolio/templates/portfolio/index.html:47
+msgid "Démarrons un projet"
+msgstr "Start a project"
+
+#: portfolio/templates/portfolio/index.html:55
+msgid "Télécharger mon CV"
+msgstr "Download my CV"
+
+#: portfolio/templates/portfolio/index.html:124
+msgid ""
+"Plus qu'un\n"
+"                            ingénieur, <br />un accélérateur\n"
+"                            de productivité."
+msgstr ""
+"More than an\n"
+"                            engineer, <br />a productivity\n"
+"                            accelerator."
+
+#: portfolio/templates/portfolio/index.html:128
+msgid ""
+"Ingénieur Google Workspace certifié et Software Developer (Google Apps "
+"Script, Python, Javascript), je transforme les défis techniques complexes en "
+"processus fluides."
+msgstr ""
+"Certified Google Workspace Engineer and Software Developer (Google Apps "
+"Script, Python, Javascript), I transform complex technical challenges into "
+"smooth processes."
+
+#: portfolio/templates/portfolio/index.html:131
+msgid ""
+"Au-delà du code, je suis un leader communautaire engagé (Lead GDG Yaoundé), "
+"speaker et créateur de contenu. Ce double profil me permet de résoudre des "
+"problèmes techniques tout en inspirant et en formant les équipes."
+msgstr ""
+"Beyond coding, I am a committed community leader (GDG Yaoundé Lead), speaker "
+"and content creator. This double profile allows me to solve technical "
+"problems while inspiring and training teams."
+
+#: portfolio/templates/portfolio/index.html:137
+msgid "Utilisateurs gérés"
+msgstr "Managed users"
+
+#: portfolio/templates/portfolio/index.html:142
+msgid "Gain de temps via automatisation"
+msgstr "Time saved via automation"
+
+#: portfolio/templates/portfolio/index.html:183
+msgid "Mon Expertise"
+msgstr "My Expertise"
+
+#: portfolio/templates/portfolio/index.html:185
+msgid ""
+"Un mix parfait entre administration système, développement et intelligence "
+"artificielle."
+msgstr ""
+"A perfect mix of system administration, development and artificial "
+"intelligence."
+
+#: portfolio/templates/portfolio/index.html:225
+msgid "Expériences"
+msgstr "Experience"
+
+#: portfolio/templates/portfolio/index.html:229
+msgid "Projets Clés"
+msgstr "Key Projects"
+
+#: portfolio/templates/portfolio/index.html:347
+#: portfolio/templates/portfolio/projects.html:96
+msgid "Code source"
+msgstr "Source code"
+
+#: portfolio/templates/portfolio/index.html:353
+msgid "Visiter le site"
+msgstr "Visit site"
+
+#: portfolio/templates/portfolio/index.html:359
+msgid "Voir l'article"
+msgstr "View article"
+
+#: portfolio/templates/portfolio/index.html:366
+msgid "Aucun projet à afficher pour le moment."
+msgstr "No projects to display for now."
+
+#: portfolio/templates/portfolio/index.html:374
+msgid "Découvrir tous mes projets"
+msgstr "Discover all my projects"
+
+#: portfolio/templates/portfolio/index.html:386
+msgid "Leadership & Communauté"
+msgstr "Leadership & Community"
+
+#: portfolio/templates/portfolio/index.html:388
+msgid ""
+"Je crois fermement que le savoir grandit quand il est partagé. Je m'investis "
+"pour dynamiser l'écosystème technologique et accompagner la prochaine "
+"génération de développeurs."
+msgstr ""
+"I firmly believe that knowledge grows when it is shared. I invest myself in "
+"dynamizing the technological ecosystem and supporting the next generation of "
+"developers."
+
+#: portfolio/templates/portfolio/index.html:397
+msgid "Lead GDG Yaoundé (2023 - Présent)"
+msgstr "GDG Yaoundé Lead (2023 - Present)"
+
+#: portfolio/templates/portfolio/index.html:398
+msgid ""
+"Organisation d'événements majeurs (DevFest), pilotage de la campagne 'Build "
+"with AI', mentoring et développement de partenariats."
+msgstr ""
+"Organization of major events (DevFest), leading the 'Build with AI' "
+"campaign, mentoring and partnership development."
+
+#: portfolio/templates/portfolio/index.html:407
+msgid "Speaker & Créateur de contenu"
+msgstr "Speaker & Content Creator"
+
+#: portfolio/templates/portfolio/index.html:408
+msgid ""
+"Keynote Speaker sur 'NotebookLM' au DevFest Yaoundé. Rédaction d'articles "
+"techniques sur Medium et création de tutoriels."
+msgstr ""
+"Keynote Speaker on 'NotebookLM' at DevFest Yaoundé. Writing technical "
+"articles on Medium and creating tutorials."
+
+#: portfolio/templates/portfolio/index.html:418
+msgid "Fondateur GDSC Université de Yaoundé I"
+msgstr "GDSC University of Yaoundé I Founder"
+
+#: portfolio/templates/portfolio/index.html:419
+msgid ""
+"Création du premier club étudiant, formation de l'équipe Core et "
+"organisation de dizaines d'ateliers pratiques."
+msgstr ""
+"Creation of the first student club, training of the Core team and "
+"organization of dozens of hands-on workshops."
+
+#: portfolio/templates/portfolio/index.html:427
+msgid "Découvrir mes interventions"
+msgstr "Discover my interventions"
+
+#: portfolio/templates/portfolio/index.html:466
+msgid "Certifications"
+msgstr "Certifications"
+
+#: portfolio/templates/portfolio/index.html:467
+msgid "Validation de mes compétences par les leaders de l'industrie."
+msgstr "Validation of my skills by industry leaders."
+
+#: portfolio/templates/portfolio/index.html:539
+msgid "Vérifier le badge"
+msgstr "Verify badge"
+
+#: portfolio/templates/portfolio/index.html:547
+msgid "Aucune certification n'est disponible pour le moment."
+msgstr "No certifications available at the moment."
+
+#: portfolio/templates/portfolio/partials/footer.html:5
+msgid "Prêt à optimiser vos processus ?"
+msgstr "Ready to optimize your processes?"
+
+#: portfolio/templates/portfolio/partials/footer.html:7
+msgid ""
+"Que ce soit pour une migration complexe, de l'automatisation sur mesure ou "
+"une intervention en tant que speaker, discutons de votre projet."
+msgstr ""
+"Whether for a complex migration, custom automation or a speaking engagement, "
+"let's discuss your project."
+
+#: portfolio/templates/portfolio/partials/footer.html:14
+msgid "Prendre un rendez-vous (30 min)"
+msgstr "Book a meeting (30 min)"
+
+#: portfolio/templates/portfolio/partials/footer.html:20
+msgid "Remplir un formulaire de contact"
+msgstr "Fill out a contact form"
+
+#: portfolio/templates/portfolio/partials/footer.html:27
+msgid "Tous droits réservés."
+msgstr "All rights reserved."
+
+#: portfolio/templates/portfolio/partials/navbar.html:15
+#: portfolio/templates/portfolio/partials/navbar.html:68
+msgid "Accueil"
+msgstr "Home"
+
+#: portfolio/templates/portfolio/partials/navbar.html:17
+#: portfolio/templates/portfolio/partials/navbar.html:70
+msgid "Projets"
+msgstr "Projects"
+
+#: portfolio/templates/portfolio/partials/navbar.html:18
+#: portfolio/templates/portfolio/partials/navbar.html:71
+msgid "Articles"
+msgstr "Articles"
+
+#: portfolio/templates/portfolio/partials/navbar.html:20
+#: portfolio/templates/portfolio/partials/navbar.html:73
+msgid "Événements"
+msgstr "Events"
+
+#: portfolio/templates/portfolio/partials/navbar.html:21
+#: portfolio/templates/portfolio/partials/navbar.html:74
+msgid "Vidéos"
+msgstr "Videos"
+
+#: portfolio/templates/portfolio/partials/navbar.html:51
+#: portfolio/templates/portfolio/partials/navbar.html:77
+msgid "Me contacter"
+msgstr "Contact Me"
+
+#: portfolio/templates/portfolio/projects.html:4
+#: portfolio/templates/portfolio/projects.html:6
+msgid "Mes Projets | Abdel Aziz Mfossa"
+msgstr "My Projects | Abdel Aziz Mfossa"
+
+#: portfolio/templates/portfolio/projects.html:5
+msgid ""
+"Découvrez mes projets d'automatisation, outils internes et solutions métiers "
+"avec Python et Google Apps Script."
+msgstr ""
+"Discover my automation projects, internal tools and business solutions with "
+"Python and Google Apps Script."
+
+#: portfolio/templates/portfolio/projects.html:7
+msgid "Découvrez mes projets d'automatisation et solutions métiers."
+msgstr "Discover my automation projects and business solutions."
+
+#: portfolio/templates/portfolio/projects.html:14
+msgid ""
+"Projets & <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-"
+"blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300\">Réalisations</"
+"span>"
+msgstr ""
+"Projects & <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-"
+"blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300\">Achievements</"
+"span>"
+
+#: portfolio/templates/portfolio/projects.html:17
+msgid ""
+"Une sélection de scripts d'automatisation, d'outils internes et de solutions "
+"conçues pour résoudre des problèmes concrets et optimiser la productivité."
+msgstr ""
+"A selection of automation scripts, internal tools and solutions designed to "
+"solve concrete problems and optimize productivity."
+
+#: portfolio/templates/portfolio/projects.html:28
+msgid "Tous"
+msgstr "All"
+
+#: portfolio/templates/portfolio/projects.html:30
+msgid "Google Apps Script"
+msgstr "Google Apps Script"
+
+#: portfolio/templates/portfolio/projects.html:78
+msgid "Impact métier"
+msgstr "Business impact"
+
+#: portfolio/templates/portfolio/projects.html:103
+msgid "Voir la démo"
+msgstr "View demo"
+
+#: portfolio/templates/portfolio/projects.html:110
+msgid "Lire"
+msgstr "Read"
+
+#: portfolio/templates/portfolio/projects.html:118
+msgid "Aucun projet trouvé."
+msgstr "No projects found."
+
+#: portfolio/templates/portfolio/videos.html:4
+#: portfolio/templates/portfolio/videos.html:6
+msgid "Mes Vidéos & Tutoriels | Abdel Aziz Mfossa"
+msgstr "My Videos & Tutorials | Abdel Aziz Mfossa"
+
+#: portfolio/templates/portfolio/videos.html:5
+msgid ""
+"Apprenez comment automatiser vos processus avec Google Workspace grâce à mes "
+"tutoriels YouTube."
+msgstr ""
+"Learn how to automate your processes with Google Workspace through my "
+"YouTube tutorials."
+
+#: portfolio/templates/portfolio/videos.html:7
+msgid "Tutoriels vidéo sur Google Workspace et l'automatisation."
+msgstr "Video tutorials on Google Workspace and automation."
+
+#: portfolio/templates/portfolio/videos.html:27
+msgid ""
+"Vidéos & <span\n"
+"                    class=\"text-transparent bg-clip-text bg-gradient-to-r "
+"from-red-500 to-red-600 dark:from-red-400 dark:to-red-500\">Tutoriels</span>"
+msgstr ""
+"Videos & <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-"
+"red-500 to-red-600 dark:from-red-400 dark:to-red-500\">Tutorials</span>"
+
+#: portfolio/templates/portfolio/videos.html:31
+msgid ""
+"Apprenez à automatiser vos tâches quotidiennes et maîtrisez l'écosystème "
+"Google Workspace grâce à mes tutoriels vidéo étape par étape sur YouTube."
+msgstr ""
+"Learn how to automate your daily tasks and master the Google Workspace "
+"ecosystem with my step-by-step YouTube video tutorials."
+
+#: portfolio/templates/portfolio/videos.html:39
+msgid "S'abonner à la chaîne"
+msgstr "Subscribe to the channel"
+
+#: portfolio/templates/portfolio/videos.html:50
+#: portfolio/templates/portfolio/videos.html:84
+msgid "À la une"
+msgstr "Featured"
+
+#: portfolio/templates/portfolio/videos.html:105
+msgid "Regarder la vidéo"
+msgstr "Watch video"
+
+#: portfolio/templates/portfolio/videos.html:112
+msgid "Aucune vidéo à la une pour le moment."
+msgstr "No featured videos at the moment."
+
+#: portfolio/templates/portfolio/videos.html:122
+msgid "Tous les tutoriels"
+msgstr "All tutorials"
+
+#: portfolio/templates/portfolio/videos.html:124
+msgid "Les plus récentes"
+msgstr "Latest"
+
+#: portfolio/templates/portfolio/videos.html:125
+msgid "Les plus populaires"
+msgstr "Most popular"
+
+#: portfolio/templates/portfolio/videos.html:177
+msgid "Aucune vidéo n'est listé pour le moment."
+msgstr "No video is listed at the moment."
+
+#: shortener/models.py:5
+msgid "URL cible"
+msgstr ""
+
+#: shortener/models.py:5
+msgid "Le lien d'origine vers lequel rediriger"
+msgstr ""
+
+#: shortener/models.py:6
+msgid "Code court"
+msgstr ""
+
+#: shortener/models.py:6
+msgid "Le mot clé pour le raccourci, ex: 'spotify'"
+msgstr ""
+
+#: shortener/models.py:7
+msgid "Nombre de clics"
+msgstr ""
+
+#: shortener/models.py:8
+msgid "Date de création"
+msgstr ""
+
+#: shortener/models.py:9
+msgid "Actif"
+msgstr ""
+
+#: shortener/models.py:12
+msgid "Lien raccourci"
+msgstr ""
+
+#: shortener/models.py:13
+msgid "Liens raccourcis"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/contrib/messages/apps.py:16
+msgid "Messages"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/contrib/sitemaps/apps.py:8
+msgid "Site Maps"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/contrib/staticfiles/apps.py:9
+msgid "Static Files"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/contrib/syndication/apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: venv/lib/python3.11/site-packages/django/core/paginator.py:30
+msgid "…"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/core/paginator.py:32
+msgid "That page number is not an integer"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/core/paginator.py:33
+msgid "That page number is less than 1"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/core/paginator.py:34
+msgid "That page contains no results"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:22
+msgid "Enter a valid value."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:70
+msgid "Enter a valid domain name."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:153
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:774
+msgid "Enter a valid URL."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:200
+msgid "Enter a valid integer."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:211
+msgid "Enter a valid email address."
+msgstr ""
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: venv/lib/python3.11/site-packages/django/core/validators.py:289
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:297
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:309
+#: venv/lib/python3.11/site-packages/django/core/validators.py:318
+#: venv/lib/python3.11/site-packages/django/core/validators.py:332
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2220
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:311
+msgid "IPv4"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:320
+#: venv/lib/python3.11/site-packages/django/utils/ipv6.py:43
+msgid "IPv6"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:334
+msgid "IPv4 or IPv6"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:375
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:381
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:416
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:425
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:434
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:441
+#, python-format
+msgid ""
+"Ensure this value is a multiple of step size %(limit_value)s, starting from "
+"%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:473
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:491
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:514
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:365
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:404
+msgid "Enter a number."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:516
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:521
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:526
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:597
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:659
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/base.py:1600
+#: venv/lib/python3.11/site-packages/django/forms/models.py:908
+msgid "and"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/base.py:1602
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/constraints.py:22
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:134
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:135
+msgid "This field cannot be null."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:136
+msgid "This field cannot be blank."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:137
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or
+#. 'month'. Eg: "Title must be unique for pub_date year"
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:141
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:180
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1162
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1163
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1165
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1215
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1217
+msgid "String (unlimited)"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1326
+msgid "Comma-separated integers"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1427
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1431
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1566
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1435
+msgid "Date (without time)"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1562
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ] format."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1570
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1575
+msgid "Date (with time)"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1702
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1704
+msgid "Decimal number"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1864
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
+"uuuuuu] format."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1868
+msgid "Duration"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1920
+msgid "Email address"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1945
+msgid "File path"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2023
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2025
+msgid "Floating point number"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2065
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2067
+msgid "Integer"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2163
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2180
+msgid "Small integer"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2188
+msgid "IPv4 address"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2219
+msgid "IP address"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2310
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2311
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2313
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2364
+msgid "Positive big integer"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2379
+msgid "Positive integer"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2394
+msgid "Positive small integer"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2410
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2446
+msgid "Text"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2526
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2530
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2534
+msgid "Time"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2642
+msgid "URL"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2666
+msgid "Raw binary data"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2731
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2733
+msgid "Universally unique identifier"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/files.py:244
+msgid "File"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/files.py:420
+msgid "Image"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/json.py:24
+msgid "A JSON object"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/json.py:26
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:979
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r is not a valid choice."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:982
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1276
+msgid "One-to-one relationship"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1333
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1335
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1383
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+#: venv/lib/python3.11/site-packages/django/forms/boundfield.py:185
+msgid ":?.!"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:94
+msgid "This field is required."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:314
+msgid "Enter a whole number."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:485
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1257
+msgid "Enter a valid date."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:508
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1258
+msgid "Enter a valid time."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:535
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:569
+msgid "Enter a valid duration."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:570
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:639
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:640
+msgid "No file was submitted."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:641
+msgid "The submitted file is empty."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:643
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:648
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:716
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:879
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:965
+#: venv/lib/python3.11/site-packages/django/forms/models.py:1592
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:967
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1086
+#: venv/lib/python3.11/site-packages/django/forms/models.py:1590
+msgid "Enter a list of values."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1087
+msgid "Enter a complete value."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1329
+msgid "Enter a valid UUID."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1359
+msgid "Enter a valid JSON."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: venv/lib/python3.11/site-packages/django/forms/forms.py:97
+msgid ":"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/forms.py:239
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/formsets.py:61
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/formsets.py:65
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.11/site-packages/django/forms/formsets.py:70
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.11/site-packages/django/forms/formsets.py:484
+#: venv/lib/python3.11/site-packages/django/forms/formsets.py:491
+msgid "Order"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/formsets.py:499
+msgid "Delete"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/models.py:901
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/models.py:906
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/models.py:913
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/models.py:922
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/models.py:1359
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/models.py:1450
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/models.py:1594
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/utils.py:229
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/widgets.py:527
+msgid "Clear"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/widgets.py:528
+msgid "Currently"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/widgets.py:529
+msgid "Change"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/widgets.py:866
+msgid "Unknown"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/widgets.py:867
+msgid "Yes"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/forms/widgets.py:868
+msgid "No"
+msgstr ""
+
+#. Translators: Please do not add spaces around commas.
+#: venv/lib/python3.11/site-packages/django/template/defaultfilters.py:873
+msgid "yes,no,maybe"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/template/defaultfilters.py:903
+#: venv/lib/python3.11/site-packages/django/template/defaultfilters.py:920
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.11/site-packages/django/template/defaultfilters.py:922
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/template/defaultfilters.py:924
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/template/defaultfilters.py:926
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/template/defaultfilters.py:928
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/template/defaultfilters.py:930
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dateformat.py:74
+msgid "p.m."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dateformat.py:75
+msgid "a.m."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dateformat.py:80
+msgid "PM"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dateformat.py:81
+msgid "AM"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dateformat.py:153
+msgid "midnight"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dateformat.py:155
+msgid "noon"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:7
+msgid "Monday"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:8
+msgid "Tuesday"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:9
+msgid "Wednesday"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:10
+msgid "Thursday"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:11
+msgid "Friday"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:12
+msgid "Saturday"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:13
+msgid "Sunday"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:16
+msgid "Mon"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:17
+msgid "Tue"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:18
+msgid "Wed"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:19
+msgid "Thu"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:20
+msgid "Fri"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:21
+msgid "Sat"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:22
+msgid "Sun"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:25
+msgid "January"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:26
+msgid "February"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:27
+msgid "March"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:28
+msgid "April"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:29
+msgid "May"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:30
+msgid "June"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:31
+msgid "July"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:32
+msgid "August"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:33
+msgid "September"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:34
+msgid "October"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:35
+msgid "November"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:36
+msgid "December"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:39
+msgid "jan"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:40
+msgid "feb"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:41
+msgid "mar"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:42
+msgid "apr"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:43
+msgid "may"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:44
+msgid "jun"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:45
+msgid "jul"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:46
+msgid "aug"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:47
+msgid "sep"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:48
+msgid "oct"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:49
+msgid "nov"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:50
+msgid "dec"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:55
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:69
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:75
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:77
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:78
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/ipv6.py:20
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/text.py:76
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/text.py:282
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: venv/lib/python3.11/site-packages/django/utils/text.py:301
+#: venv/lib/python3.11/site-packages/django/utils/timesince.py:135
+msgid ", "
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/utils/timesince.py:8
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.11/site-packages/django/utils/timesince.py:9
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.11/site-packages/django/utils/timesince.py:10
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.11/site-packages/django/utils/timesince.py:11
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.11/site-packages/django/utils/timesince.py:12
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.11/site-packages/django/utils/timesince.py:13
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.11/site-packages/django/views/csrf.py:29
+msgid "Forbidden"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/csrf.py:30
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/csrf.py:34
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/csrf.py:40
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/csrf.py:45
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a rel=\"noreferrer"
+"\" …> for links to third-party sites."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/csrf.py:54
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/csrf.py:60
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/csrf.py:66
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:44
+msgid "No year specified"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:64
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:115
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:214
+msgid "Date out of range"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:94
+msgid "No month specified"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:147
+msgid "No day specified"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:194
+msgid "No week specified"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:353
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:384
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:680
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:720
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/generic/detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/generic/list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/generic/list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/generic/list.py:173
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/static.py:49
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/static.py:51
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/static.py:68
+#: venv/lib/python3.11/site-packages/django/views/templates/directory_index.html:8
+#: venv/lib/python3.11/site-packages/django/views/templates/directory_index.html:11
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/templates/default_urlconf.html:7
+#: venv/lib/python3.11/site-packages/django/views/templates/default_urlconf.html:204
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/templates/default_urlconf.html:206
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/templates/default_urlconf.html:208
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
+"\">DEBUG=True</a> is in your settings file and you have not configured any "
+"URLs."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/templates/default_urlconf.html:217
+msgid "Django Documentation"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/templates/default_urlconf.html:218
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/templates/default_urlconf.html:226
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/templates/default_urlconf.html:227
+msgid "Get started with Django"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/templates/default_urlconf.html:235
+msgid "Django Community"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/django/views/templates/default_urlconf.html:236
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:14
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:94
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:102
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:112
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:122
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:126
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:158
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:177
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:404
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:409
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:419
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:439
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:456
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:475
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:481
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:498
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:510
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:518
+msgid "title"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:18
+msgid "password"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:285
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:304
+msgid "title a"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:289
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:315
+msgid "title b"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:293
+msgid "title c"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:297
+msgid "title d"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/models.py:420
+msgid "visits"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/modeltranslation/tests/translation.py:74
+msgid "Sorry, translation is not available."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/modeltranslation/widgets.py:32
+msgid "None"
+msgstr ""
