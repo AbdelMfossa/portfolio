@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Project, Article, Event, Video, Certification, Skill, Experience
+from .models import Tag, Project, Article, Event, Video, Certification, Skill, Experience
 
 def home(request):
     projects = Project.objects.filter(status='production')[:2]
@@ -22,7 +22,11 @@ def home(request):
 
 def projects(request):
     projects_list = Project.objects.all()
-    return render(request, 'portfolio/projects.html', {'projects': projects_list})
+    tags = Tag.objects.filter(projects__isnull=False).distinct()
+    return render(request, 'portfolio/projects.html', {
+        'projects': projects_list,
+        'tags': tags
+    })
 
 def blog(request):
     articles_list = Article.objects.all()

@@ -24,23 +24,25 @@
     <div class="max-w-6xl mx-auto px-4">
 
         <!-- Filtres -->
-        <div class="flex flex-wrap gap-2 mb-10 justify-center md:justify-start">
-            <button class="px-4 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full text-sm font-medium transition-colors">{% trans "Tous" %}</button>
-            <button
-                class="px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 rounded-full text-sm font-medium transition-colors">{% trans "Google Apps Script" %}</button>
-            <button
-                class="px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 rounded-full text-sm font-medium transition-colors">Python</button>
-            <button
-                class="px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 rounded-full text-sm font-medium transition-colors">API
-                Google</button>
+        <div class="flex flex-wrap gap-2 mb-10 justify-center md:justify-start" id="filter-buttons">
+            <button data-filter="all" 
+                class="tag-filter px-4 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full text-sm font-medium transition-all shadow-md">
+                {% trans "Tous" %}
+            </button>
+            {% for tag in tags %}
+            <button data-filter="{{ tag.slug }}"
+                class="tag-filter px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 rounded-full text-sm font-medium transition-all">
+                {{ tag.name }}
+            </button>
+            {% endfor %}
         </div>
 
         <div class="grid md:grid-cols-2 gap-8">
 
             {% for project in projects %}
             <!-- PROJET -->
-            <article
-                class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-xl dark:shadow-none transition-all duration-300 flex flex-col overflow-hidden group">
+            <article data-tags="{% for tag in project.tags.all %}{{ tag.slug }} {% endfor %}"
+                class="project-card bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-xl dark:shadow-none transition-all duration-300 flex flex-col overflow-hidden group">
                 <!-- Image de couverture -->
                 <div class="h-56 relative overflow-hidden bg-slate-100 dark:bg-slate-700">
                     <img loading="lazy" src="{% if project.image %}{{ project.image.url }}{% elif project.image_url %}{{ project.image_url }}{% else %}{% static 'portfolio/images/default_project.jpg' %}{% endif %}"
@@ -123,4 +125,42 @@
     </div>
 </section>
 
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const filters = document.querySelectorAll('.tag-filter');
+        const cards = document.querySelectorAll('.project-card');
+
+        filters.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+
+                // Update active state
+                filters.forEach(btn => {
+                    btn.classList.remove('bg-slate-900', 'dark:bg-white', 'text-white', 'dark:text-slate-900', 'shadow-md');
+                    btn.classList.add('bg-white', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+                });
+                button.classList.add('bg-slate-900', 'dark:bg-white', 'text-white', 'dark:text-slate-900', 'shadow-md');
+                button.classList.remove('bg-white', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+
+                // Filter cards
+                cards.forEach(card => {
+                    const tagsAttr = card.getAttribute('data-tags') || '';
+                    const tags = tagsAttr.trim().split(/\s+/);
+                    if (filter === 'all' || tags.includes(filter)) {
+                        card.style.display = 'flex';
+                        card.style.opacity = '0';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transition = 'opacity 0.3s ease';
+                        }, 10);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+</script>
+{% endblock %}
 {% endblock %}
