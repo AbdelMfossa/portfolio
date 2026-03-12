@@ -1,17 +1,24 @@
-{% load static %}
+{% load static i18n %}
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="{{ request.LANGUAGE_CODE }}" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Abdel Aziz Mfossa | Portfolio{% endblock %}</title>
     <meta name="description" content="{% block meta_description %}Portfolio de Abdel Aziz Mfossa, Ingénieur Google Workspace, passionné d'automatisation et Lead du GDG Yaoundé.{% endblock %}">
-    <meta property="og:title" content="{% block og_title %}Abdel Aziz Mfossa | Portfolio{% endblock %}">
-    <meta property="og:description" content="{% block og_description %}Ingénieur Google Workspace & Transformateur Digital.{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}{% trans "Abdel Aziz Mfossa | Portfolio" %}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{% trans "Ingénieur Google Workspace & Transformateur Digital." %}{% endblock %}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ request.build_absolute_uri }}">
-    <meta property="og:image" content="{% block og_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'portfolio/images/logo abdelmfossa.png' %}{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'portfolio/images/og_banner.png' %}{% endblock %}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="{% block twitter_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'portfolio/images/og_banner.png' %}{% endblock %}">
+
     <link rel="canonical" href="{{ request.build_absolute_uri }}">
 
     <!-- Tailwind CSS via CDN -->
