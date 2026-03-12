@@ -6,18 +6,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Abdel Aziz Mfossa | Portfolio{% endblock %}</title>
-    <meta name="description" content="{% block meta_description %}Portfolio de Abdel Aziz Mfossa, Ingénieur Google Workspace, passionné d'automatisation et Lead du GDG Yaoundé.{% endblock %}">
+    <meta name="description" content="{% block meta_description %}{% trans "Découvrez le portfolio d'Abdel Aziz Mfossa, Ingénieur Google Workspace certifié et expert en automatisation. Solutions Cloud, scripts sur mesure et expertise transformation digitale." %}{% endblock %}">
+    
+    <!-- OpenGraph -->
+    <meta property="og:site_name" content="Abdel Aziz Mfossa">
     <meta property="og:title" content="{% block og_title %}{% trans "Abdel Aziz Mfossa | Portfolio" %}{% endblock %}">
-    <meta property="og:description" content="{% block og_description %}{% trans "Ingénieur Google Workspace & Transformateur Digital." %}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{% trans "Portfolio d'Abdel Aziz Mfossa, Ingénieur Google Workspace et consultant expert en automatisation. Découvrez mes solutions Cloud, scripts Apps Script et projets tech." %}{% endblock %}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ request.build_absolute_uri }}">
-    <meta property="og:image" content="{% block og_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'portfolio/images/og_banner.png' %}{% endblock %}">
+    <meta property="og:locale" content="{{ request.LANGUAGE_CODE }}_{{ request.LANGUAGE_CODE|upper }}">
+    
+    {# On ajoute ?v=2.1 pour forcer le rafraîchissement du cache des réseaux sociaux #}
+    <meta property="og:image" content="{% block og_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'portfolio/images/og_banner.png' %}?v=2.1{% endblock %}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="{% block twitter_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'portfolio/images/og_banner.png' %}{% endblock %}">
+    <meta name="twitter:title" content="{% block twitter_title %}{% trans "Abdel Aziz Mfossa | Portfolio" %}{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}{% trans "Ingénieur Google Workspace & Transformateur Digital." %}{% endblock %}">
+    <meta name="twitter:image" content="{% block twitter_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'portfolio/images/og_banner.png' %}?v=2.1{% endblock %}">
 
     <link rel="canonical" href="{{ request.build_absolute_uri }}">
 
