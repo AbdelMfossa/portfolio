@@ -1,6 +1,7 @@
 server {
     listen 80;
     server_name abdelmfossa.com www.abdelmfossa.com;
+    client_max_body_size 20M;
 
     location = /favicon.ico { 
         access_log off; 
