@@ -4,6 +4,57 @@ from django.utils.text import slugify
 import os
 from PIL import Image
 
+
+class VisitorLog(models.Model):
+    DEVICE_CHOICES = [
+        ('desktop', 'Desktop'),
+        ('mobile', 'Mobile'),
+        ('tablet', 'Tablette'),
+        ('bot', 'Bot'),
+        ('other', 'Autre'),
+    ]
+
+    # --- Quand & Où ---
+    timestamp       = models.DateTimeField(default=timezone.now, verbose_name="Date/Heure")
+    page            = models.CharField(max_length=300, verbose_name="Page visitée")
+
+    # --- Qui ---
+    ip_address      = models.GenericIPAddressField(null=True, blank=True, verbose_name="IP (anonymisée)")
+    session_key     = models.CharField(max_length=64, blank=True, verbose_name="Clé de session")
+
+    # --- D'où (Géolocalisation) ---
+    country         = models.CharField(max_length=100, blank=True, verbose_name="Pays")
+    country_code    = models.CharField(max_length=5, blank=True, verbose_name="Code Pays")
+    city            = models.CharField(max_length=100, blank=True, verbose_name="Ville")
+    region          = models.CharField(max_length=100, blank=True, verbose_name="Région")
+
+    # --- Avec quoi ---
+    browser         = models.CharField(max_length=100, blank=True, verbose_name="Navigateur")
+    browser_version = models.CharField(max_length=30, blank=True, verbose_name="Version navigateur")
+    os              = models.CharField(max_length=100, blank=True, verbose_name="Système d'exploitation")
+    device_type     = models.CharField(max_length=20, choices=DEVICE_CHOICES, default='other', verbose_name="Type d'appareil")
+
+    # --- Comment ---
+    referrer        = models.URLField(max_length=500, blank=True, verbose_name="Page de référence")
+    referrer_domain = models.CharField(max_length=150, blank=True, verbose_name="Domaine référent")
+    language        = models.CharField(max_length=20, blank=True, verbose_name="Langue du navigateur")
+    user_agent      = models.TextField(blank=True, verbose_name="User-Agent complet")
+
+    class Meta:
+        verbose_name = "Visite"
+        verbose_name_plural = "Visites"
+        ordering = ['-timestamp']
+        indexes = [
+            models.Index(fields=['-timestamp']),
+            models.Index(fields=['country_code']),
+            models.Index(fields=['device_type']),
+            models.Index(fields=['page']),
+        ]
+
+    def __str__(self):
+        return f"[{self.timestamp.strftime('%d/%m/%Y %H:%M')}] {self.page} — {self.country or 'Inconnu'}"
+
+
 class Tag(models.Model):
     name = models.CharField(max_length=50, unique=True, verbose_name="Nom du tag")
     slug = models.SlugField(max_length=50, unique=True, blank=True)

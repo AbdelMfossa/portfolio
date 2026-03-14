@@ -26,6 +26,29 @@
             <div>
                 &copy; 2026 Abdel Aziz MFOSSA. {% trans "Tous droits réservés." %}
             </div>
+
+            <!-- 📊 Badge Visiteurs -->
+            {% if visitor_country_count > 0 or visitor_total > 0 %}
+            <div class="flex items-center gap-3 text-xs text-slate-500">
+                <!-- Pays -->
+                <div class="flex items-center gap-1.5 bg-slate-800/60 px-3 py-1.5 rounded-full border border-slate-700/50 hover:border-slate-600 transition-colors">
+                    <span class="text-base leading-none">🌍</span>
+                    <span class="text-slate-300 font-medium">{{ visitor_country_count }}</span>
+                    <span>{% trans "pays" %}</span>
+                </div>
+                <!-- Visites -->
+                <div class="flex items-center gap-1.5 bg-slate-800/60 px-3 py-1.5 rounded-full border border-slate-700/50 hover:border-slate-600 transition-colors">
+                    <!-- Point live animé -->
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    <span class="text-slate-300 font-medium">{{ visitor_total }}</span>
+                    <span>{% trans "visites" %}</span>
+                </div>
+            </div>
+            {% endif %}
+
             <div class="flex gap-4">
                 <a href="https://www.youtube.com/@abdelmfossa" aria-label="Chaîne YouTube" class="hover:text-red-500"><i data-lucide="youtube"
                         class="w-5 h-5"></i></a>
