@@ -83,7 +83,8 @@ class Project(models.Model):
     icon = models.CharField(max_length=50, default='users', verbose_name="Icône Lucide (ex: users, bot)")
     
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='production', verbose_name="Statut")
-    
+    is_active = models.BooleanField(default=True, verbose_name="Actif (visible sur le site)")
+
     github_url = models.URLField(blank=True, null=True, verbose_name="Lien GitHub")
     demo_url = models.URLField(blank=True, null=True, verbose_name="Lien de Démo")
     article_url = models.URLField(blank=True, null=True, verbose_name="Lien de l'article (Medium)")
@@ -125,7 +126,8 @@ class Article(models.Model):
     medium_url = models.URLField(verbose_name="Lien Medium")
     published_date = models.DateField(default=timezone.now, verbose_name="Date de publication")
     read_time = models.PositiveIntegerField(default=5, verbose_name="Temps de lecture (minutes)")
-    
+    is_active = models.BooleanField(default=True, verbose_name="Actif (visible sur le site)")
+
     category = models.CharField(max_length=100, verbose_name="Catégorie principale (ex: Intelligence Artificielle)")
     tags = models.ManyToManyField(Tag, related_name='articles', blank=True)
 
@@ -170,6 +172,7 @@ class Event(models.Model):
     linkedin_url = models.URLField(blank=True, null=True, verbose_name="Lien post LinkedIn")
     video_url = models.URLField(blank=True, null=True, verbose_name="Lien replay vidéo")
     photos_url = models.URLField(blank=True, null=True, verbose_name="Lien galerie photos")
+    is_active = models.BooleanField(default=True, verbose_name="Actif (visible sur le site)")
 
     class Meta:
         verbose_name = "Événement"
@@ -203,7 +206,8 @@ class Video(models.Model):
     
     published_date = models.DateField(default=timezone.now, verbose_name="Date de publication")
     is_featured = models.BooleanField(default=False, verbose_name="Mettre à la une")
-    
+    is_active = models.BooleanField(default=True, verbose_name="Actif (visible sur le site)")
+
     tags = models.ManyToManyField(Tag, related_name='videos', blank=True)
 
     class Meta:
@@ -241,7 +245,8 @@ class Certification(models.Model):
     icon = models.CharField(max_length=50, default='award', verbose_name="Icône Lucide (ex: cloud, shield-check)")
     
     verify_url = models.URLField(blank=True, null=True, verbose_name="Lien de vérification")
-    
+    is_active = models.BooleanField(default=True, verbose_name="Actif (visible sur le site)")
+
     tags = models.ManyToManyField(Tag, related_name='certifications', blank=True)
 
     class Meta:
@@ -271,6 +276,7 @@ class Skill(models.Model):
     bullets = models.TextField(help_text="Un point par ligne", verbose_name="Points clés de la compétence")
     
     order = models.PositiveIntegerField(default=0, verbose_name="Ordre d'affichage")
+    is_active = models.BooleanField(default=True, verbose_name="Actif (visible sur le site)")
 
     class Meta:
         verbose_name = "Expertise (Skill)"

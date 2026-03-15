@@ -84,43 +84,143 @@ class TagAdmin(TranslationAdmin):
 
 @admin.register(Project)
 class ProjectAdmin(TranslationAdmin):
-    list_display = ('title', 'status', 'created_at')
-    list_filter = ('status', 'tags')
+    list_display  = ('title', 'status', 'active_badge', 'created_at')
+    list_filter   = ('status', 'is_active', 'tags')
+    list_editable = ('status',)
     search_fields = ('title', 'description', 'impact')
     filter_horizontal = ('tags',)
+    actions = ['activate_selected', 'deactivate_selected']
+
+    def active_badge(self, obj):
+        if obj.is_active:
+            return format_html('<span style="color:#16a34a;font-size:16px" title="Actif">✅</span>')
+        return format_html('<span style="color:#dc2626;font-size:16px" title="Désactivé">❌</span>')
+    active_badge.short_description = 'Visible'
+
+    @admin.action(description="✅ Activer la sélection")
+    def activate_selected(self, request, queryset):
+        updated = queryset.update(is_active=True)
+        self.message_user(request, f"{updated} élément(s) activé(s).")
+
+    @admin.action(description="❌ Désactiver la sélection")
+    def deactivate_selected(self, request, queryset):
+        updated = queryset.update(is_active=False)
+        self.message_user(request, f"{updated} élément(s) désactivé(s).")
+
 
 @admin.register(Article)
 class ArticleAdmin(TranslationAdmin):
-    list_display = ('title', 'category', 'published_date', 'read_time')
-    list_filter = ('category', 'published_date', 'tags')
+    list_display  = ('title', 'category', 'published_date', 'read_time', 'active_badge')
+    list_filter   = ('is_active', 'category', 'published_date', 'tags')
     search_fields = ('title', 'summary')
     filter_horizontal = ('tags',)
+    actions = ['activate_selected', 'deactivate_selected']
+
+    def active_badge(self, obj):
+        if obj.is_active:
+            return format_html('<span style="color:#16a34a;font-size:16px" title="Actif">✅</span>')
+        return format_html('<span style="color:#dc2626;font-size:16px" title="Désactivé">❌</span>')
+    active_badge.short_description = 'Visible'
+
+    @admin.action(description="✅ Activer la sélection")
+    def activate_selected(self, request, queryset):
+        queryset.update(is_active=True)
+
+    @admin.action(description="❌ Désactiver la sélection")
+    def deactivate_selected(self, request, queryset):
+        queryset.update(is_active=False)
+
 
 @admin.register(Event)
 class EventAdmin(TranslationAdmin):
-    list_display = ('title', 'date', 'location', 'role')
-    list_filter = ('date', 'location')
+    list_display  = ('title', 'date', 'location', 'role', 'active_badge')
+    list_filter   = ('is_active', 'date', 'location')
     search_fields = ('title', 'description')
+    actions = ['activate_selected', 'deactivate_selected']
+
+    def active_badge(self, obj):
+        if obj.is_active:
+            return format_html('<span style="color:#16a34a;font-size:16px" title="Actif">✅</span>')
+        return format_html('<span style="color:#dc2626;font-size:16px" title="Désactivé">❌</span>')
+    active_badge.short_description = 'Visible'
+
+    @admin.action(description="✅ Activer la sélection")
+    def activate_selected(self, request, queryset):
+        queryset.update(is_active=True)
+
+    @admin.action(description="❌ Désactiver la sélection")
+    def deactivate_selected(self, request, queryset):
+        queryset.update(is_active=False)
+
 
 @admin.register(Video)
 class VideoAdmin(TranslationAdmin):
-    list_display = ('title', 'published_date', 'duration', 'is_featured')
-    list_filter = ('is_featured', 'published_date', 'tags')
+    list_display  = ('title', 'published_date', 'duration', 'is_featured', 'active_badge')
+    list_filter   = ('is_active', 'is_featured', 'published_date', 'tags')
     search_fields = ('title', 'description')
     filter_horizontal = ('tags',)
+    actions = ['activate_selected', 'deactivate_selected']
+
+    def active_badge(self, obj):
+        if obj.is_active:
+            return format_html('<span style="color:#16a34a;font-size:16px" title="Actif">✅</span>')
+        return format_html('<span style="color:#dc2626;font-size:16px" title="Désactivé">❌</span>')
+    active_badge.short_description = 'Visible'
+
+    @admin.action(description="✅ Activer la sélection")
+    def activate_selected(self, request, queryset):
+        queryset.update(is_active=True)
+
+    @admin.action(description="❌ Désactiver la sélection")
+    def deactivate_selected(self, request, queryset):
+        queryset.update(is_active=False)
+
 
 @admin.register(Certification)
 class CertificationAdmin(TranslationAdmin):
-    list_display = ('title', 'provider', 'issue_date')
-    list_filter = ('provider', 'issue_date', 'tags')
+    list_display  = ('title', 'provider', 'issue_date', 'active_badge')
+    list_filter   = ('is_active', 'provider', 'issue_date', 'tags')
     search_fields = ('title', 'provider', 'description')
     filter_horizontal = ('tags',)
+    actions = ['activate_selected', 'deactivate_selected']
+
+    def active_badge(self, obj):
+        if obj.is_active:
+            return format_html('<span style="color:#16a34a;font-size:16px" title="Actif">✅</span>')
+        return format_html('<span style="color:#dc2626;font-size:16px" title="Désactivé">❌</span>')
+    active_badge.short_description = 'Visible'
+
+    @admin.action(description="✅ Activer la sélection")
+    def activate_selected(self, request, queryset):
+        queryset.update(is_active=True)
+
+    @admin.action(description="❌ Désactiver la sélection")
+    def deactivate_selected(self, request, queryset):
+        queryset.update(is_active=False)
+
 
 @admin.register(Skill)
 class SkillAdmin(TranslationAdmin):
-    list_display = ('title', 'order', 'color')
+    list_display  = ('title', 'order', 'color', 'active_badge')
     list_editable = ('order',)
+    list_filter   = ('is_active',)
     search_fields = ('title', 'description')
+    actions = ['activate_selected', 'deactivate_selected']
+
+    def active_badge(self, obj):
+        if obj.is_active:
+            return format_html('<span style="color:#16a34a;font-size:16px" title="Actif">✅</span>')
+        return format_html('<span style="color:#dc2626;font-size:16px" title="Désactivé">❌</span>')
+    active_badge.short_description = 'Visible'
+
+    @admin.action(description="✅ Activer la sélection")
+    def activate_selected(self, request, queryset):
+        queryset.update(is_active=True)
+
+    @admin.action(description="❌ Désactiver la sélection")
+    def deactivate_selected(self, request, queryset):
+        queryset.update(is_active=False)
+
 
 @admin.register(Experience)
 class ExperienceAdmin(TranslationAdmin):

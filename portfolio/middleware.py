@@ -34,11 +34,22 @@ except ImportError:
 # En mode DEBUG (dev) → IP complète affichée pour faciliter les tests.
 # En production (DEBUG=False) → IP anonymisée pour la conformité RGPD.
 # Pour forcer l'anonymisation même en debug : VISITOR_ANONYMIZE_IP = True dans settings.py
-ANONYMIZE_IP = getattr(settings, 'VISITOR_ANONYMIZE_IP', not settings.DEBUG)
+# ANONYMIZE_IP = getattr(settings, 'VISITOR_ANONYMIZE_IP', not settings.DEBUG)
+ANONYMIZE_IP = False # False pour le dev local uniquement
 
 # Fenêtre de déduplication : une même page n'est comptée qu'une fois
 # par session dans cet intervalle de temps.
 DEDUP_WINDOW_SECONDS = 30 * 60  # 30 minutes
+
+# Patterns de User-Agent connus pour être des bots mais qui ne se déclarent pas comme tels
+# (Go-http-client, curl, Python-requests, scrapers divers...)
+KNOWN_BOT_UA_PATTERNS = (
+    'go-http-client', 'python-requests', 'python-urllib',
+    'curl/', 'wget/', 'httpx/', 'java/', 'okhttp/',
+    'scrapy', 'crawler', 'spider', 'bot', 'headless',
+    'phantomjs', 'selenium', 'playwright', 'puppeteer',
+    'apache-httpclient', 'libwww-perl', 'axios/',
+)
 
 # URL admin récupérée depuis le .env pour être exclue du tracking
 _ADMIN_URL_PREFIX = '/' + os.environ.get('ADMIN_URL', 'admin/')
@@ -217,9 +228,17 @@ def _log_visit_async(request, path: str):
         else:
             device_type = 'other'
 
-    # Ignorer les bots
-    if device_type == 'bot':
-        return
+    # Détection étendue : patterns UA connus comme bots mais non détectés
+    # (Go-http-client, curl, Python-requests, scanners, etc.)
+    if device_type != 'bot':
+        ua_lower = ua_string.lower()
+        if any(pattern in ua_lower for pattern in KNOWN_BOT_UA_PATTERNS):
+            device_type = 'bot'
+            if not browser:  # Récupérer au moins le nom du client
+                browser = ua_string.split('/')[0][:50] if ua_string else 'Bot inconnu'
+
+    # Les bots sont ENREGISTRÉS avec device_type='bot' (visibles dans l'admin)
+    # On ne les ignore plus pour permettre leur analyse et comptabilisation séparée
 
     # --- Géolocalisation ---
     geo = _get_geo(raw_ip)
