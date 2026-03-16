@@ -28,6 +28,7 @@
     <meta name="twitter:image" content="{% block twitter_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'portfolio/images/og_banner.png' %}?v=2.1{% endblock %}">
 
     <link rel="canonical" href="{{ request.build_absolute_uri }}">
+    <link rel="alternate" type="application/rss+xml" title="Abdel Aziz Mfossa - RSS Feed" href="{% url 'article_feed' %}">
 
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -67,6 +68,9 @@
     
     <!-- PWA -->
     <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="AbdelMfossa">
     <link rel="manifest" href="{% static 'portfolio/manifest.json' %}">
 
     <!-- Structured Data (JSON-LD) -->

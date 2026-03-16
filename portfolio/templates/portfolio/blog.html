@@ -23,6 +23,11 @@
                 <i data-lucide="book-open" class="w-5 h-5"></i>
                 {% trans "S'abonner sur Medium" %}
             </a>
+            <a href="{% url 'article_feed' %}" target="_blank"
+                class="flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-xl font-medium hover:bg-orange-600 transition-all shadow-md shadow-orange-500/20">
+                <i data-lucide="rss" class="w-5 h-5"></i>
+                {% trans "Flux RSS" %}
+            </a>
         </div>
     </div>
 </section>

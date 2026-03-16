@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-16 14:20+0000\n"
+"POT-Creation-Date: 2026-03-16 20:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,13 +18,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: config/settings.py:128
+#: config/settings.py:130
 msgid "French"
 msgstr "French"
 
-#: config/settings.py:129
+#: config/settings.py:131
 msgid "English"
 msgstr "English"
+
+#: portfolio/feeds.py:7
+msgid "Abdel Aziz Mfossa - Articles & Tutoriels"
+msgstr "Abdel Aziz Mfossa - Articles & Tutorials"
+
+#: portfolio/feeds.py:9
+msgid "Les derniers articles sur Google Workspace, l'automatisation et l'IA."
+msgstr "The latest articles on Google Workspace, automation and AI."
 
 #: portfolio/forms.py:12
 msgid "Votre nom complet"
@@ -147,7 +155,7 @@ msgstr ""
 msgid "Ingénieur Google Workspace & Transformateur Digital."
 msgstr "Google Workspace Engineer & Digital Transformer."
 
-#: portfolio/templates/portfolio/base.html:89
+#: portfolio/templates/portfolio/base.html:91
 #, fuzzy
 #| msgid ""
 #| "Explorez le portfolio d'Abdel Aziz Mfossa : Ingénieur Google Workspace "
@@ -206,15 +214,19 @@ msgstr ""
 msgid "S'abonner sur Medium"
 msgstr "Subscribe on Medium"
 
-#: portfolio/templates/portfolio/blog.html:59
+#: portfolio/templates/portfolio/blog.html:29
+msgid "Flux RSS"
+msgstr "RSS Feed"
+
+#: portfolio/templates/portfolio/blog.html:64
 msgid "min de lecture"
 msgstr "min read"
 
-#: portfolio/templates/portfolio/blog.html:84
+#: portfolio/templates/portfolio/blog.html:89
 msgid "Lire sur Medium"
 msgstr "Read on Medium"
 
-#: portfolio/templates/portfolio/blog.html:95
+#: portfolio/templates/portfolio/blog.html:100
 msgid "Aucun article publié pour le moment."
 msgstr "No articles published for the moment."
 
@@ -796,13 +808,6 @@ msgstr "Shortened links"
 
 #~ msgid "Formulaire de contact Abdel Aziz Mfossa"
 #~ msgstr "Abdel Aziz Mfossa Contact Form"
-
-#~ msgid ""
-#~ "Articles, tutoriels et réflexions sur Google Workspace, l'automatisation "
-#~ "et l'IA."
-#~ msgstr ""
-#~ "Articles, tutorials and reflections on Google Workspace, automation and "
-#~ "AI."
 
 #~ msgid "Mes interventions, conférences et engagement tech communautaire."
 #~ msgstr "My interventions, conferences and tech community engagement."
