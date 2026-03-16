@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .forms import ContactForm
 from .models import Tag, Project, Article, Event, Video, Certification, Skill, Experience
 
 def home(request):
@@ -53,7 +55,18 @@ def videos(request):
     })
 
 def contact(request):
-    return render(request, 'portfolio/contact.html')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Merci ! Votre message a été envoyé avec succès.")
+            return redirect('contact')
+        else:
+            messages.error(request, "Une erreur est survenue. Veuillez vérifier les champs du formulaire.")
+    else:
+        form = ContactForm()
+        
+    return render(request, 'portfolio/contact.html', {'form': form})
 
 def trigger_error(request):
     """Fonction temporaire pour simuler une erreur 500"""

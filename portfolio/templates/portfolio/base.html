@@ -63,6 +63,33 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="{% static 'portfolio/images/logo abdelmfossa.svg' %}">
     <link rel="alternate icon" type="image/png" href="{% static 'portfolio/images/logo abdelmfossa.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'portfolio/images/logo abdelmfossa.png' %}">
+    
+    <!-- PWA -->
+    <meta name="theme-color" content="#2563eb">
+    <link rel="manifest" href="{% static 'portfolio/manifest.json' %}">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Abdel Aziz Mfossa",
+      "url": "{{ request.build_absolute_uri }}",
+      "image": "{{ request.scheme }}://{{ request.get_host }}{% static 'portfolio/images/Profile Abdel.jpg' %}",
+      "jobTitle": "Google Workspace Engineer",
+      "sameAs": [
+        "https://facebook.com/AbdelMfossa",
+        "https://linkedin.com/in/AbdelMfossa",
+        "https://twitter.com/AbdelMfossa",
+        "https://x.com/AbdelMfossa",
+        "http://medium.com/@abdelmfossa",
+        "http://youtube.com/@AbdelMfossa",
+        "https://github.com/AbdelMfossa"
+      ],
+      "description": "{% trans "Ingénieur Google Workspace certifié, expert en automatisation de processus et Lead du GDG Yaoundé." %}"
+    }
+    </script>
 
     <style>
         /* Utilitaire pour cacher la barre de défilement tout en gardant le scroll actif */
@@ -130,6 +157,15 @@
     {% include 'portfolio/partials/footer.html' %}
 
     <script src="{% static 'portfolio/js/main.js' %}"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('{% static "portfolio/js/sw.js" %}')
+                    .then(reg => console.log('SW Registered'))
+                    .catch(err => console.log('SW Error:', err));
+            });
+        }
+    </script>
     {% block extra_js %}{% endblock %}
 </body>
 </html>

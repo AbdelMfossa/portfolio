@@ -4,7 +4,7 @@ from django.utils import timezone
 from django.db.models import Count
 from datetime import timedelta
 from modeltranslation.admin import TranslationAdmin
-from .models import Tag, Project, Article, Event, Video, Certification, Skill, Experience, VisitorLog
+from .models import Tag, Project, Article, Event, Video, Certification, Skill, Experience, VisitorLog, ContactMessage
 
 
 @admin.register(VisitorLog)
@@ -227,3 +227,11 @@ class ExperienceAdmin(TranslationAdmin):
     list_display = ('job_title', 'company', 'order')
     list_editable = ('order',)
     search_fields = ('job_title', 'company', 'description')
+@admin.register(ContactMessage)
+class ContactMessageAdmin(admin.ModelAdmin):
+    list_display = ('name', 'subject', 'email', 'created_at', 'is_read')
+    list_filter = ('is_read', 'created_at')
+    search_fields = ('name', 'email', 'subject', 'message')
+    readonly_fields = ('created_at',)
+    list_editable = ('is_read',)
+    date_hierarchy = 'created_at'

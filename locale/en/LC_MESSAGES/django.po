@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-15 20:05+0000\n"
+"POT-Creation-Date: 2026-03-16 14:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,6 +25,50 @@ msgstr "French"
 #: config/settings.py:129
 msgid "English"
 msgstr "English"
+
+#: portfolio/forms.py:12
+msgid "Votre nom complet"
+msgstr "Your full name"
+
+#: portfolio/forms.py:20
+msgid "Le sujet de votre message"
+msgstr "The subject of your message"
+
+#: portfolio/forms.py:24
+msgid "Comment puis-je vous aider ?"
+msgstr "How can I help you?"
+
+#: portfolio/models.py:319 portfolio/templates/portfolio/contact.html:52
+msgid "Nom complet"
+msgstr "Full name"
+
+#: portfolio/models.py:320
+msgid "Adresse email"
+msgstr "Email address"
+
+#: portfolio/models.py:321 portfolio/templates/portfolio/contact.html:72
+msgid "Sujet"
+msgstr "Subject"
+
+#: portfolio/models.py:322 portfolio/templates/portfolio/contact.html:82
+msgid "Message"
+msgstr "Message"
+
+#: portfolio/models.py:323
+msgid "Date de réception"
+msgstr "Reception date"
+
+#: portfolio/models.py:324
+msgid "Message lu"
+msgstr "Message read"
+
+#: portfolio/models.py:327
+msgid "Message de contact"
+msgstr "Contact Message"
+
+#: portfolio/models.py:328
+msgid "Messages de contact"
+msgstr "Contact Messages"
 
 #: portfolio/templates/404.html:4
 msgid "Page non trouvée | Abdel Aziz Mfossa"
@@ -102,6 +146,20 @@ msgstr ""
 #: portfolio/templates/portfolio/base.html:27
 msgid "Ingénieur Google Workspace & Transformateur Digital."
 msgstr "Google Workspace Engineer & Digital Transformer."
+
+#: portfolio/templates/portfolio/base.html:89
+#, fuzzy
+#| msgid ""
+#| "Explorez le portfolio d'Abdel Aziz Mfossa : Ingénieur Google Workspace "
+#| "certifié, expert en automatisation de processus et conférencier passionné "
+#| "par l'innovation Cloud."
+msgid ""
+"Ingénieur Google Workspace certifié, expert en automatisation de processus "
+"et Lead du GDG Yaoundé."
+msgstr ""
+"Explore the portfolio of Abdel Aziz Mfossa: Certified Google Workspace "
+"Engineer, process automation expert, and speaker passionate about Cloud "
+"innovation."
 
 #: portfolio/templates/portfolio/blog.html:4
 #: portfolio/templates/portfolio/blog.html:6
@@ -182,8 +240,8 @@ msgid ""
 "Travaillons <span class=\"text-transparent bg-clip-text bg-gradient-to-r "
 "from-blue-600 to-indigo-600\">ensemble</span>"
 msgstr ""
-"Let's work <span class=\"text-transparent bg-clip-text bg-gradient-to-r "
-"from-blue-600 to-indigo-600\">together</span>"
+"Let's work <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-"
+"blue-600 to-indigo-600\">together</span>"
 
 #: portfolio/templates/portfolio/contact.html:15
 msgid ""
@@ -201,19 +259,15 @@ msgstr "Leave me a message"
 msgid "Je m'efforce de répondre à toutes les requêtes dans un délai rapide."
 msgstr "I strive to respond to all inquiries in a timely manner."
 
-#: portfolio/templates/portfolio/contact.html:39
-msgid "Chargement du formulaire..."
-msgstr "Loading form..."
+#: portfolio/templates/portfolio/contact.html:93
+msgid "Envoyer le message"
+msgstr ""
 
-#: portfolio/templates/portfolio/contact.html:52
-msgid "Formulaire de contact Abdel Aziz Mfossa"
-msgstr "Abdel Aziz Mfossa Contact Form"
-
-#: portfolio/templates/portfolio/contact.html:65
+#: portfolio/templates/portfolio/contact.html:108
 msgid "Réserver un call"
 msgstr "Book a call"
 
-#: portfolio/templates/portfolio/contact.html:66
+#: portfolio/templates/portfolio/contact.html:109
 msgid "Discutons de vive voix de votre projet."
 msgstr "Let's discuss your project live."
 
@@ -736,6 +790,12 @@ msgstr "Shortened link"
 #: shortener/models.py:13
 msgid "Liens raccourcis"
 msgstr "Shortened links"
+
+#~ msgid "Chargement du formulaire..."
+#~ msgstr "Loading form..."
+
+#~ msgid "Formulaire de contact Abdel Aziz Mfossa"
+#~ msgstr "Abdel Aziz Mfossa Contact Form"
 
 #~ msgid ""
 #~ "Articles, tutoriels et réflexions sur Google Workspace, l'automatisation "

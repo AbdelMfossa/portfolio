@@ -1,0 +1,12 @@
+// Minimal Service Worker for PWA compliance
+self.addEventListener('install', (event) => {
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil(clients.claim());
+});
+
+self.addEventListener('fetch', (event) => {
+  // Logic for offline support could be added here
+});

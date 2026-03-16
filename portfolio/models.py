@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 from django.utils.text import slugify
 import os
@@ -313,3 +314,19 @@ class Experience(models.Model):
         
     def get_bullets_list(self):
         return [b.strip() for b in self.bullets.split('\n') if b.strip()]
+
+class ContactMessage(models.Model):
+    name = models.CharField(max_length=100, verbose_name=_("Nom complet"))
+    email = models.EmailField(verbose_name=_("Adresse email"))
+    subject = models.CharField(max_length=200, verbose_name=_("Sujet"))
+    message = models.TextField(verbose_name=_("Message"))
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_("Date de réception"))
+    is_read = models.BooleanField(default=False, verbose_name=_("Message lu"))
+
+    class Meta:
+        verbose_name = _("Message de contact")
+        verbose_name_plural = _("Messages de contact")
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f"Message de {self.name} - {self.subject}"

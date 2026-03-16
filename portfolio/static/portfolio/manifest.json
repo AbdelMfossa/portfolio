@@ -1,0 +1,16 @@
+{
+  "name": "Abdel Aziz Mfossa Portfolio",
+  "short_name": "AbdelMfossa",
+  "description": "Portfolio d'Abdel Aziz Mfossa, Ingénieur Google Workspace & Transformateur Digital.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/static/portfolio/images/logo abdelmfossa.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
