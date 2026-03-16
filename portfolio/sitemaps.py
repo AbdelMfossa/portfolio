@@ -25,19 +25,6 @@ class ProjectSitemap(Sitemap):
     def location(self, obj):
         return reverse('projects') # Actuellement les projets n'ont pas de page individuelle, on renvoie vers la grille
 
-class ArticleSitemap(Sitemap):
-    changefreq = "weekly"
-    priority = 0.9
-
-    def items(self):
-        return Article.objects.filter(is_active=True)
-
-    def lastmod(self, obj):
-        return obj.published_date
-    
-    def location(self, obj):
-        return obj.medium_url # Redirection vers Medium car pas de page individuelle locale
-
 class EventSitemap(Sitemap):
     changefreq = "monthly"
     priority = 0.7

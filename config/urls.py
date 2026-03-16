@@ -2,7 +2,7 @@ import os
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.sitemaps.views import sitemap
-from portfolio.sitemaps import StaticViewSitemap, ProjectSitemap, ArticleSitemap, EventSitemap
+from portfolio.sitemaps import StaticViewSitemap, ProjectSitemap, EventSitemap
 from portfolio.feeds import LatestArticlesFeed
 from portfolio.views import robots_txt
 
@@ -23,7 +23,6 @@ from django.conf.urls.i18n import i18n_patterns
 sitemaps = {
     'static': StaticViewSitemap,
     'projects': ProjectSitemap,
-    'articles': ArticleSitemap,
     'events': EventSitemap,
 }
 

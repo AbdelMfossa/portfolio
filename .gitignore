@@ -6,4 +6,8 @@ __pycache__
 db.sqlite3
 .DS_Store
 .env
-staticfiles
+staticfiles/
+media/
+*.mo
+.vscode/
+.idea/
