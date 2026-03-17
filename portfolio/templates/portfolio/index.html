@@ -194,14 +194,17 @@
                     {% for skill in skills %}
                     <!-- Carte -->
                     <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md dark:hover:shadow-slate-900/50 transition-all duration-300">
+                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md dark:hover:shadow-slate-900/50 transition-all duration-300"
+                        data-aos="fade-up" data-aos-delay="{{ forloop.counter0 }}00">
                         <div
                             class="w-12 h-12 bg-{{ skill.color }}-100 dark:bg-{{ skill.color }}-900/30 text-{{ skill.color }}-600 dark:text-{{ skill.color }}-400 rounded-xl flex items-center justify-center mb-6 transition-colors">
                             <i data-lucide="{{ skill.icon }}" class="w-6 h-6"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-4 dark:text-white transition-colors">{{ skill.title }}</h3>
                         {% if skill.description %}
-                        <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 transition-colors">{{ skill.description }}</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 transition-colors leading-relaxed">
+                            {{ skill.description }}
+                        </p>
                         {% endif %}
                         <ul class="space-y-3 text-slate-600 dark:text-slate-300 transition-colors">
                             {% for bullet in skill.get_bullets_list %}
@@ -548,6 +551,18 @@
                     </div>
                     {% endfor %}
 
+                </div>
+
+                <!-- Lien vers les autres certifications -->
+                <div class="mt-12 text-center">
+                    <a href="https://www.skills.google/public_profiles/20549f83-a046-4e0c-81c6-4ba1b6092e22" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 px-8 py-4 rounded-2xl font-bold hover:bg-slate-50 dark:hover:bg-slate-700 transition-all shadow-sm hover:shadow-md group">
+                        <div class="w-10 h-10 bg-blue-50 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                            <i data-lucide="award" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-lg">{% trans "Voir toutes mes certifications sur Google Skills" %}</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform text-slate-400"></i>
+                    </a>
                 </div>
             </div>
         </section>

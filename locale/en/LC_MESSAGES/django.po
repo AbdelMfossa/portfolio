@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-16 20:09+0000\n"
+"POT-Creation-Date: 2026-03-17 07:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -78,54 +78,6 @@ msgstr "Contact Message"
 msgid "Messages de contact"
 msgstr "Contact Messages"
 
-#: portfolio/templates/404.html:4
-msgid "Page non trouvée | Abdel Aziz Mfossa"
-msgstr "Page Not Found | Abdel Aziz Mfossa"
-
-#: portfolio/templates/404.html:22
-msgid "Oups ! Cette page s'est envolée."
-msgstr "Oops! This page has flown away."
-
-#: portfolio/templates/404.html:24
-msgid ""
-"La page que vous recherchez n'existe pas ou a été déplacée. Pas "
-"d'inquiétude, vous pouvez retrouver votre chemin facilement."
-msgstr ""
-"The page you are looking for does not exist or has been moved. No worries, "
-"you can find your way back easily."
-
-#: portfolio/templates/404.html:30
-msgid "Retour à l'accueil"
-msgstr "Back to Home"
-
-#: portfolio/templates/404.html:34
-msgid "Voir mes projets"
-msgstr "See my projects"
-
-#: portfolio/templates/500.html:4
-msgid "Erreur Serveur | Abdel Aziz Mfossa"
-msgstr "Server Error | Abdel Aziz Mfossa"
-
-#: portfolio/templates/500.html:22
-msgid "Un petit souci technique..."
-msgstr "A little technical issue..."
-
-#: portfolio/templates/500.html:24
-msgid ""
-"Désolé, une erreur interne est survenue sur nos serveurs. Nous travaillons "
-"déjà à résoudre le problème. Merci de réessayer dans quelques instants."
-msgstr ""
-"Sorry, an internal error occurred on our servers. We are already working to "
-"resolve the issue. Please try again in a few moments."
-
-#: portfolio/templates/500.html:30
-msgid "Actualiser la page"
-msgstr "Refresh page"
-
-#: portfolio/templates/500.html:34
-msgid "Me signaler le bug"
-msgstr "Report bug"
-
 #: portfolio/templates/portfolio/base.html:9
 msgid ""
 "Découvrez le portfolio d'Abdel Aziz Mfossa, Ingénieur Google Workspace "
@@ -155,7 +107,7 @@ msgstr ""
 msgid "Ingénieur Google Workspace & Transformateur Digital."
 msgstr "Google Workspace Engineer & Digital Transformer."
 
-#: portfolio/templates/portfolio/base.html:91
+#: portfolio/templates/portfolio/base.html:94
 #, fuzzy
 #| msgid ""
 #| "Explorez le portfolio d'Abdel Aziz Mfossa : Ingénieur Google Workspace "
@@ -465,40 +417,40 @@ msgstr ""
 "A perfect mix of system administration, development and artificial "
 "intelligence."
 
-#: portfolio/templates/portfolio/index.html:225
+#: portfolio/templates/portfolio/index.html:228
 msgid "Expériences"
 msgstr "Experience"
 
-#: portfolio/templates/portfolio/index.html:229
+#: portfolio/templates/portfolio/index.html:232
 msgid "Projets Clés"
 msgstr "Key Projects"
 
-#: portfolio/templates/portfolio/index.html:347
+#: portfolio/templates/portfolio/index.html:350
 #: portfolio/templates/portfolio/projects.html:98
 msgid "Code source"
 msgstr "Source code"
 
-#: portfolio/templates/portfolio/index.html:353
+#: portfolio/templates/portfolio/index.html:356
 msgid "Visiter le site"
 msgstr "Visit site"
 
-#: portfolio/templates/portfolio/index.html:359
+#: portfolio/templates/portfolio/index.html:362
 msgid "Voir l'article"
 msgstr "View article"
 
-#: portfolio/templates/portfolio/index.html:366
+#: portfolio/templates/portfolio/index.html:369
 msgid "Aucun projet à afficher pour le moment."
 msgstr "No projects to display for now."
 
-#: portfolio/templates/portfolio/index.html:374
+#: portfolio/templates/portfolio/index.html:377
 msgid "Découvrir tous mes projets"
 msgstr "Discover all my projects"
 
-#: portfolio/templates/portfolio/index.html:386
+#: portfolio/templates/portfolio/index.html:389
 msgid "Leadership & Communauté"
 msgstr "Leadership & Community"
 
-#: portfolio/templates/portfolio/index.html:388
+#: portfolio/templates/portfolio/index.html:391
 msgid ""
 "Je crois fermement que le savoir grandit quand il est partagé. Je m'investis "
 "pour dynamiser l'écosystème technologique et accompagner la prochaine "
@@ -508,11 +460,11 @@ msgstr ""
 "dynamizing the technological ecosystem and supporting the next generation of "
 "developers."
 
-#: portfolio/templates/portfolio/index.html:397
+#: portfolio/templates/portfolio/index.html:400
 msgid "Lead GDG Yaoundé (2023 - Présent)"
 msgstr "GDG Yaoundé Lead (2023 - Present)"
 
-#: portfolio/templates/portfolio/index.html:398
+#: portfolio/templates/portfolio/index.html:401
 msgid ""
 "Organisation d'événements majeurs (DevFest), pilotage de la campagne 'Build "
 "with AI', mentoring et développement de partenariats."
@@ -520,11 +472,11 @@ msgstr ""
 "Organization of major events (DevFest), leading the 'Build with AI' "
 "campaign, mentoring and partnership development."
 
-#: portfolio/templates/portfolio/index.html:407
+#: portfolio/templates/portfolio/index.html:410
 msgid "Speaker & Créateur de contenu"
 msgstr "Speaker & Content Creator"
 
-#: portfolio/templates/portfolio/index.html:408
+#: portfolio/templates/portfolio/index.html:411
 msgid ""
 "Keynote Speaker sur 'NotebookLM' au DevFest Yaoundé. Rédaction d'articles "
 "techniques sur Medium et création de tutoriels."
@@ -532,11 +484,11 @@ msgstr ""
 "Keynote Speaker on 'NotebookLM' at DevFest Yaoundé. Writing technical "
 "articles on Medium and creating tutorials."
 
-#: portfolio/templates/portfolio/index.html:418
+#: portfolio/templates/portfolio/index.html:421
 msgid "Fondateur GDSC Université de Yaoundé I"
 msgstr "GDSC University of Yaoundé I Founder"
 
-#: portfolio/templates/portfolio/index.html:419
+#: portfolio/templates/portfolio/index.html:422
 msgid ""
 "Création du premier club étudiant, formation de l'équipe Core et "
 "organisation de dizaines d'ateliers pratiques."
@@ -544,29 +496,33 @@ msgstr ""
 "Creation of the first student club, training of the Core team and "
 "organization of dozens of hands-on workshops."
 
-#: portfolio/templates/portfolio/index.html:427
+#: portfolio/templates/portfolio/index.html:430
 msgid "Découvrir mes interventions"
 msgstr "Discover my interventions"
 
-#: portfolio/templates/portfolio/index.html:450
+#: portfolio/templates/portfolio/index.html:453
 msgid "Yaoundé Chapter Lead"
 msgstr "Yaoundé Chapter Lead"
 
-#: portfolio/templates/portfolio/index.html:466
+#: portfolio/templates/portfolio/index.html:469
 msgid "Certifications"
 msgstr "Certifications"
 
-#: portfolio/templates/portfolio/index.html:467
+#: portfolio/templates/portfolio/index.html:470
 msgid "Validation de mes compétences par les leaders de l'industrie."
 msgstr "Validation of my skills by industry leaders."
 
-#: portfolio/templates/portfolio/index.html:539
+#: portfolio/templates/portfolio/index.html:542
 msgid "Vérifier le badge"
 msgstr "Verify badge"
 
-#: portfolio/templates/portfolio/index.html:547
+#: portfolio/templates/portfolio/index.html:550
 msgid "Aucune certification n'est disponible pour le moment."
 msgstr "No certifications available at the moment."
+
+#: portfolio/templates/portfolio/index.html:563
+msgid "Voir toutes mes certifications sur Google Skills"
+msgstr "View all my certifications on Google Skills"
 
 #: portfolio/templates/portfolio/partials/footer.html:5
 msgid "Prêt à optimiser vos processus ?"
@@ -802,6 +758,54 @@ msgstr "Shortened link"
 #: shortener/models.py:13
 msgid "Liens raccourcis"
 msgstr "Shortened links"
+
+#: templates/404.html:4
+msgid "Page non trouvée | Abdel Aziz Mfossa"
+msgstr "Page Not Found | Abdel Aziz Mfossa"
+
+#: templates/404.html:22
+msgid "Oups ! Cette page s'est envolée."
+msgstr "Oops! This page has flown away."
+
+#: templates/404.html:24
+msgid ""
+"La page que vous recherchez n'existe pas ou a été déplacée. Pas "
+"d'inquiétude, vous pouvez retrouver votre chemin facilement."
+msgstr ""
+"The page you are looking for does not exist or has been moved. No worries, "
+"you can find your way back easily."
+
+#: templates/404.html:30
+msgid "Retour à l'accueil"
+msgstr "Back to Home"
+
+#: templates/404.html:34
+msgid "Voir mes projets"
+msgstr "See my projects"
+
+#: templates/500.html:4
+msgid "Erreur Serveur | Abdel Aziz Mfossa"
+msgstr "Server Error | Abdel Aziz Mfossa"
+
+#: templates/500.html:22
+msgid "Un petit souci technique..."
+msgstr "A little technical issue..."
+
+#: templates/500.html:24
+msgid ""
+"Désolé, une erreur interne est survenue sur nos serveurs. Nous travaillons "
+"déjà à résoudre le problème. Merci de réessayer dans quelques instants."
+msgstr ""
+"Sorry, an internal error occurred on our servers. We are already working to "
+"resolve the issue. Please try again in a few moments."
+
+#: templates/500.html:30
+msgid "Actualiser la page"
+msgstr "Refresh page"
+
+#: templates/500.html:34
+msgid "Me signaler le bug"
+msgstr "Report bug"
 
 #~ msgid "Chargement du formulaire..."
 #~ msgstr "Loading form..."
